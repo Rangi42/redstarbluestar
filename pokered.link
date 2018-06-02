@@ -156,6 +156,24 @@ ROMX $2B
 ROMX $2C
   "Move Names" ; MOVE_NAMES
 
+ROMX $2D
+  "Pics 6"
+
+ROMX $2E
+  "Pics 7"
+
+ROMX $2F
+  "Pics 8"
+
+ROMX $30
+  "Pics 9"
+
+ROMX $31
+  "Pics 10"
+
+ROMX $32
+  "Pics 11"
+
 WRAM0
   "WRAM Bank 0"
 

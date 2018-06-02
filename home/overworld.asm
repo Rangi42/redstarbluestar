@@ -283,7 +283,25 @@ OverworldLoopLessDelay::
 	bit 6, a ; jumping a ledge?
 	jr nz, .normalPlayerSpriteAdvancement
 	call DoBikeSpeedup
+; mach bike when holding B
+	ld a, [hJoyHeld]
+	and B_BUTTON
+	jr z, .notRunning
+	call DoBikeSpeedup
+	call DoBikeSpeedup
+	jr .notRunning
 .normalPlayerSpriteAdvancement
+; surf at bike speed
+	ld a,[wWalkBikeSurfState]
+	cp a, $02 ; surfing
+	jr z, .goFaster
+; running shoes when holding B
+	ld a, [hJoyHeld]
+	and B_BUTTON
+	jr z, .notRunning
+.goFaster
+	call DoBikeSpeedup
+.notRunning
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
