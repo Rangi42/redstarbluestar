@@ -1,43 +1,3 @@
-# Linux
-
-	sudo apt-get install make git gcc
-
-	sudo apt-get install byacc flex pkg-config libpng-dev
-	git clone https://github.com/rednex/rgbds
-	cd rgbds
-	sudo make install
-	cd ..
-
-	git clone https://github.com/pret/pokered
-	cd pokered
-
-To build **pokered.gbc** and **pokeblue.gbc**:
-
-	make
-
-To build them individually:
-
-	make red
-	make blue
-
-
-# Mac
-
-Get [**Homebrew**](http://brew.sh/).
-
-Then in **Terminal**, run:
-
-	xcode-select --install
-	brew install rgbds
-
-	git clone https://github.com/pret/pokered
-	cd pokered
-
-To build **pokered.gbc** and **pokeblue.gbc**:
-
-	make
-
-
 # Windows
 
 Download [**Cygwin**](http://cygwin.com/install.html): **setup-x86_64.exe** for 64-bit Windows, **setup-x86.exe** for 32-bit.
@@ -52,9 +12,49 @@ Then download [**rgbds**](https://github.com/rednex/rgbds/releases/): the latest
 
 In the **Cygwin terminal**, enter these commands:
 
-	git clone https://github.com/pret/pokered
+	git clone -b spaceworld https://github.com/Rangi42/pokered
 	cd pokered
 
 To build **pokered.gbc** and **pokeblue.gbc**:
 
 	make
+
+
+# Mac OS X
+
+Get [**Homebrew**](http://brew.sh/).
+
+Then in **Terminal**, run:
+
+	xcode-select --install
+	brew install rgbds
+
+	git clone -b spaceworld https://github.com/Rangi42/pokered
+	cd pokered
+
+To build **pokered.gbc** and **pokeblue.gbc**:
+
+	make
+
+
+# Linux
+
+	sudo apt-get install make git gcc
+
+	sudo apt-get install byacc flex pkg-config libpng-dev
+	git clone https://github.com/rednex/rgbds
+	cd rgbds
+	sudo make install
+	cd ..
+
+	git clone -b spaceworld https://github.com/Rangi42/pokered
+	cd pokered
+
+To build **pokered.gbc** and **pokeblue.gbc**:
+
+	make
+
+To build them individually:
+
+	make red
+	make blue
