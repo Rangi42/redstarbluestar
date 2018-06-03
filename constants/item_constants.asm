@@ -51,7 +51,7 @@ SAFARI_ROCK           EQU $16 ; overload
 	const LEAF_STONE    ; $2F
 	const CARD_KEY      ; $30
 	const NUGGET        ; $31
-	const PP_UP_2       ; $32
+	const HEART_STONE   ; $32
 	const POKE_DOLL     ; $33
 	const FULL_HEAL     ; $34
 	const REVIVE        ; $35

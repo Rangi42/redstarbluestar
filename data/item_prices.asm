@@ -48,7 +48,7 @@ ItemPrices:
 	money 2100  ; LEAF_STONE
 	money 0     ; CARD_KEY
 	money 10000 ; NUGGET
-	money 9800  ; XXX PP_UP
+	money 2100  ; HEART_STONE
 	money 1000  ; POKE_DOLL
 	money 600   ; FULL_HEAL
 	money 1500  ; REVIVE

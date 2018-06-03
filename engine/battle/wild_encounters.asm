@@ -113,6 +113,6 @@ WildMonEncounterSlotChances:
 	db $BE, $08 ; 25/256 =  9.8% chance of slot 4
 	db $D7, $0A ; 25/256 =  9.8% chance of slot 5
 	db $E4, $0C ; 13/256 =  5.1% chance of slot 6
-	db $F1, $0E ; 13/256 =  5.1% chance of slot 7
-	db $FC, $10 ; 11/256 =  4.3% chance of slot 8
-	db $FF, $12 ;  3/256 =  1.2% chance of slot 9
+	db $EF, $0E ; 11/256 =  4.3% chance of slot 7
+	db $FA, $10 ; 11/256 =  4.3% chance of slot 8
+	db $FF, $12 ;  5/256 =  1.9% chance of slot 9

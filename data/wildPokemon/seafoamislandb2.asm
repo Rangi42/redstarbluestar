@@ -5,23 +5,23 @@ IslandMonsB2:
 		db 30,SLOWPOKE
 		db 32,SEEL
 		db 32,SLOWPOKE
-		db 28,HORSEA
+		db 29,HORSEA
 		db 30,STARYU
-		db 30,HORSEA
 		db 28,SHELLDER
 		db 30,GOLBAT
 		db 37,SLOWBRO
+		db 37,JYNX
 	ENDC
 	IF DEF(_BLUE)
 		db 30,SEEL
 		db 30,PSYDUCK
 		db 32,SEEL
 		db 32,PSYDUCK
-		db 28,KRABBY
+		db 29,KRABBY
 		db 30,SHELLDER
-		db 30,KRABBY
 		db 28,STARYU
 		db 30,GOLBAT
 		db 37,GOLDUCK
+		db 37,JYNX
 	ENDC
 	db $00

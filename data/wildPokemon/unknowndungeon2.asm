@@ -2,7 +2,7 @@ DungeonMons2:
 	db $0F
 	db 51,DODRIO
 	db 51,VENOMOTH
-	db 51,KADABRA
+	db 53,GOLEM
 	db 52,RHYDON
 	db 52,MAROWAK
 	db 52,ELECTRODE

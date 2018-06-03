@@ -9,7 +9,7 @@ ZoneMonsCenter:
 		db 25,EXEGGCUTE
 		db 31,NIDORINA
 		db 30,PARASECT
-		db 23,SCYTHER
+		db 23,MAROWAK
 		db 23,CHANSEY
 	ENDC
 	IF DEF(_BLUE)
@@ -21,7 +21,7 @@ ZoneMonsCenter:
 		db 25,EXEGGCUTE
 		db 31,NIDORINO
 		db 30,PARASECT
-		db 23,PINSIR
+		db 23,MAROWAK
 		db 23,CHANSEY
 	ENDC
 	db $00

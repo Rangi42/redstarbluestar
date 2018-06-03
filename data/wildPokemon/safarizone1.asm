@@ -10,7 +10,7 @@ ZoneMons1:
 		db 24,NIDORAN_F
 		db 25,PARASECT
 		db 25,KANGASKHAN
-		db 28,SCYTHER
+		db 28,PINSIR
 	ENDC
 	IF DEF(_BLUE)
 		db 24,NIDORAN_F
@@ -22,6 +22,6 @@ ZoneMons1:
 		db 24,NIDORAN_M
 		db 25,PARASECT
 		db 25,KANGASKHAN
-		db 28,PINSIR
+		db 28,SCYTHER
 	ENDC
 	db $00
