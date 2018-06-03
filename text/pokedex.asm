@@ -1508,3 +1508,13 @@ _VictreebelDexEntry::
 	next "from there"
 	dex
 
+_MissingnoDexEntry::
+	text "This #MON has"
+	next "just been dis-"
+	next "covered."
+
+	page "It is currently"
+	next "under investi-"
+	next "gation"
+	dex
+
