@@ -184,6 +184,15 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	inc a
 	ld [H_AUTOBGTRANSFERENABLED], a
 	call Delay3
+	ld de, wEnemyMonDVs
+	callba IsMonShiny
+	ld hl, wShinyMonFlag
+	jr nz, .shiny
+	res 0, [hl]
+	jr .setPal
+.shiny
+	set 0, [hl]
+.setPal
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call HideSprites
@@ -1849,6 +1858,22 @@ SendOutMon:
 	call PlayMoveAnimation
 	coord hl, 4, 11
 	predef AnimateSendingOutMon
+	ld de, wBattleMonDVs
+	callba IsMonShiny
+	jr z, .playCry
+	ld a, [rBGP]
+	push af
+	ld a, %00011011
+	ld [rBGP], a
+	ld c, 2
+	call DelayFrames
+	xor a
+	ld [rBGP],a
+	ld c, 2
+	call DelayFrames
+	pop af
+	ld [rBGP], a
+.playCry
 	ld a, [wcf91]
 	call PlayCry
 	call PrintEmptyString

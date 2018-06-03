@@ -1510,6 +1510,40 @@ INCLUDE "engine/menu/diploma.asm"
 
 INCLUDE "engine/overworld/trainers.asm"
 
+IsMonShiny:
+	ld h, d
+	ld l, e
+	ld a, [hli]
+	bit 5, a
+	jr z, .notShiny
+	and a, $f
+	cp 10
+	jr nz, .notShiny
+	ld a, [hl]
+	cp (10 << 4) | 10
+	jr nz, .notShiny
+	and a
+	ret
+
+.notShiny
+	xor a
+	ret
+
+_EvolutionSetWholeScreenPalette:
+	ld hl, wShinyMonFlag
+	res 0, [hl]
+	push de
+	ld de, wLoadedMonDVs
+	call IsMonShiny
+	pop de
+	jr z, .setPal
+	ld hl, wShinyMonFlag
+	set 0, [hl]
+.setPal
+	ld c, d
+	ld b, SET_PAL_POKEMON_WHOLE_SCREEN
+	jp RunPaletteCommand
+
 
 SECTION "bank16",ROMX,BANK[$16]
 

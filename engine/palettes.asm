@@ -30,13 +30,37 @@ SetPal_Battle:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	ld hl, wShinyMonFlag
+	res 0, [hl]
+	ld a, [wBattleMonSpecies]
+	and a
+	jr z, .getPalID
+	ld de, wBattleMonDVs
+	callba IsMonShiny
+	jr z, .getPalID
+	ld hl, wShinyMonFlag
+	set 0, [hl]
+.getPalID
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
 	call DeterminePaletteID
 	ld b, a
+	push bc
+	ld hl, wShinyMonFlag
+	res 0, [hl]
+	ld a, [wEnemyMonSpecies2]
+	and a
+	jr z, .getPalID2
+	ld de, wEnemyMonDVs
+	callba IsMonShiny
+	jr z, .getPalID2
+	ld hl, wShinyMonFlag
+	set 0, [hl]
+.getPalID2
 	ld a, [wEnemyBattleStatus3]
 	ld hl, wEnemyMonSpecies2
 	call DeterminePaletteID
+	pop bc
 	ld c, a
 	ld hl, wPalPacket + 1
 	ld a, [wPlayerHPBarColor]
@@ -286,7 +310,24 @@ DeterminePaletteIDOutOfBattle:
 	ld d, 0
 	ld hl, MonsterPalettes ; not just for Pokemon, Trainers use it too
 	add hl, de
+	ld [wd11e], a
+	and a ; is the mon index 0?
 	ld a, [hl]
+	ret z
+	push bc
+	ld d, a
+	ld a, e
+	and a
+	ld a, d
+	jr z, .done
+	ld b, a
+	ld a, [wShinyMonFlag]
+	bit 0, a
+	ld a, b
+	jr z, .done
+	add PAL_SHINYMEWMON - PAL_MEWMON
+.done
+	pop bc
 	ret
 
 InitPartyMenuBlkPacket:

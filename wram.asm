@@ -600,6 +600,8 @@ wAnimPalette:: ; cc79
 
 wNPCMovementDirections2:: ; cc97
 
+wShinyMonFlag:: ; cc97
+
 wSwitchPartyMonTempBuffer:: ; cc97
 ; temporary buffer when swapping party mon data
 	ds 10

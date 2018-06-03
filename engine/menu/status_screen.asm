@@ -123,6 +123,15 @@ StatusScreen:
 	predef DrawHP
 	ld hl, wStatusScreenHPBarColor
 	call GetHealthBarColor
+	ld de, wLoadedMonDVs
+	callba IsMonShiny
+	ld hl, wShinyMonFlag
+	jr nz, .shiny
+	res 0, [hl]
+	jr .setPal
+.shiny
+	set 0, [hl]
+.setPal
 	ld b, SET_PAL_STATUS_SCREEN
 	call RunPaletteCommand
 	coord hl, 16, 6
@@ -164,6 +173,7 @@ StatusScreen:
 	ld de, wLoadedMonOTID
 	lb bc, LEADING_ZEROES | 2, 5
 	call PrintNumber ; ID Number
+	call PrintShinySymbol
 	ld d, $0
 	call PrintStatsBox
 	call Delay3
@@ -244,6 +254,14 @@ DrawLineBox:
 PTile: ; This is a single 1bpp "P" tile
 	INCBIN "gfx/p_tile.1bpp"
 PTileEnd:
+
+PrintShinySymbol:
+	ld de, wLoadedMonDVs
+	callba IsMonShiny
+	ret z
+	coord hl, 0, 0
+	ld [hl], "⁂"
+	ret
 
 PrintStatsBox:
 	ld a, d
