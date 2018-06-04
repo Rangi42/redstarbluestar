@@ -10,20 +10,9 @@ PrintBeginningBattleText:
 .notPokemonTower
 	ld de, wEnemyMonDVs
 	callba IsMonShiny
-	jr z, .playCry
-	ld a, [rBGP]
-	push af
-	ld a, %00011011
-	ld [rBGP], a
-	ld c, 2
-	call DelayFrames
-	xor a
-	ld [rBGP], a
-	ld c, 2
-	call DelayFrames
-	pop af
-	ld [rBGP], a
-.playCry
+	jr z, .noFlash
+	callba AnimationFlashScreen
+.noFlash
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
 	ld hl, WildMonAppearedText

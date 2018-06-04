@@ -173,9 +173,9 @@ StatusScreen:
 	ld de, wLoadedMonOTID
 	lb bc, LEADING_ZEROES | 2, 5
 	call PrintNumber ; ID Number
-	call PrintShinySymbol
 	ld d, $0
 	call PrintStatsBox
+	call PrintShinySymbol
 	call Delay3
 	call GBPalNormal
 	coord hl, 1, 0
@@ -259,7 +259,7 @@ PrintShinySymbol:
 	ld de, wLoadedMonDVs
 	callba IsMonShiny
 	ret z
-	coord hl, 0, 0
+	coord hl, 6, 7
 	ld [hl], "⁂"
 	ret
 
