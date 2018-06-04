@@ -1910,15 +1910,6 @@ INCLUDE "engine/hidden_object_functions18.asm"
 
 SECTION "bank19",ROMX,BANK[$19]
 
-Overworld_GFX:     INCBIN "gfx/tilesets/overworld.2bpp"
-Overworld_Block:   INCBIN "gfx/blocksets/overworld.bst"
-
-RedsHouse1_GFX:
-RedsHouse2_GFX:    INCBIN "gfx/tilesets/reds_house.2bpp"
-	ds 16
-RedsHouse1_Block:
-RedsHouse2_Block:  INCBIN "gfx/blocksets/reds_house.bst"
-
 House_GFX:         INCBIN "gfx/tilesets/house.2bpp"
 House_Block:       INCBIN "gfx/blocksets/house.bst"
 Mansion_GFX:       INCBIN "gfx/tilesets/mansion.2bpp"
@@ -2157,3 +2148,11 @@ INCLUDE "engine/items/tm_prices.asm"
 SECTION "bank33",ROMX,BANK[$33]
 
 INCLUDE "engine/mon_gender.asm"
+
+Overworld_GFX:     INCBIN "gfx/tilesets/overworld.2bpp"
+Overworld_Block:   INCBIN "gfx/blocksets/overworld.bst"
+
+RedsHouse1_GFX:
+RedsHouse2_GFX:    INCBIN "gfx/tilesets/reds_house.2bpp"
+RedsHouse1_Block:
+RedsHouse2_Block:  INCBIN "gfx/blocksets/reds_house.bst"
