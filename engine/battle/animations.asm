@@ -1159,6 +1159,7 @@ FlashScreenLongDelay:
 .delayFrames
 	jp DelayFrames
 
+PlayShinySparkleAnimation: ; temporary
 AnimationFlashScreen:
 	ld a, [rBGP]
 	push af ; save initial palette

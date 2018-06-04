@@ -2152,3 +2152,8 @@ INCLUDE "engine/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 
 INCLUDE "engine/items/tm_prices.asm"
+
+
+SECTION "bank33",ROMX,BANK[$33]
+
+INCLUDE "engine/mon_gender.asm"

@@ -11,7 +11,9 @@ PrintBeginningBattleText:
 	ld de, wEnemyMonDVs
 	callba IsMonShiny
 	jr z, .noFlash
-	callba AnimationFlashScreen
+	ld hl, wShinyMonFlag
+	set 1, [hl]
+	callba PlayShinySparkleAnimation
 .noFlash
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry

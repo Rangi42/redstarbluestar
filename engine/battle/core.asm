@@ -1531,7 +1531,9 @@ EnemySendOutFirstMon:
 	ld de, wEnemyMonDVs
 	callba IsMonShiny
 	jr z, .noFlash
-	callba AnimationFlashScreen
+	ld hl, wShinyMonFlag
+	res 1, [hl]
+	callba PlayShinySparkleAnimation
 .noFlash
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
@@ -1866,7 +1868,9 @@ SendOutMon:
 	ld de, wBattleMonDVs
 	callba IsMonShiny
 	jr z, .noFlash
-	callba AnimationFlashScreen
+	ld hl, wShinyMonFlag
+	set 1, [hl]
+	callba PlayShinySparkleAnimation
 .noFlash
 	ld a, [wcf91]
 	call PlayCry
@@ -1932,6 +1936,8 @@ DrawPlayerHUDAndHPBar:
 	coord hl, 10, 7
 	call CenterMonName
 	call PlaceString
+	call PrintPlayerMonGender
+	call PrintPlayerMonShiny
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -1940,7 +1946,7 @@ DrawPlayerHUDAndHPBar:
 	ld de, wLoadedMonLevel
 	ld bc, wBattleMonPP - wBattleMonLevel
 	call CopyData
-	coord hl, 14, 8
+	coord hl, 13, 8
 	push hl
 	inc hl
 	ld de, wLoadedMonStatus
@@ -1991,6 +1997,8 @@ DrawEnemyHUDAndHPBar:
 	coord hl, 1, 0
 	call CenterMonName
 	call PlaceString
+	call PrintEnemyMonGender
+	call PrintEnemyMonShiny
 	coord hl, 4, 1
 	push hl
 	inc hl
@@ -2103,6 +2111,56 @@ CenterMonName:
 	jr nz, .loop
 .done
 	pop de
+	ret
+
+PrintPlayerMonGender:
+	ld a, [wBattleMonSpecies]
+	ld de, wBattleMonDVs
+	coord hl, 17, 8
+	jr PrintGenderCommon
+
+PrintEnemyMonGender:
+	ld a, [wEnemyMonSpecies]
+	ld de, wEnemyMonDVs
+	coord hl, 8, 1
+PrintGenderCommon:
+	ld [wGenderTemp], a
+	push hl
+	callba GetMonGender
+	ld a, [wGenderTemp]
+	and a
+	jr z, .genderless
+	dec a
+	ld a, "♂"
+	jr z, .ok
+	ld a, "♀"
+	jr .ok
+.genderless
+	ld a, " "
+.ok
+	pop hl
+	ld [hl], a
+	ret
+
+PrintPlayerMonShiny:
+	ld de, wBattleMonDVs
+	coord hl, 11, 8
+	jr PrintShinyCommon
+
+PrintEnemyMonShiny:
+	ld de, wEnemyMonDVs
+	coord hl, 2, 1
+PrintShinyCommon:
+	push hl
+	callba IsMonShiny
+	jr z, .notShiny
+	ld a, "⁂"
+	jr .ok
+.notShiny
+	ld a, " "
+.ok
+	pop hl
+	ld [hl], a
 	ret
 
 DisplayBattleMenu:
