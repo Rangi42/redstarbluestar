@@ -13,7 +13,7 @@ dw JolteonPicFront
 dw JolteonPicBack
 ; attacks known at lvl 0
 db TACKLE
-db SAND_ATTACK
+db TAIL_WHIP
 db QUICK_ATTACK
 db THUNDERSHOCK
 db 0 ; growth rate

@@ -14,8 +14,8 @@ dw PrimeapePicBack
 ; attacks known at lvl 0
 db SCRATCH
 db LEER
+db LOW_KICK
 db KARATE_CHOP
-db FURY_SWIPES
 db 0 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8

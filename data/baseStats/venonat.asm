@@ -24,5 +24,5 @@ db 0 ; growth rate
 	tmlearn 29,31,32
 	tmlearn 33,34
 	tmlearn 44,46
-	tmlearn 50
+	tmlearn 50,55
 db BANK(VenonatPicBack)
