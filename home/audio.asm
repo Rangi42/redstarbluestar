@@ -24,6 +24,8 @@ PlayDefaultMusicCommon::
 	jr z, .walking
 	cp $2
 	jr z, .surfing
+	call CheckForNoBikingMusicMap
+	jr c, .walking
 	ld a, MUSIC_BIKE_RIDING
 	jr .next
 
@@ -65,6 +67,25 @@ PlayDefaultMusicCommon::
 	ld [wLastMusicSoundID], a
 	ld [wNewSoundID], a
 	jp PlaySound
+
+CheckForNoBikingMusicMap::
+; maps without music change upon getting on bike
+	ld a, [wCurMap]
+	cp ROUTE_23
+	jr z, .found
+	cp VICTORY_ROAD_1
+	jr z, .found
+	cp VICTORY_ROAD_2
+	jr z, .found
+	cp VICTORY_ROAD_3
+	jr z, .found
+	cp INDIGO_PLATEAU
+	jr z, .found
+	and a
+	ret
+.found
+	scf
+	ret
 
 UpdateMusic6Times::
 ; This is called when entering a map, before fading out the current music and
