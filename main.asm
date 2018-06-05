@@ -1960,8 +1960,6 @@ Facility_Block:    INCBIN "gfx/blocksets/facility.bst"
 
 SECTION "bank1B",ROMX,BANK[$1B]
 
-Cemetery_GFX:      INCBIN "gfx/tilesets/cemetery.2bpp"
-Cemetery_Block:    INCBIN "gfx/blocksets/cemetery.bst"
 Cavern_GFX:        INCBIN "gfx/tilesets/cavern.2bpp"
 Cavern_Block:      INCBIN "gfx/blocksets/cavern.bst"
 Lobby_GFX:         INCBIN "gfx/tilesets/lobby.2bpp"
@@ -2156,3 +2154,6 @@ RedsHouse1_GFX:
 RedsHouse2_GFX:    INCBIN "gfx/tilesets/reds_house.2bpp"
 RedsHouse1_Block:
 RedsHouse2_Block:  INCBIN "gfx/blocksets/reds_house.bst"
+
+Cemetery_GFX:      INCBIN "gfx/tilesets/cemetery.2bpp"
+Cemetery_Block:    INCBIN "gfx/blocksets/cemetery.bst"

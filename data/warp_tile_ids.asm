@@ -57,7 +57,7 @@ InteriorWarpTileIDs:
 	db $15,$55,$04,$FF
 
 CavernWarpTileIDs:
-	db $18,$1A,$22,$FF
+	db $18,$1A,$22,$3B,$3D,$FF
 
 LobbyWarpTileIDs:
 	db $1A,$1C,$38,$FF
@@ -69,7 +69,7 @@ LabWarpTileIDs:
 	db $34,$FF
 
 FacilityWarpTileIDs:
-	db $43,$58,$20
+	db $43,$58,$5F,$20
 
 CemeteryWarpTileIDs:
 	db $1B
