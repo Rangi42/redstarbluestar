@@ -288,7 +288,7 @@ TrainerClassMoveChoiceModifications:
 	db 1,0    ; BIKER
 	db 1,3,0  ; BURGLAR
 	db 1,0    ; ENGINEER
-	db 1,2,0  ; JUGGLER_X
+	db 1,3,0  ; SWIMMER_F
 	db 1,3,0  ; FISHER
 	db 1,3,0  ; SWIMMER
 	db 0      ; CUE_BALL
@@ -384,7 +384,7 @@ TrainerAIPointers:
 	dbw 3,GenericAI
 	dbw 3,GenericAI
 	dbw 3,GenericAI
-	dbw 3,JugglerAI ; juggler_x
+	dbw 3,GenericAI
 	dbw 3,GenericAI
 	dbw 3,GenericAI
 	dbw 3,GenericAI

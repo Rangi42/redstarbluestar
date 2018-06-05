@@ -175,7 +175,13 @@ ROMX $32
   "Pics 11"
 
 ROMX $33
-  "bank33"
+  "Trainer Pics 1"
+
+ROMX $34
+  "Trainer Pics 2"
+
+ROMX $35
+  "bank35"
 
 WRAM0
   "WRAM Bank 0"

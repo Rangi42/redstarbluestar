@@ -11,7 +11,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw Juggler1Data
+	dw SwimmerFData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -288,8 +288,6 @@ EngineerData:
 ; Route 11
 	db 21,MAGNEMITE,0
 	db 18,MAGNEMITE,MAGNEMITE,MAGNETON,0
-Juggler1Data:
-; none
 FisherData:
 ; SS Anne 2F Rooms
 	db 17,GOLDEEN,TENTACOOL,GOLDEEN,0
@@ -352,6 +350,7 @@ GamblerData:
 	db 22,ONIX,GEODUDE,GRAVELER,0
 ; Route 8
 	db 24,GROWLITHE,VULPIX,0
+SwimmerFData:
 BeautyData:
 ; Celadon Gym
 	db 21,ODDISH,BELLSPROUT,ODDISH,BELLSPROUT,0
