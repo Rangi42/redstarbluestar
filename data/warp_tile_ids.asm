@@ -30,7 +30,7 @@ OverworldWarpTileIDs:
 ForestGateWarpTileIDs:
 MuseumWarpTileIDs:
 GateWarpTileIDs:
-	db $3B
+	db $37,$3B,$14,$1A,$1C,$FF
 
 RedsHouse1WarpTileIDs:
 RedsHouse2WarpTileIDs:

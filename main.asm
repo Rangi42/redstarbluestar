@@ -1945,13 +1945,6 @@ Pokecenter_GFX:    INCBIN "gfx/tilesets/pokecenter.2bpp"
 Mart_Block:
 Pokecenter_Block:  INCBIN "gfx/blocksets/pokecenter.bst"
 
-ForestGate_GFX:
-Museum_GFX:
-Gate_GFX:          INCBIN "gfx/tilesets/gate.2bpp"
-ForestGate_Block:
-Museum_Block:
-Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
-
 Forest_GFX:        INCBIN "gfx/tilesets/forest.2bpp"
 Forest_Block:      INCBIN "gfx/blocksets/forest.bst"
 Facility_GFX:      INCBIN "gfx/tilesets/facility.2bpp"
@@ -2157,3 +2150,10 @@ RedsHouse2_Block:  INCBIN "gfx/blocksets/reds_house.bst"
 
 Cemetery_GFX:      INCBIN "gfx/tilesets/cemetery.2bpp"
 Cemetery_Block:    INCBIN "gfx/blocksets/cemetery.bst"
+
+ForestGate_GFX:
+Museum_GFX:
+Gate_GFX:          INCBIN "gfx/tilesets/gate.2bpp"
+ForestGate_Block:
+Museum_Block:
+Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
