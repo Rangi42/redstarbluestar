@@ -164,3 +164,21 @@ ReadTrainer:
 	dec b
 	jr nz, .LastLoop ; repeat wCurEnemyLVL times
 	ret
+
+GetTrainerMonDVs:: ; called from engine/battle/core.asm
+	ld a, [wTrainerClass]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, TrainerClassDVs
+	add hl, bc
+	add hl, bc
+	ld de, wTempDVs
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	ret
+
+INCLUDE "data/trainer_dvs.asm"

@@ -6290,10 +6290,14 @@ LoadEnemyMonData:
 	jr nz, .storeDVs
 	ld a, [wIsInBattle]
 	cp $2 ; is it a trainer battle?
-; fixed DVs for trainer mon
-	ld a, $98
-	ld b, $88
-	jr z, .storeDVs
+	jr nz, .notTrainer
+; get DVs for trainer mon
+	callba GetTrainerMonDVs
+	ld hl, wTempDVs
+	ld a, [hli]
+	ld b, [hl]
+	jr .storeDVs
+.notTrainer
 ; random DVs for wild mon
 	call BattleRandom
 	ld b, a
