@@ -41,7 +41,6 @@ DrawBadges:
 	ld hl, wBadgeNumberTile
 	ld a, $d8 ; [1]
 	ld [hli], a
-	ld [hl], $60 ; First name
 
 	coord hl, 2, 11
 	ld de, wTempObtainedBadgesBooleans
@@ -66,15 +65,7 @@ DrawBadges:
 	inc a
 	ld [wBadgeNumberTile], a
 
-; Names aren't printed if the badge is owned.
-	ld a, [de]
-	and a
 	ld a, [wBadgeNameTile]
-	jr nz, .SkipName
-	call .PlaceTiles
-	jr .PlaceBadge
-
-.SkipName
 	inc a
 	inc a
 	inc hl
@@ -114,7 +105,7 @@ DrawBadges:
 	ret
 
 .FaceBadgeTiles
-	db $20, $28, $30, $38, $40, $48, $50, $58
+	db $30, $38, $40, $48, $50, $58, $60, $68
 
 GymLeaderFaceAndBadgeTileGraphics:
 	INCBIN "gfx/badges.2bpp"

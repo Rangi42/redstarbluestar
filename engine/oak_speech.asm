@@ -229,7 +229,7 @@ IntroDisplayPicCenteredOrUpperRight:
 	pop bc
 	ld a, c
 	and a
-	coord hl, 15, 1
+	coord hl, 14, 2
 	jr nz, .next
 	coord hl, 6, 4
 .next
