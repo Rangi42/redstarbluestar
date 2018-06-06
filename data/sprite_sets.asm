@@ -60,14 +60,14 @@ SplitMapSpriteSets:
 
 SpriteSets:
 ; sprite set $01
-	db SPRITE_BLUE
+	db SPRITE_OAK
 	db SPRITE_BUG_CATCHER
 	db SPRITE_GIRL
 	db SPRITE_FISHER2
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_GAMBLER
 	db SPRITE_SEEL
-	db SPRITE_OAK
+	db SPRITE_SWIMMER_F
 	db SPRITE_SWIMMER
 	db SPRITE_BALL
 	db SPRITE_LYING_OLD_MAN
@@ -83,7 +83,7 @@ SpriteSets:
 	db SPRITE_LASS
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $03
 	db SPRITE_LITTLE_GIRL
@@ -96,7 +96,7 @@ SpriteSets:
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_GUARD
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $04
 	db SPRITE_FOULARD_WOMAN
@@ -109,7 +109,7 @@ SpriteSets:
 	db SPRITE_LASS
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $05
 	db SPRITE_LITTLE_GIRL
@@ -118,7 +118,7 @@ SpriteSets:
 	db SPRITE_FISHER2
 	db SPRITE_FAT_BALD_GUY
 	db SPRITE_OLD_PERSON
-	db SPRITE_SLOWBRO
+	db SPRITE_POLIWRATH
 	db SPRITE_GUARD
 	db SPRITE_ROCKET
 	db SPRITE_BALL
@@ -135,7 +135,7 @@ SpriteSets:
 	db SPRITE_GUARD
 	db SPRITE_GAMBLER
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $07
 	db SPRITE_ROCKET
@@ -148,7 +148,7 @@ SpriteSets:
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_SLOWBRO
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $08
 	db SPRITE_BIKER
@@ -180,7 +180,7 @@ SpriteSets:
 	db SPRITE_BIRD
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_CLEFAIRY
-	db SPRITE_FISHER2
+	db SPRITE_SWIMMER_F
 	db SPRITE_GAMBLER
 	db SPRITE_SLOWBRO
 	db SPRITE_SEEL
@@ -188,6 +188,19 @@ SpriteSets:
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL
 	db SPRITE_OMANYTE
+
+; sprite set $0b
+	db SPRITE_BLUE
+	db SPRITE_BUG_CATCHER
+	db SPRITE_GIRL
+	db SPRITE_FISHER2
+	db SPRITE_BLACK_HAIR_BOY_1
+	db SPRITE_GAMBLER
+	db SPRITE_SEEL
+	db SPRITE_SWIMMER_F
+	db SPRITE_SWIMMER
+	db SPRITE_BALL
+	db SPRITE_LYING_OLD_MAN
 
 SpriteSheetPointerTable:
 	; SPRITE_RED
@@ -490,6 +503,26 @@ SpriteSheetPointerTable:
 	db $c0 ; byte count
 	db BANK(SeelSprite)
 
+	; SPRITE_BILL
+	dw BillSprite
+	db $c0 ; byte count
+	db BANK(BillSprite)
+
+	; SPRITE_BURGLAR
+	dw BurglarSprite
+	db $c0 ; byte count
+	db BANK(BurglarSprite)
+
+	; SPRITE_SWIMMER_F
+	dw SwimmerFSprite
+	db $c0 ; byte count
+	db BANK(SwimmerFSprite)
+
+	; SPRITE_POLIWRATH
+	dw PoliwrathSprite
+	db $c0 ; byte count
+	db BANK(PoliwrathSprite)
+
 	; SPRITE_BALL
 	dw BallSprite
 	db $40 ; byte count
@@ -525,25 +558,10 @@ SpriteSheetPointerTable:
 	db $40 ; byte count
 	db BANK(SnorlaxSprite)
 
-	; SPRITE_OLD_AMBER_COPY
-	dw OldAmberSprite
-	db $40 ; byte count
-	db BANK(OldAmberSprite)
-
 	; SPRITE_OLD_AMBER
 	dw OldAmberSprite
 	db $40 ; byte count
 	db BANK(OldAmberSprite)
-
-	; SPRITE_LYING_OLD_MAN_UNUSED_1
-	dw LyingOldManSprite
-	db $40 ; byte count
-	db BANK(LyingOldManSprite)
-
-	; SPRITE_LYING_OLD_MAN_UNUSED_2
-	dw LyingOldManSprite
-	db $40 ; byte count
-	db BANK(LyingOldManSprite)
 
 	; SPRITE_LYING_OLD_MAN
 	dw LyingOldManSprite

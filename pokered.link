@@ -181,7 +181,11 @@ ROMX $34
   "Trainer Pics 2"
 
 ROMX $35
-  "bank35"
+  "NPC Sprites 3"
+
+ROMX $36
+  "Pokemon Gender"
+  "Tileset Spillover 1"
 
 WRAM0
   "WRAM Bank 0"

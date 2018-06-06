@@ -248,6 +248,14 @@ LoreleiSprite:        INCBIN "gfx/sprites/lorelei.2bpp"
 SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
 
 
+SECTION "NPC Sprites 3", ROMX
+
+BillSprite:            INCBIN "gfx/sprites/bill.2bpp"
+BurglarSprite:         INCBIN "gfx/sprites/burglar.2bpp"
+SwimmerFSprite:        INCBIN "gfx/sprites/swimmer_f.2bpp"
+PoliwrathSprite:       INCBIN "gfx/sprites/poliwrath.2bpp"
+
+
 SECTION "Battle (bank 5)", ROMX, BANK[$5]
 
 INCLUDE "engine/load_pokedex_tiles.asm"
@@ -2143,9 +2151,12 @@ INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
 
 
-SECTION "bank35",ROMX,BANK[$35]
+SECTION "Pokemon Gender", ROMX
 
 INCLUDE "engine/mon_gender.asm"
+
+
+SECTION "Tileset Spillover 1", ROMX
 
 Overworld_GFX:     INCBIN "gfx/tilesets/overworld.2bpp"
 Overworld_Block:   INCBIN "gfx/blocksets/overworld.bst"

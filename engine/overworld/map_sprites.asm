@@ -261,8 +261,18 @@ InitOutsideMapSprites:
 	inc h
 .noCarry
 	ld a, [hl] ; a = spriteSetID
+	cp $01 ; Pallet Town and Route 22's sprite set
+	jr nz, .noVariableSprite
+	ld a, [wPlayerStarter]
+	and a
+	ld a, $01 ; set with Oak
+	jr z, .gotSpriteSet
+	ld a, $0b ; set with Blue
+	jr .gotSpriteSet
+.noVariableSprite
 	cp $f0 ; does the map have 2 sprite sets?
 	call nc, GetSplitMapSpriteSetID ; if so, choose the appropriate one
+.gotSpriteSet
 	ld b, a ; b = spriteSetID
 	ld a, [wFontLoaded]
 	bit 0, a ; reloading upper half of tile patterns after displaying text?

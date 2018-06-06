@@ -31,7 +31,7 @@ FuchsiaCityObject:
 	db 10 ; objects
 	object SPRITE_BUG_CATCHER, 10, 12, WALK, 2, 1 ; person
 	object SPRITE_GAMBLER, 28, 17, WALK, 2, 2 ; person
-	object SPRITE_FISHER2, 30, 14, STAY, DOWN, 3 ; person
+	object SPRITE_BUG_CATCHER, 30, 14, STAY, DOWN, 3 ; person
 	object SPRITE_BUG_CATCHER, 24, 8, STAY, UP, 4 ; person
 	object SPRITE_CLEFAIRY, 31, 5, WALK, 0, 5 ; person
 	object SPRITE_BALL, 25, 6, STAY, NONE, 6 ; person
