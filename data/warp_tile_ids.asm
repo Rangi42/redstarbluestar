@@ -41,7 +41,7 @@ PokecenterWarpTileIDs:
 	db $5E,$FF
 
 ForestWarpTileIDs:
-	db $5A,$5C,$3A,$FF
+	db $3A,$FF
 
 DojoWarpTileIDs:
 GymWarpTileIDs:
