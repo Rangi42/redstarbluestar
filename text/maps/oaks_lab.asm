@@ -134,7 +134,7 @@ _OaksLabGivePokeballsText2::
 
 	para "Just throw a #"
 	line "BALL at it and try"
-	line "to catch it!"
+	cont "to catch it!"
 
 	para "This won't always"
 	line "work, though."
