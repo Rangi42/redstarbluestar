@@ -2535,7 +2535,10 @@ wSpriteSetID:: ; d3a8
 wObjectDataPointerTemp:: ; d3a9
 	ds 2
 
-	ds 2
+wNextEncounterLevel:: ; d3aa
+	ds 1
+wNextEncounterSpecies:: ; d3ab
+	ds 1
 
 wMapBackgroundTile:: ; d3ad
 ; the tile shown outside the boundaries of the map

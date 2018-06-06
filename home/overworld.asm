@@ -10,9 +10,9 @@ EnterMap::
 	call LoadMapData
 	callba ClearVariablesOnEnterMap
 	ld hl, wd72c
-	bit 0, [hl] ; has the player already made 3 steps since the last battle?
+	bit 0, [hl] ; has the player already made 2 steps since the last battle?
 	jr z, .skipGivingThreeStepsOfNoRandomBattles
-	ld a, 3 ; minimum number of steps between battles
+	ld a, 2 ; minimum number of steps between battles
 	ld [wNumberOfNoRandomBattleStepsLeft], a
 .skipGivingThreeStepsOfNoRandomBattles
 	ld hl, wd72e
