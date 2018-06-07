@@ -324,14 +324,14 @@ DisplayNamingScreen:
 	jp EraseMenuCursor
 
 LoadEDTile:
-	ld de, ED_Tile
-	ld hl, vFont + $700
-	lb bc, BANK(ED_Tile), (ED_TileEnd - ED_Tile) / $8
+	ld de, NamingScreenTiles
+	ld hl, vFont + $690
+	lb bc, BANK(NamingScreenTiles), (NamingScreenTilesEnd - NamingScreenTiles) / $8
 	jp CopyVideoDataDouble
 
-ED_Tile:
-	INCBIN "gfx/ED_tile.1bpp"
-ED_TileEnd:
+NamingScreenTiles:
+	INCBIN "gfx/naming_screen.1bpp"
+NamingScreenTilesEnd:
 
 PrintAlphabet:
 	xor a
@@ -364,10 +364,10 @@ PrintAlphabet:
 	jp Delay3
 
 LowerCaseAlphabet:
-	db "abcdefghijklmnopqrstuvwxyz ×():;[]<PK><MN>-?!♂♀/.,¥UPPER CASE@"
+	db "abcdefghijklmnopqrstuvwxyz ×():;[]<PK><MN>-?!♂♀/.,",$EB,"UPPER CASE@"
 
 UpperCaseAlphabet:
-	db "ABCDEFGHIJKLMNOPQRSTUVWXYZ ×():;[]<PK><MN>-?!♂♀/.,¥lower case@"
+	db "ABCDEFGHIJKLMNOPQRSTUVWXYZ ×():;[]<PK><MN>-?!♂♀/.,",$EB,"lower case@"
 
 PrintNicknameAndUnderscores:
 	call CalcStringLength
@@ -388,7 +388,7 @@ PrintNicknameAndUnderscores:
 .pokemon1
 	ld b, 10 ; pokemon max name length
 .playerOrRival1
-	ld a, $76 ; underscore tile id
+	ld a, $E9 ; underscore tile id
 .placeUnderscoreLoop
 	ld [hli], a
 	dec b
@@ -420,7 +420,7 @@ PrintNicknameAndUnderscores:
 	ld b, $0
 	coord hl, 10, 3
 	add hl, bc
-	ld [hl], $77 ; raised underscore tile id
+	ld [hl], $EA ; raised underscore tile id
 	ret
 
 DakutensAndHandakutens:

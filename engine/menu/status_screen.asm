@@ -93,10 +93,6 @@ StatusScreen:
 	ld hl, vChars2 + $780
 	lb bc, BANK(BattleHudTiles2), $01
 	call CopyVideoDataDouble ; │
-	ld de, BattleHudTiles3
-	ld hl, vChars2 + $760
-	lb bc, BANK(BattleHudTiles3), $02
-	call CopyVideoDataDouble ; ─┘
 	ld a, [hTilesetType]
 	push af
 	xor a

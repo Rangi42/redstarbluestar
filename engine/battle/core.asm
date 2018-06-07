@@ -6805,7 +6805,7 @@ LoadHudTilePatterns:
 	call FarCopyDataDouble
 	ld hl, BattleHudTiles2
 	ld de, vChars2 + $730
-	ld bc, BattleHudTiles3End - BattleHudTiles2
+	ld bc, BattleHudTiles2End - BattleHudTiles2
 	ld a, BANK(BattleHudTiles2)
 	jp FarCopyDataDouble
 .lcdEnabled
@@ -6815,7 +6815,7 @@ LoadHudTilePatterns:
 	call CopyVideoDataDouble
 	ld de, BattleHudTiles2
 	ld hl, vChars2 + $730
-	lb bc, BANK(BattleHudTiles2), (BattleHudTiles3End - BattleHudTiles2) / $8
+	lb bc, BANK(BattleHudTiles2), (BattleHudTiles2End - BattleHudTiles2) / $8
 	jp CopyVideoDataDouble
 
 PrintEmptyString:
