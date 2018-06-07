@@ -162,16 +162,14 @@ PokemonLogoGraphics:            INCBIN "gfx/pokemon_logo.2bpp"
 FontGraphics:                   INCBIN "gfx/font.1bpp"
 FontGraphicsEnd:
 HpBarAndStatusGraphics:         INCBIN "gfx/hp_bar_and_status.2bpp"
+TextBoxGraphics:                INCBIN "gfx/text_box.2bpp"
+TextBoxGraphicsEnd:
 HpBarAndStatusGraphicsEnd:
-BattleHudTiles1:                INCBIN "gfx/battle_hud1.1bpp"
-BattleHudTiles1End:
-BattleHudTiles2:                INCBIN "gfx/battle_hud2.1bpp"
-BattleHudTiles2End:
+BattleHudTiles:                 INCBIN "gfx/battle_hud.1bpp"
+BattleHudTilesEnd:
 NintendoCopyrightLogoGraphics:  INCBIN "gfx/copyright.2bpp"
 GamefreakLogoGraphics:          INCBIN "gfx/gamefreak.2bpp"
 GamefreakLogoGraphicsEnd:
-TextBoxGraphics:                INCBIN "gfx/text_box.2bpp"
-TextBoxGraphicsEnd:
 PokedexTileGraphics:            INCBIN "gfx/pokedex.2bpp"
 PokedexTileGraphicsEnd:
 WorldMapTileGraphics:           INCBIN "gfx/town_map.2bpp"

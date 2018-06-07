@@ -1477,8 +1477,8 @@ wPrintItemPrices:: ; cf93
 wHPBarType:: ; cf94
 ; type of HP bar
 ; $00 = enemy HUD in battle
-; $01 = player HUD in battle / status screen
-; $02 = party menu
+; $01 = player HUD in battle
+; $02 = party menu / status screen
 
 wListMenuID:: ; cf94
 ; ID used by DisplayListMenuID

@@ -179,7 +179,6 @@ HoFDisplayMonInfo:
 
 HoFMonInfoText:
 	db   "LEVEL/"
-	next "TYPE1/"
 	next "TYPE2/@"
 
 HoFLoadPlayerPics:

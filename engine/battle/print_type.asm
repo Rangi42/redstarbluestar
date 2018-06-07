@@ -13,23 +13,16 @@ PrintMonType:
 	ld a, [wMonHType2]
 	cp b
 	pop hl
-	jr z, EraseType2Text
-	ld bc, SCREEN_WIDTH * 2
+	ret z
+	ld bc, SCREEN_WIDTH
 	add hl, bc
+; fall through
 
 ; a = type
 ; hl = dest addr
 PrintType:
 	push hl
 	jr PrintType_
-
-; erase "TYPE2/" if the mon only has 1 type
-EraseType2Text:
-	ld a, " "
-	ld bc, $13
-	add hl, bc
-	ld bc, $6
-	jp FillMemory
 
 PrintMoveType:
 	call GetPredefRegisters

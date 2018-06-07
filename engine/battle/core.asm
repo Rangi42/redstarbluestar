@@ -2144,12 +2144,12 @@ PrintGenderCommon:
 
 PrintPlayerMonShiny:
 	ld de, wBattleMonDVs
-	coord hl, 11, 8
+	coord hl, 18, 8
 	jr PrintShinyCommon
 
 PrintEnemyMonShiny:
 	ld de, wEnemyMonDVs
-	coord hl, 2, 1
+	coord hl, 9, 1
 PrintShinyCommon:
 	push hl
 	callba IsMonShiny
@@ -6798,24 +6798,15 @@ LoadHudTilePatterns:
 	add a ; is LCD disabled?
 	jr c, .lcdEnabled
 .lcdDisabled
-	ld hl, BattleHudTiles1
-	ld de, vChars2 + $6d0
-	ld bc, BattleHudTiles1End - BattleHudTiles1
-	ld a, BANK(BattleHudTiles1)
-	call FarCopyDataDouble
-	ld hl, BattleHudTiles2
-	ld de, vChars2 + $730
-	ld bc, BattleHudTiles2End - BattleHudTiles2
-	ld a, BANK(BattleHudTiles2)
+	ld hl, BattleHudTiles
+	ld de, vChars2 + $700
+	ld bc, BattleHudTilesEnd - BattleHudTiles
+	ld a, BANK(BattleHudTiles)
 	jp FarCopyDataDouble
 .lcdEnabled
-	ld de, BattleHudTiles1
-	ld hl, vChars2 + $6d0
-	lb bc, BANK(BattleHudTiles1), (BattleHudTiles1End - BattleHudTiles1) / $8
-	call CopyVideoDataDouble
-	ld de, BattleHudTiles2
-	ld hl, vChars2 + $730
-	lb bc, BANK(BattleHudTiles2), (BattleHudTiles2End - BattleHudTiles2) / $8
+	ld de, BattleHudTiles
+	ld hl, vChars2 + $700
+	lb bc, BANK(BattleHudTiles), (BattleHudTilesEnd - BattleHudTiles) / $8
 	jp CopyVideoDataDouble
 
 PrintEmptyString:

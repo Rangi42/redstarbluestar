@@ -179,15 +179,15 @@ DrawHPBar::
 	push bc
 
 	; Left
-	ld a, $71 ; "HP:"
+	ld a, $64 ; "HP:" tile 1
 	ld [hli], a
-	ld a, $62
+	inc a ; $65 ; "HP:" tile 2
 	ld [hli], a
 
 	push hl
 
 	; Middle
-	ld a, $63 ; empty
+	ld a, $66 ; empty HP bar
 .draw
 	ld [hli], a
 	dec d
@@ -196,9 +196,9 @@ DrawHPBar::
 	; Right
 	ld a, [wHPBarType]
 	dec a
-	ld a, $6d ; status screen and battle
+	ld a, $70 ; player HUD in battle
 	jr z, .ok
-	dec a ; pokemon menu
+	dec a ; $6F ; other
 .ok
 	ld [hl], a
 
@@ -219,7 +219,7 @@ DrawHPBar::
 	sub 8
 	jr c, .partial
 	ld e, a
-	ld a, $6b ; full
+	ld a, $6E ; full HP bar
 	ld [hli], a
 	ld a, e
 	and a
@@ -228,7 +228,7 @@ DrawHPBar::
 
 .partial
 	; Fill remaining pixels at the end if necessary.
-	ld a, $63 ; empty
+	ld a, $66 ; empty HP bar
 	add e
 	ld [hl], a
 .done
@@ -513,7 +513,7 @@ PrintStatusConditionNotFainted:
 ; hl = destination address
 ; [wLoadedMonLevel] = level
 PrintLevel::
-	ld a, $6e ; ":L" tile ID
+	ld a, "<:L>"
 	ld [hli], a
 	ld c, 2 ; number of digits
 	ld a, [wLoadedMonLevel] ; level
@@ -529,7 +529,7 @@ PrintLevel::
 ; hl = destination address
 ; [wLoadedMonLevel] = level
 PrintLevelFull::
-	ld a, $6e ; ":L" tile ID
+	ld a, "<:L>"
 	ld [hli], a
 	ld c, 3 ; number of digits
 	ld a, [wLoadedMonLevel] ; level

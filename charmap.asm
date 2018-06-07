@@ -155,10 +155,11 @@ charmap "#", $54 ; POKé
 charmap "<TARGET>", $59
 charmap "<USER>", $5A
 
+charmap "<:L>", $62
+charmap "<SHINY>", $63
 charmap "<P>", $72
 charmap "<ID>", $73
 charmap "№", $74
-charmap "<SHINY>", $75
 
 charmap "┌", $79
 charmap "─", $7A

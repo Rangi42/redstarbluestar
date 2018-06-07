@@ -85,34 +85,26 @@ StatusScreen:
 	call ClearScreen
 	call UpdateSprites
 	call LoadHpBarAndStatusTilePatterns
-	ld de, BattleHudTiles1  ; source
-	ld hl, vChars2 + $6d0 ; dest
-	lb bc, BANK(BattleHudTiles1), $03
-	call CopyVideoDataDouble ; ·│ :L and halfarrow line end
-	ld de, BattleHudTiles2
-	ld hl, vChars2 + $780
-	lb bc, BANK(BattleHudTiles2), $01
-	call CopyVideoDataDouble ; │
 	ld a, [hTilesetType]
 	push af
 	xor a
 	ld [hTilesetType], a
-	coord hl, 19, 1
-	lb bc, 6, 10
-	call DrawLineBox ; Draws the box around name, HP and status
-	ld de, -6
-	add hl, de
-	ld [hl], "."
-	dec hl
+	coord hl, 8, 0
 	ld [hl], "№"
-	coord hl, 19, 9
-	lb bc, 8, 6
-	call DrawLineBox ; Draws the box around types, ID No. and OT
-	coord hl, 10, 9
-	ld de, Type1Text
-	call PlaceString ; "TYPE1/"
-	coord hl, 11, 3
-	predef DrawHP
+	inc hl
+	ld [hl], "."
+	coord hl, 8, 4
+	ld de, IDNoOTText
+	call PlaceString ; "ID№/" "OT/"
+	coord hl, 0, 7
+	ld a, $71 ; horizontal dash tile
+	ld c, SCREEN_WIDTH
+.dashes
+	ld [hli], a
+	dec c
+	jr nz, .dashes
+	coord hl, 1, 8
+	predef DrawHP2
 	ld hl, wStatusScreenHPBarColor
 	call GetHealthBarColor
 	ld de, wLoadedMonDVs
@@ -126,42 +118,39 @@ StatusScreen:
 .setPal
 	ld b, SET_PAL_STATUS_SCREEN
 	call RunPaletteCommand
-	coord hl, 16, 6
+	coord hl, 7, 11
 	ld de, wLoadedMonStatus
 	call PrintStatusCondition
 	jr nz, .StatusWritten
-	coord hl, 16, 6
+	coord hl, 7, 11
 	ld de, OKText
 	call PlaceString ; "OK"
 .StatusWritten
-	coord hl, 9, 6
+	coord hl, 0, 11
 	ld de, StatusText
 	call PlaceString ; "STATUS/"
-	coord hl, 14, 2
+	coord hl, 14, 0
 	call PrintLevel ; Pokémon level
 	ld a, [wMonHIndex]
 	ld [wd11e], a
-	ld [wd0b5], a
 	predef IndexToPokedex
-	coord hl, 3, 7
+	coord hl, 10, 0
 	ld de, wd11e
 	lb bc, LEADING_ZEROES | 1, 3
 	call PrintNumber ; Pokémon no.
-	coord hl, 11, 10
-	predef PrintMonType
 	ld hl, NamePointers2
 	call .GetStringPointer
 	ld d, h
 	ld e, l
-	coord hl, 9, 1
+	coord hl, 8, 2
 	call PlaceString ; Pokémon name
 	ld hl, OTPointers
 	call .GetStringPointer
 	ld d, h
 	ld e, l
-	coord hl, 12, 16
+	coord hl, 11, 6
 	call PlaceString ; OT
-	coord hl, 12, 14
+	coord hl, 11, 4
 	ld de, wLoadedMonOTID
 	lb bc, LEADING_ZEROES | 2, 5
 	call PrintNumber ; ID Number
@@ -171,9 +160,35 @@ StatusScreen:
 	ld a, [wLoadedMonSpecies]
 	ld [wGenderTemp], a
 	call PrintGenderStatusScreen
+	coord hl, 0, 13
+	ld de, StatusScreenExpText
+	call PlaceString ; "EXP POINTS" "LEVEL UP"
+	ld a, [wLoadedMonLevel]
+	push af
+	cp MAX_LEVEL
+	jr z, .Level100
+	inc a
+	ld [wLoadedMonLevel], a ; Increase temporarily if not 100
+.Level100
+	coord hl, 5, 16
+	ld [hl], $70 ; 1-tile "to"
+	inc hl
+	inc hl
+	call PrintLevel
+	pop af
+	ld [wLoadedMonLevel], a
+	ld de, wLoadedMonExp
+	coord hl, 2, 14
+	lb bc, 3, 7
+	call PrintNumber ; exp
+	call CalcExpToLevelUp
+	ld de, wLoadedMonExp
+	coord hl, 0, 16
+	lb bc, 3, 5
+	call PrintNumber ; exp needed to level up
 	call Delay3
 	call GBPalNormal
-	coord hl, 1, 0
+	coord hl, 0, 0
 	call LoadFlippedFrontSpriteByMonIndex ; draw Pokémon picture
 	ld a, [wcf91]
 	call PlayCry ; play Pokémon cry
@@ -209,18 +224,12 @@ NamePointers2:
 	dw wBoxMonNicks
 	dw wDayCareMonName
 
-Type1Text:
-	db "TYPE1/", $4e
+TypesText:
+	db "TYPE/@"
 
-Type2Text:
-	db "TYPE2/", $4e
-
-IDNoText:
-	db "<ID>№/", $4e
-
-OTText:
-	db   "OT/"
-	next "@"
+IDNoOTText:
+	db   "<ID>№/"
+	next "OT/@"
 
 StatusText:
 	db "STATUS/@"
@@ -228,29 +237,11 @@ StatusText:
 OKText:
 	db "OK@"
 
-; Draws a line starting from hl high b and wide c
-DrawLineBox:
-	ld de, SCREEN_WIDTH ; New line
-.PrintVerticalLine
-	ld [hl], $78 ; │
-	add hl, de
-	dec b
-	jr nz, .PrintVerticalLine
-	ld [hl], $77 ; ┘
-	dec hl
-.PrintHorizLine
-	ld [hl], $76 ; ─
-	dec hl
-	dec c
-	jr nz, .PrintHorizLine
-	ld [hl], $6f ; ← (halfarrow ending)
-	ret
-
 PrintShinySymbol:
 	ld de, wLoadedMonDVs
 	callba IsMonShiny
 	ret z
-	coord hl, 6, 7
+	coord hl, 19, 0
 	ld [hl], "<SHINY>"
 	ret
 
@@ -265,7 +256,7 @@ PrintGenderStatusScreen:
 	jr z, .ok
 	ld a, "♀"
 .ok
-	coord hl, 18, 2
+	coord hl, 18, 0
 	ld [hl], a
 	ret
 
@@ -273,11 +264,11 @@ PrintStatsBox:
 	ld a, d
 	and a ; a is 0 from the status screen
 	jr nz, .DifferentBox
-	coord hl, 0, 8
+	coord hl, 10, 8
 	ld b, 8
 	ld c, 8
 	call TextBoxBorder ; Draws the box
-	coord hl, 1, 9 ; Start printing stats from here
+	coord hl, 11, 9 ; Start printing stats from here
 	ld bc, $0019 ; Number offset
 	jr .PrintStats
 .DifferentBox
@@ -332,11 +323,12 @@ StatusScreen2:
 	ld bc, NUM_MOVES
 	call CopyData
 	callab FormatMovesString
-	coord hl, 9, 2
+	coord hl, 8, 2
 	lb bc, 5, 10
-	call ClearScreenArea ; Clear under name
-	coord hl, 19, 3
-	ld [hl], $78
+	call ClearScreenArea ; Clear name, ID №, and OT
+	coord hl, 8, 4
+	ld de, TypesText
+	call PlaceString ; "TYPES/"
 	coord hl, 0, 8
 	ld b, 8
 	ld c, 18
@@ -412,41 +404,14 @@ StatusScreen2:
 	cp $4
 	jr nz, .PrintPP
 .PPDone
-	coord hl, 9, 3
-	ld de, StatusScreenExpText
-	call PlaceString
-	ld a, [wLoadedMonLevel]
-	push af
-	cp MAX_LEVEL
-	jr z, .Level100
-	inc a
-	ld [wLoadedMonLevel], a ; Increase temporarily if not 100
-.Level100
-	coord hl, 14, 6
-	ld [hl], $70 ; 1-tile "to"
-	inc hl
-	inc hl
-	call PrintLevel
-	pop af
-	ld [wLoadedMonLevel], a
-	ld de, wLoadedMonExp
-	coord hl, 12, 4
-	lb bc, 3, 7
-	call PrintNumber ; exp
-	call CalcExpToLevelUp
-	ld de, wLoadedMonExp
-	coord hl, 7, 6
-	lb bc, 3, 7
-	call PrintNumber ; exp needed to level up
-	coord hl, 9, 0
-	call StatusScreen_ClearName
-	coord hl, 9, 1
-	call StatusScreen_ClearName
 	ld a, [wMonHIndex]
+	ld [wd0b5], a
 	ld [wd11e], a
 	call GetMonName
-	coord hl, 9, 1
+	coord hl, 8, 2
 	call PlaceString
+	coord hl, 9, 5
+	predef PrintMonType
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
 	call Delay3
