@@ -97,10 +97,6 @@ StatusScreen:
 	ld hl, vChars2 + $760
 	lb bc, BANK(BattleHudTiles3), $02
 	call CopyVideoDataDouble ; ─┘
-	ld de, PTile
-	ld hl, vChars2 + $720
-	lb bc, BANK(PTile), (PTileEnd - PTile) / $8
-	call CopyVideoDataDouble ; P (for PP), inline
 	ld a, [hTilesetType]
 	push af
 	xor a
@@ -110,7 +106,7 @@ StatusScreen:
 	call DrawLineBox ; Draws the box around name, HP and status
 	ld de, -6
 	add hl, de
-	ld [hl], "⠄" ; . after No ("." is a different one)
+	ld [hl], "."
 	dec hl
 	ld [hl], "№"
 	coord hl, 19, 9
@@ -224,7 +220,7 @@ Type2Text:
 	db "TYPE2/", $4e
 
 IDNoText:
-	db $73, "№/", $4e
+	db "<ID>№/", $4e
 
 OTText:
 	db   "OT/"
@@ -254,16 +250,12 @@ DrawLineBox:
 	ld [hl], $6f ; ← (halfarrow ending)
 	ret
 
-PTile: ; This is a single 1bpp "P" tile
-	INCBIN "gfx/p_tile.1bpp"
-PTileEnd:
-
 PrintShinySymbol:
 	ld de, wLoadedMonDVs
 	callba IsMonShiny
 	ret z
 	coord hl, 6, 7
-	ld [hl], "⁂"
+	ld [hl], "<SHINY>"
 	ret
 
 PrintGenderStatusScreen:
@@ -364,7 +356,7 @@ StatusScreen2:
 	ld b, a ; Number of moves ?
 	coord hl, 11, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, $72 ; special P tile id
+	ld a, "<P>"
 	call StatusScreen_PrintPP ; Print "PP"
 	ld a, b
 	and a

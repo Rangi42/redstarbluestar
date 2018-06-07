@@ -245,7 +245,7 @@ JapaneseMainMenuText:
 	next "さいしょから@"
 
 BattleMenuText:
-	db   "FIGHT ",$E1,$E2
+	db   "FIGHT <PK><MN>"
 	next "ITEM  RUN@"
 
 SafariZoneBattleMenuText:

@@ -2032,7 +2032,7 @@ _WhenYouChangeBoxText::
 
 _ChooseABoxText::
 	text "Choose a"
-	line "<pkmn> BOX.@@"
+	line "<PKMN> BOX.@@"
 
 _EvolvedText::
 	TX_RAM wcf4b

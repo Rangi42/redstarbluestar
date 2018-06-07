@@ -2154,7 +2154,7 @@ PrintShinyCommon:
 	push hl
 	callba IsMonShiny
 	jr z, .notShiny
-	ld a, "⁂"
+	ld a, "<SHINY>"
 	jr .ok
 .notShiny
 	ld a, " "

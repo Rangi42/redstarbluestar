@@ -326,9 +326,7 @@ DisplayNamingScreen:
 LoadEDTile:
 	ld de, ED_Tile
 	ld hl, vFont + $700
-	ld bc, (ED_TileEnd - ED_Tile) / $8
-	; to fix the graphical bug on poor emulators
-	;lb bc, BANK(ED_Tile), (ED_TileEnd - ED_Tile) / $8
+	lb bc, BANK(ED_Tile), (ED_TileEnd - ED_Tile) / $8
 	jp CopyVideoDataDouble
 
 ED_Tile:
@@ -366,10 +364,10 @@ PrintAlphabet:
 	jp Delay3
 
 LowerCaseAlphabet:
-	db "abcdefghijklmnopqrstuvwxyz ×():;[]",$e1,$e2,"-?!♂♀/⠄,¥UPPER CASE@"
+	db "abcdefghijklmnopqrstuvwxyz ×():;[]<PK><MN>-?!♂♀/.,¥UPPER CASE@"
 
 UpperCaseAlphabet:
-	db "ABCDEFGHIJKLMNOPQRSTUVWXYZ ×():;[]",$e1,$e2,"-?!♂♀/⠄,¥lower case@"
+	db "ABCDEFGHIJKLMNOPQRSTUVWXYZ ×():;[]<PK><MN>-?!♂♀/.,¥lower case@"
 
 PrintNicknameAndUnderscores:
 	call CalcStringLength

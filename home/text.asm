@@ -95,9 +95,9 @@ endm
 	dict $4B, Char4B ; cont_
 	dict $51, Char51 ; para
 	dict $49, Char49 ; page
-	dict $52, Char52 ; player
-	dict $53, Char53 ; rival
-	dict $54, Char54 ; POKé
+	dict "<PLAYER>", Char52
+	dict "<RIVAL>", Char53
+	dict "#", Char54
 	dict $5B, Char5B ; PC
 	dict $5E, Char5E ; ROCKET
 	dict $5C, Char5C ; TM
@@ -106,10 +106,10 @@ endm
 	dict $56, Char56 ; 6 dots
 	dict $57, Char57 ; done
 	dict $58, Char58 ; prompt
-	dict $4A, Char4A ; PKMN
+	dict "<PKMN>", Char4A ; PKMN
 	dict $5F, Char5F ; dex
-	dict $59, Char59 ; TARGET
-	dict $5A, Char5A ; USER
+	dict "<TARGET>", Char59
+	dict "<USER>", Char5A
 
 	ld [hli], a
 	call PrintLetterDelay
@@ -224,11 +224,11 @@ Char5EText::
 Char54Text::
 	db "POKé@"
 Char56Text::
-	db "……@"
+	db "..@" ; ellipses
 Char5AText::
 	db "Enemy @"
 Char4AText::
-	db $E1,$E2,"@" ; PKMN
+	db "<PK><MN>@" ; PKMN
 
 Char55::
 	push de
@@ -646,7 +646,7 @@ TextCommand0C::
 	ld h, b
 	ld l, c
 .loop
-	ld a, "…"
+	ld a, "." ; ellipsis
 	ld [hli], a
 	push de
 	call Joypad

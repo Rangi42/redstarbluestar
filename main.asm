@@ -161,7 +161,6 @@ SECTION "Graphics", ROMX, BANK[GFX]
 PokemonLogoGraphics:            INCBIN "gfx/pokemon_logo.2bpp"
 FontGraphics:                   INCBIN "gfx/font.1bpp"
 FontGraphicsEnd:
-ABTiles:                        INCBIN "gfx/AB.2bpp"
 HpBarAndStatusGraphics:         INCBIN "gfx/hp_bar_and_status.2bpp"
 HpBarAndStatusGraphicsEnd:
 BattleHudTiles1:                INCBIN "gfx/battle_hud1.1bpp"

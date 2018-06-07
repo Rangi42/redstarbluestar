@@ -147,18 +147,18 @@ charmap "ゅ", $E1
 charmap "ょ", $E2
 charmap "ー", $E3
 
-charmap "<pkmn>", $4A ; PkMn
+charmap "<PKMN>", $4A
 charmap "@", $50
 charmap "<PLAYER>", $52
 charmap "<RIVAL>", $53
-charmap "#", $54
-;charmap "POKé", $54
+charmap "#", $54 ; POKé
 charmap "<TARGET>", $59
 charmap "<USER>", $5A
-charmap "′", $71
-charmap "″", $73
+
+charmap "<P>", $72
+charmap "<ID>", $73
 charmap "№", $74
-charmap "…", $75
+charmap "<SHINY>", $75
 
 charmap "┌", $79
 charmap "─", $7A
@@ -233,10 +233,9 @@ charmap "'s", $BD
 charmap "'t", $BE
 charmap "'v", $BF
 
-charmap "⁂", $DF
-
 charmap "'", $E0
-
+charmap "<PK>", $E1
+charmap "<MN>", $E2
 charmap "-", $E3
 charmap "'r", $E4
 charmap "'m", $E5
@@ -244,14 +243,16 @@ charmap "?", $E6
 charmap "!", $E7
 charmap ".", $E8
 
+charmap "<V>", $E9
+charmap "<S>", $EA
+charmap "▲", $EB
 charmap "▷", $EC
 charmap "▶", $ED
-charmap "▲", $ED
 charmap "▼", $EE
 charmap "♂", $EF
 charmap "¥", $F0
 charmap "×", $F1
-charmap "⠄", $F2
+charmap "<:>", $F2
 charmap "/", $F3
 charmap ",", $F4
 charmap "♀", $F5
