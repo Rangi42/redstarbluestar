@@ -31,7 +31,7 @@ TrainerClassDVs:
 	dvs  9,  8,  8,  8 ; BLACKBELT
 	dvs  9,  8,  8,  8 ; SONY1
 	dvs  9,  8,  8,  8 ; PROF_OAK
-	dvs  9,  8,  8,  8 ; CHIEF
+	dvs 13, 12, 13, 13 ; GIOVANNI2
 	dvs  9,  8,  8,  8 ; SCIENTIST
 	dvs 13, 12, 13, 13 ; GIOVANNI
 	dvs 13,  8, 10,  8 ; ROCKET

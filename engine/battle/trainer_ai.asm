@@ -302,7 +302,7 @@ TrainerClassMoveChoiceModifications:
 	db 1,0    ; BLACKBELT
 	db 1,0    ; SONY1
 	db 1,3,0  ; PROF_OAK
-	db 1,2,0  ; CHIEF
+	db 1,3,0  ; GIOVANNI2
 	db 1,2,0  ; SCIENTIST
 	db 1,3,0  ; GIOVANNI
 	db 1,0    ; ROCKET
@@ -329,12 +329,6 @@ INCLUDE "engine/battle/trainer_pic_money_pointers.asm"
 INCLUDE "text/trainer_names.asm"
 
 INCLUDE "engine/battle/bank_e_misc.asm"
-
-INCLUDE "engine/battle/read_trainer_party.asm"
-
-INCLUDE "data/trainer_moves.asm"
-
-INCLUDE "data/trainer_parties.asm"
 
 TrainerAI:
 	and a
@@ -398,7 +392,7 @@ TrainerAIPointers:
 	dbw 2,BlackbeltAI ; blackbelt
 	dbw 3,GenericAI
 	dbw 3,GenericAI
-	dbw 1,GenericAI ; chief
+	dbw 1,GiovanniAI ; giovanni2
 	dbw 3,GenericAI
 	dbw 1,GiovanniAI ; giovanni
 	dbw 3,GenericAI

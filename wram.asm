@@ -2896,7 +2896,10 @@ wRoute18GateCurScript:: ; d669
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	ds 43
+
+wCurTrainerName::
+	ds 13
 
 wObtainedHiddenItemsFlags::
 	ds 14

@@ -14,7 +14,7 @@ Mansion1Object:
 	db 0 ; signs
 
 	db 3 ; objects
-	object SPRITE_OAK_AIDE, 17, 17, STAY, LEFT, 1, OPP_SCIENTIST, 4
+	object SPRITE_OAK_AIDE, 17, 17, STAY, LEFT, 1, OPP_SCIENTIST, 1
 	object SPRITE_BALL, 14, 3, STAY, NONE, 2, ESCAPE_ROPE
 	object SPRITE_BALL, 18, 21, STAY, NONE, 3, CARBOS
 

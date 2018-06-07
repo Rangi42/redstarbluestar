@@ -79,7 +79,7 @@ TrainerPicAndMoneyPointers:
 	dw ProfOakPic
 	money 9900
 
-	dw ChiefPic
+	dw GiovanniPic
 	money 3000
 
 	dw ScientistPic

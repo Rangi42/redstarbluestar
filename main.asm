@@ -937,7 +937,6 @@ SECTION "Trainer Pics 2", ROMX
 
 Rival1Pic::        INCBIN "pic/trainer/rival1.pic"
 ProfOakPic::       INCBIN "pic/trainer/prof.oak.pic"
-ChiefPic::
 ScientistPic::     INCBIN "pic/trainer/scientist.pic"
 GiovanniPic::      INCBIN "pic/trainer/giovanni.pic"
 RocketPic::        INCBIN "pic/swtrainer/rocket.pic"
@@ -2153,6 +2152,15 @@ INCLUDE "engine/items/tm_prices.asm"
 SECTION "Pokemon Gender", ROMX
 
 INCLUDE "engine/mon_gender.asm"
+
+
+SECTION "Trainer Parties", ROMX
+
+INCLUDE "engine/battle/read_trainer_party.asm"
+
+INCLUDE "data/trainer_moves.asm"
+
+INCLUDE "data/trainer_parties.asm"
 
 
 SECTION "Tileset Spillover 1", ROMX

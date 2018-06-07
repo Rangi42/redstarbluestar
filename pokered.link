@@ -184,7 +184,10 @@ ROMX $35
   "NPC Sprites 3"
 
 ROMX $36
+  "Trainer Parties"
   "Pokemon Gender"
+
+ROMX $37
   "Tileset Spillover 1"
 
 WRAM0
