@@ -11,7 +11,12 @@ CeruleanHouse1Text1:
 
 CeruleanHouse1Text2:
 	TX_ASM
+	ld hl, Trader6Name
+	call SetCustomName
 	ld a, $6
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
+
+Trader6Name:
+	db "DONTAE@"

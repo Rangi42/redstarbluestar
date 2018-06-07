@@ -12,14 +12,24 @@ Lab2Text1:
 
 Lab2Text2:
 	TX_ASM
+	ld hl, Trader7Name
+	call SetCustomName
 	ld a, $7
 	ld [wWhichTrade], a
 	jr Lab2DoTrade
 
 Lab2Text3:
 	TX_ASM
+	ld hl, Trader8Name
+	call SetCustomName
 	ld a, $8
 	ld [wWhichTrade], a
 Lab2DoTrade:
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
+
+Trader7Name:
+	db "CLIFTON@"
+
+Trader8Name:
+	db "NORMA@"

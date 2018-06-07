@@ -8,10 +8,15 @@ Route18GateUpstairsTextPointers:
 
 Route18GateUpstairsText1:
 	TX_ASM
+	ld hl, Trader5Name
+	call SetCustomName
 	ld a, $5
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
+
+Trader5Name:
+	db "HADEN@"
 
 Route18GateUpstairsText2:
 	TX_ASM

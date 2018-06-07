@@ -9,7 +9,7 @@ IF DEF(_RED)
 	db PRIMEAPE,  LICKITUNG, 0,"MARC@@@@@@@"
 	db STARYU,    JYNX,      1,"LOLA@@@@@@@"
 	db SLOWBRO,   ELECTRODE, 2,"DORIS@@@@@@"
-	db MACHOKE,   HAUNTER,   1,"GEIST@@@@@@"
+	db MACHOKE,   KADABRA,   1,"GELLER@@@@@"
 	db NIDORAN_M, NIDORAN_F, 2,"SPOT@@@@@@@"
 ENDC
 IF DEF(_BLUE)
@@ -21,6 +21,6 @@ IF DEF(_BLUE)
 	db PERSIAN,   TAUROS,    0,"MARC@@@@@@@"
 	db SHELLDER,  JYNX,      1,"LOLA@@@@@@@"
 	db GOLDUCK,   ELECTRODE, 2,"DORIS@@@@@@"
-	db GRAVELER,  HAUNTER,   1,"GEIST@@@@@@"
+	db GRAVELER,  HAUNTER,   1,"GEISTR@@@@@"
 	db NIDORAN_F, NIDORAN_M, 2,"SPOT@@@@@@@"
 ENDC

@@ -11,7 +11,12 @@ Route2HouseText1:
 
 Route2HouseText2:
 	TX_ASM
+	ld hl, Trader1Name
+	call SetCustomName
 	ld a, $1
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
+
+Trader1Name:
+	db "REYLEY@"
