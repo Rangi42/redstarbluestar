@@ -185,10 +185,12 @@ ROMX $35
 
 ROMX $36
   "Trainer Parties"
-  "Pokemon Gender"
 
 ROMX $37
   "Tileset Spillover 1"
+
+ROMX $38
+  "Engine Spillover 1"
 
 WRAM0
   "WRAM Bank 0"
