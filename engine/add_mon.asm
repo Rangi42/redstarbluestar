@@ -75,8 +75,18 @@ _AddPartyMon:
 	push hl
 	ld a, [wMonDataLocation]
 	and $f
-	ld a, $98     ; set enemy trainer mon IVs to fixed average values
-	ld b, $88
+	push hl
+	push de
+	push bc
+	push af
+	callba GetTrainerMonDVs
+	pop af
+	pop bc
+	pop de
+	ld hl, wTempDVs
+	ld a, [hli]
+	ld b, [hl]
+	pop hl
 	jr nz, .next4
 
 ; If the mon is being added to the player's party, update the pokedex.
@@ -430,7 +440,7 @@ _MoveMon:
 	cp PARTY_TO_DAYCARE
 	ld de, wDayCareMonOT
 	jr z, .findOTsrc
-	dec a 
+	dec a
 	ld hl, wPartyMonOT
 	ld a, [wPartyCount]
 	jr nz, .addOToffset
