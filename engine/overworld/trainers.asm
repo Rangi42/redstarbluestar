@@ -347,3 +347,27 @@ CheckPlayerIsInFrontOfSprite:
 .done
 	ld [wTrainerSpriteOffset], a
 	ret
+
+FaceEnemyTrainer::
+	ld a, [wTrainerFacingDirection]
+	and a ; SPRITE_FACING_DOWN
+	jr z, .facingDown
+	cp SPRITE_FACING_UP
+	jr z, .facingUp
+	cp SPRITE_FACING_LEFT
+	jr z, .facingLeft
+	jr .facingRight
+.facingDown
+	ld a, PLAYER_DIR_UP
+	jr .done
+.facingUp
+	ld a, PLAYER_DIR_DOWN
+	jr .done
+.facingLeft
+	ld a, PLAYER_DIR_RIGHT
+	jr .done
+.facingRight
+	ld a, PLAYER_DIR_LEFT
+.done
+	ld [wPlayerMovingDirection], a ; update player facing
+	ret
