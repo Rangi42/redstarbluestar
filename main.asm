@@ -167,6 +167,8 @@ TextBoxGraphicsEnd:
 HpBarAndStatusGraphicsEnd:
 BattleHudTiles:                 INCBIN "gfx/battle_hud.1bpp"
 BattleHudTilesEnd:
+EXPBarGraphics:                 INCBIN "gfx/exp_bar.2bpp"
+EXPBarGraphicsEnd:
 NintendoCopyrightLogoGraphics:  INCBIN "gfx/copyright.2bpp"
 GamefreakLogoGraphics:          INCBIN "gfx/gamefreak.2bpp"
 GamefreakLogoGraphicsEnd:

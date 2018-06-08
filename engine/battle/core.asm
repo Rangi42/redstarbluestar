@@ -1936,8 +1936,15 @@ DrawPlayerHUDAndHPBar:
 	coord hl, 10, 7
 	call CenterMonName
 	call PlaceString
-	call PrintPlayerMonGender
-	call PrintPlayerMonShiny
+	coord hl, 17, 8
+	ld a, [wBattleMonSpecies]
+	ld de, wBattleMonDVs
+	call PrintMonGender
+	coord hl, 18, 8
+	ld de, wBattleMonDVs
+	call PrintMonShiny
+	coord hl, 17, 11
+	call PrintEXPBar
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -1948,7 +1955,6 @@ DrawPlayerHUDAndHPBar:
 	call CopyData
 	coord hl, 13, 8
 	push hl
-	inc hl
 	ld de, wLoadedMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
@@ -1997,11 +2003,15 @@ DrawEnemyHUDAndHPBar:
 	coord hl, 1, 0
 	call CenterMonName
 	call PlaceString
-	call PrintEnemyMonGender
-	call PrintEnemyMonShiny
+	coord hl, 8, 1
+	ld a, [wEnemyMonSpecies]
+	ld de, wEnemyMonDVs
+	call PrintMonGender
+	coord hl, 9, 1
+	ld de, wEnemyMonDVs
+	call PrintMonShiny
 	coord hl, 4, 1
 	push hl
-	inc hl
 	ld de, wEnemyMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
@@ -2113,17 +2123,7 @@ CenterMonName:
 	pop de
 	ret
 
-PrintPlayerMonGender:
-	ld a, [wBattleMonSpecies]
-	ld de, wBattleMonDVs
-	coord hl, 17, 8
-	jr PrintGenderCommon
-
-PrintEnemyMonGender:
-	ld a, [wEnemyMonSpecies]
-	ld de, wEnemyMonDVs
-	coord hl, 8, 1
-PrintGenderCommon:
+PrintMonGender:
 	ld [wGenderTemp], a
 	push hl
 	callba GetMonGender
@@ -2142,15 +2142,7 @@ PrintGenderCommon:
 	ld [hl], a
 	ret
 
-PrintPlayerMonShiny:
-	ld de, wBattleMonDVs
-	coord hl, 18, 8
-	jr PrintShinyCommon
-
-PrintEnemyMonShiny:
-	ld de, wEnemyMonDVs
-	coord hl, 9, 1
-PrintShinyCommon:
+PrintMonShiny:
 	push hl
 	callba IsMonShiny
 	jr z, .notShiny
@@ -8792,4 +8784,183 @@ PlayBattleAnimationGotID:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+PrintEXPBar:
+	push hl
+	call CalcEXPBarPixelLength
+	ld a, [H_QUOTIENT + 3]
+	ld [wEXPBarPixelLength], a
+	ld b, a
+	ld c, 8
+	ld d, 8
+	pop hl
+.loop
+	ld a, b
+	sub c
+	jr nc, .skip
+	ld c, b
+	jr .loop
+.skip
+	ld b, a
+	ld a, $c0
+	add c
+.loop2
+	ld [hld], a
+	dec d
+	ret z
+	ld a, b
+	and a
+	jr nz, .loop
+	ld a, $c0
+	jr .loop2
+
+CalcEXPBarPixelLength:
+	ld hl, wEXPBarKeepFullFlag
+	bit 0, [hl]
+	jr z, .start
+	res 0, [hl]
+	ld a, $40
+	ld [H_QUOTIENT + 3], a
+	ret
+
+.start
+	; get the base exp needed for the current level
+	ld a, [wPlayerBattleStatus3]
+	ld hl, wBattleMonSpecies
+	bit 3, a ; transformed?
+	jr z, .skip
+	ld hl, wPartyMon1
+	ld a, [wPlayerMonNumber]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+.skip
+	ld a, [hl]
+	ld [wd0b5], a
+	call GetMonHeader
+	ld a, [wBattleMonLevel]
+	ld d, a
+	callab CalcExperience
+	ld hl, H_MULTIPLICAND
+	ld de, wEXPBarBaseEXP
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+
+	; get the exp needed to gain a level
+	ld a, [wBattleMonLevel]
+	ld d, a
+	inc d
+	callab CalcExperience
+
+	; get the address of the active Pokemon's current experience
+	ld hl, wPartyMon1Exp
+	ld a, [wPlayerMonNumber]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+
+	; current exp - base exp
+	ld b, h
+	ld c, l
+	ld hl, wEXPBarBaseEXP
+	ld de, wEXPBarCurEXP
+	call SubThreeByteNum
+
+	; exp needed - base exp
+	ld bc, H_MULTIPLICAND
+	ld hl, wEXPBarBaseEXP
+	ld de, wEXPBarNeededEXP
+	call SubThreeByteNum
+
+	; make the divisor an 8-bit number
+	ld hl, wEXPBarNeededEXP
+	ld de, wEXPBarCurEXP + 1
+	ld a, [hli]
+	and a
+	jr z, .twoBytes
+	ld a, [hli]
+	ld [hld], a
+	dec hl
+	ld a, [hli]
+	ld [hld], a
+	ld a, [de]
+	inc de
+	ld [de], a
+	dec de
+	dec de
+	ld a, [de]
+	inc de
+	ld [de], a
+	dec de
+	xor a
+	ld [hli], a
+	ld [de], a
+	inc de
+.twoBytes
+	ld a, [hl]
+	and a
+	jr z, .oneByte
+	srl a
+	ld [hli], a
+	ld a, [hl]
+	rr a
+	ld [hld], a
+	ld a, [de]
+	srl a
+	ld [de], a
+	inc de
+	ld a, [de]
+	rr a
+	ld [de], a
+	dec de
+	jr .twoBytes
+.oneByte
+
+	; current exp * (8 tiles * 8 pixels)
+	ld hl, H_MULTIPLICAND
+	ld de, wEXPBarCurEXP
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	ld [hl], a
+	ld a, $40
+	ld [H_MULTIPLIER], a
+	call Multiply
+
+	; product / needed exp = pixel length
+	ld a, [wEXPBarNeededEXP + 2]
+	ld [H_DIVISOR], a
+	ld b, 4
+	jp Divide
+
+; calculates the three byte number starting at [bc]
+; minus the three byte number starting at [hl]
+; and stores it into the three bytes starting at [de]
+; assumes that [hl] is smaller than [bc]
+SubThreeByteNum:
+	call .subByte
+	call .subByte
+.subByte
+	ld a, [bc]
+	inc bc
+	sub [hl]
+	inc hl
+	ld [de], a
+	jr nc, .noCarry
+	dec de
+	ld a, [de]
+	dec a
+	ld [de], a
+	inc de
+.noCarry
+	inc de
 	ret

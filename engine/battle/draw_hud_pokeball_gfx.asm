@@ -121,6 +121,12 @@ PlacePlayerHUDTiles:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
+	ld a, [wBattleMonSpecies2]
+	and a
+	jr z, .pokeBallHUD
+	ld a, $75 ; exp bar right corner tile
+	ld [wHUDGraphicsTiles + 1], a
+.pokeBallHUD
 	coord hl, 18, 10
 	ld de, -1
 	jr PlaceHUDTiles
@@ -136,9 +142,26 @@ PlaceEnemyHUDTiles:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
+
+	ld a, [wEnemyMon]
+	ld [wd11e], a
+	predef IndexToPokedex
+	ld hl, wPokedexOwned
+	ld a, [wd11e]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	coord hl, 1, 1
+	ld [hl], $78 ; caught pokeball tile
+.notOwned
+
 	coord hl, 1, 2
 	ld de, $1
-	jr PlaceHUDTiles
+	jp PlaceHUDTiles
 
 EnemyBattleHUDGraphicsTiles:
 ; The tile numbers for specific parts of the battle display for the enemy

@@ -156,10 +156,8 @@ StatusScreen:
 	call PrintNumber ; ID Number
 	ld d, $0
 	call PrintStatsBox
-	call PrintShinySymbol
-	ld a, [wLoadedMonSpecies]
-	ld [wGenderTemp], a
-	call PrintGenderStatusScreen
+	call PrintMonGender_StatusScreen
+	call PrintMonShiny_StatusScreen
 	coord hl, 0, 13
 	ld de, StatusScreenExpText
 	call PlaceString ; "EXP POINTS" "LEVEL UP"
@@ -237,15 +235,9 @@ StatusText:
 OKText:
 	db "OK@"
 
-PrintShinySymbol:
-	ld de, wLoadedMonDVs
-	callba IsMonShiny
-	ret z
-	coord hl, 19, 0
-	ld [hl], "<SHINY>"
-	ret
-
-PrintGenderStatusScreen:
+PrintMonGender_StatusScreen:
+	ld a, [wLoadedMonSpecies]
+	ld [wGenderTemp], a
 	ld de, wLoadedMonDVs
 	callba GetMonGender
 	ld a, [wGenderTemp]
@@ -258,6 +250,14 @@ PrintGenderStatusScreen:
 .ok
 	coord hl, 18, 0
 	ld [hl], a
+	ret
+
+PrintMonShiny_StatusScreen:
+	ld de, wLoadedMonDVs
+	callba IsMonShiny
+	ret z
+	coord hl, 19, 0
+	ld [hl], "<SHINY>"
 	ret
 
 PrintStatsBox:
