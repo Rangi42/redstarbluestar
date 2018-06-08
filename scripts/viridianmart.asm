@@ -91,3 +91,6 @@ ViridianMartText2:
 ViridianMartText3:
 	TX_FAR _ViridianMartText3
 	db "@"
+
+ViridianCashierText:
+	TX_MART POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL

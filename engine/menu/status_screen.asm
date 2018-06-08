@@ -184,6 +184,12 @@ StatusScreen:
 	coord hl, 0, 16
 	lb bc, 3, 5
 	call PrintNumber ; exp needed to level up
+	coord hl, 9, 17
+	ld [hl], $6F ; exp bar right end tile
+	coord hl, 0, 17
+	ld [hl], $75 ; exp bar left end tile
+	inc hl
+	call PrintEXPBar_StatusScreen
 	call Delay3
 	call GBPalNormal
 	coord hl, 0, 0
@@ -258,6 +264,18 @@ PrintMonShiny_StatusScreen:
 	ret z
 	coord hl, 19, 0
 	ld [hl], "<SHINY>"
+	ret
+
+PrintEXPBar_StatusScreen:
+	ld a, $C0 ; empty exp bar
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
 	ret
 
 PrintStatsBox:

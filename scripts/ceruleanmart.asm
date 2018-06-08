@@ -13,3 +13,6 @@ CeruleanMartText2:
 CeruleanMartText3:
 	TX_FAR _CeruleanMartText3
 	db "@"
+
+CeruleanCashierText:
+	TX_MART POKE_BALL, POTION, REPEL, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL

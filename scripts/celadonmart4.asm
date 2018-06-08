@@ -18,3 +18,6 @@ CeladonMart4Text3:
 CeladonMart4Text4:
 	TX_FAR _CeladonMart4Text4
 	db "@"
+
+CeladonMart4ClerkText:
+	TX_MART POKE_DOLL, FIRE_STONE, THUNDER_STONE, WATER_STONE, LEAF_STONE, HEART_STONE

@@ -13,3 +13,6 @@ VermilionMartText2:
 VermilionMartText3:
 	TX_FAR _VermilionMartText3
 	db "@"
+
+VermilionCashierText:
+	TX_MART POKE_BALL, SUPER_POTION, ICE_HEAL, AWAKENING, PARLYZ_HEAL, REPEL

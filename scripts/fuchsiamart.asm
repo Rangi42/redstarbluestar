@@ -13,3 +13,6 @@ FuchsiaMartText2:
 FuchsiaMartText3:
 	TX_FAR _FuchsiaMartText3
 	db "@"
+
+FuchsiaCashierText:
+	TX_MART ULTRA_BALL, GREAT_BALL, SUPER_POTION, REVIVE, FULL_HEAL, SUPER_REPEL

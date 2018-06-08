@@ -19,3 +19,9 @@ CeladonMart2Text4:
 CeladonMart2Text5:
 	TX_FAR _CeladonMart2Text5
 	db "@"
+
+CeladonMart2Clerk1Text:
+	TX_MART GREAT_BALL, SUPER_POTION, REVIVE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, AWAKENING, PARLYZ_HEAL
+
+CeladonMart2Clerk2Text:
+	TX_MART TM_32, TM_33, TM_02, TM_07, TM_37, TM_01, TM_05, TM_09, TM_17

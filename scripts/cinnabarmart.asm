@@ -13,3 +13,6 @@ CinnabarMartText2:
 CinnabarMartText3:
 	TX_FAR _CinnabarMartText3
 	db "@"
+
+CinnabarCashierText:
+	TX_MART ULTRA_BALL, GREAT_BALL, HYPER_POTION, MAX_REPEL, ESCAPE_ROPE, FULL_HEAL, REVIVE

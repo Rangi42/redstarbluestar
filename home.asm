@@ -898,7 +898,6 @@ UpdateSprites::
 	ld [MBC1RomBank], a
 	ret
 
-INCLUDE "data/mart_inventories.asm"
 
 TextScriptEndingChar::
 	db "@"
@@ -3835,6 +3834,29 @@ StringCmp::
 	inc hl
 	dec c
 	jr nz, StringCmp
+	ret
+
+; calculates the three byte number starting at [bc]
+; minus the three byte number starting at [hl]
+; and stores it into the three bytes starting at [de]
+; assumes that [hl] is smaller than [bc]
+SubThreeByteNum:
+	call .subByte
+	call .subByte
+.subByte
+	ld a, [bc]
+	inc bc
+	sub [hl]
+	inc hl
+	ld [de], a
+	jr nc, .noCarry
+	dec de
+	ld a, [de]
+	dec a
+	ld [de], a
+	inc de
+.noCarry
+	inc de
 	ret
 
 ; INPUT:

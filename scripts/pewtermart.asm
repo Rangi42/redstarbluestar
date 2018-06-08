@@ -26,3 +26,6 @@ PewterMartText3:
 .Text
 	TX_FAR _PewterMartText3
 	db "@"
+
+PewterCashierText:
+	TX_MART POKE_BALL, POTION, REPEL, ESCAPE_ROPE, ANTIDOTE, AWAKENING, PARLYZ_HEAL
