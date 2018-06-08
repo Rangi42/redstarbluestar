@@ -24,13 +24,8 @@ PrizeMenuMon1Cost:
 	db "@"
 
 PrizeMenuMon2Entries:
-IF DEF(_RED)
-	db SCYTHER
-ENDC
-IF DEF(_BLUE)
-	db PINSIR
-ENDC
 	db DRATINI
+	db EEVEE
 	db PORYGON
 	db "@"
 

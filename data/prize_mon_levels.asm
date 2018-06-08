@@ -3,11 +3,6 @@ PrizeMonLevelDictionary:
 	db CLEFAIRY,12
 	db PIKACHU,17
 
-IF DEF(_RED)
-	db SCYTHER,20
-ENDC
-IF DEF(_BLUE)
-	db PINSIR,20
-ENDC
-	db DRATINI,22
-	db PORYGON,24
+	db DRATINI,18
+	db EEVEE,20
+	db PORYGON,22
