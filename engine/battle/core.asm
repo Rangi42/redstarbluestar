@@ -1532,7 +1532,7 @@ EnemySendOutFirstMon:
 	callba IsMonShiny
 	jr z, .noFlash
 	ld hl, wShinyMonFlag
-	res 1, [hl]
+	set 1, [hl]
 	callba PlayShinySparkleAnimation
 .noFlash
 	ld a, [wEnemyMonSpecies2]
@@ -1869,7 +1869,7 @@ SendOutMon:
 	callba IsMonShiny
 	jr z, .noFlash
 	ld hl, wShinyMonFlag
-	set 1, [hl]
+	res 1, [hl]
 	callba PlayShinySparkleAnimation
 .noFlash
 	ld a, [wcf91]

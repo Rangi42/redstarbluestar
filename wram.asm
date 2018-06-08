@@ -603,6 +603,8 @@ wAnimPalette:: ; cc79
 wNPCMovementDirections2:: ; cc97
 
 wShinyMonFlag:: ; cc97
+; Bit 0 is set if the mon should be shiny
+; Bit 1 is set for enemy mon animation, reset for player mon animation
 
 wSwitchPartyMonTempBuffer:: ; cc97
 ; temporary buffer when swapping party mon data
