@@ -76,7 +76,7 @@ BlkPacket_Battle:
 
 BlkPacket_StatusScreen:
 	ATTR_BLK 1
-	ATTR_BLK_DATA %111, 1,1,0, 01,00, 07,06 ; mon: pal 1, HP bar: pal 0
+	ATTR_BLK_DATA %111, 1,1,0, 00,00, 06,06 ; mon: pal 1, HP bar: pal 0
 	ds 8
 
 	db $02,$00,$00,$11,$00,$03
