@@ -175,6 +175,7 @@ StatusScreen:
 	call PrintLevel
 	pop af
 	ld [wLoadedMonLevel], a
+	call PrintEXPBar_StatusScreen
 	ld de, wLoadedMonExp
 	coord hl, 2, 14
 	lb bc, 3, 7
@@ -184,7 +185,6 @@ StatusScreen:
 	coord hl, 0, 16
 	lb bc, 3, 5
 	call PrintNumber ; exp needed to level up
-	call PrintEXPBar_StatusScreen
 	call Delay3
 	call GBPalNormal
 	coord hl, 0, 0

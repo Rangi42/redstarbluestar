@@ -8830,8 +8830,8 @@ CalcEXPBarPixelLength:
 	bit 1, [hl] ; bit 1 = fading out audio; is set for the status screen
 	ld hl, wLoadedMonSpecies
 	jr nz, .got_species
-	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
+	ld a, [wPlayerBattleStatus3]
 	bit 3, a ; transformed?
 	jr z, .got_species
 	ld hl, wPartyMon1
@@ -8846,7 +8846,7 @@ CalcEXPBarPixelLength:
 	ld a, [wBattleMonLevel]
 	ld d, a
 	callab CalcExperience
-	ld hl, H_MULTIPLICAND
+	ld hl, hExperience
 	ld de, wEXPBarBaseEXP
 	ld a, [hli]
 	ld [de], a
