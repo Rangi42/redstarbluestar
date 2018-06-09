@@ -166,7 +166,7 @@ TextBoxTextAndCoordTable:
 	db 3,0   ; text coordinates
 
 	db USE_TOSS_MENU_TEMPLATE
-	db 13,10,19,14 ; text box coordinates
+	db 13,10,19,16 ; text box coordinates
 	dw UseTossText
 	db 15,11 ; text coordinates
 
@@ -224,6 +224,7 @@ BuySellQuitText:
 
 UseTossText:
 	db   "USE"
+	next "INFO"
 	next "TOSS@"
 
 JapaneseSaveMessageText:

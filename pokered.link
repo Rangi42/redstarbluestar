@@ -187,9 +187,13 @@ ROMX $36
   "Trainer Parties"
 
 ROMX $37
-  "Tileset Spillover 1"
+  "Item Descriptions"
+  "Item Description Text"
 
 ROMX $38
+  "Tileset Spillover 1"
+
+ROMX $39
   "Engine Spillover 1"
 
 WRAM0

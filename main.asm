@@ -2270,6 +2270,11 @@ INCLUDE "data/trainer_moves.asm"
 INCLUDE "data/trainer_parties.asm"
 
 
+SECTION "Item Descriptions", ROMX
+
+INCLUDE "engine/menu/item_descriptions.asm"
+
+
 SECTION "Tileset Spillover 1", ROMX
 
 Overworld_GFX:     INCBIN "gfx/tilesets/overworld.2bpp"
