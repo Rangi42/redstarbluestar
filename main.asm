@@ -904,8 +904,8 @@ FossilKabutopsPic::    INCBIN "pic/bmon/fossilkabutops.pic"
 FossilAerodactylPic::  INCBIN "pic/bmon/fossilaerodactyl.pic"
 GhostPic::             INCBIN "pic/other/ghost.pic"
 
-RedPicBack::           INCBIN "pic/swtrainer/redb.pic"
-OldManPic::            INCBIN "pic/swtrainer/oldman.pic"
+RedPicBack::           INCBIN "pic/other/redb.pic"
+OldManPic::            INCBIN "pic/other/oldman.pic"
 
 
 SECTION "Trainer Pics 1", ROMX
