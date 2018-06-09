@@ -337,10 +337,6 @@ StartMenu_Item:
 	call PlaceUnfilledArrowMenuCursor
 	xor a
 	ld [wMenuItemToSwap], a
-	ld a, [wcf91]
-	cp BICYCLE
-	jp z, .useOrTossItem
-.notBicycle1
 	ld a, USE_TOSS_MENU_TEMPLATE
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
@@ -369,22 +365,22 @@ StartMenu_Item:
 	ld [wd11e], a
 	call GetItemName
 	call CopyStringToCF4B ; copy name to wcf4b
+	ld a, [wCurrentMenuItem]
+	cp a, 2
+	jr z, .tossItem
+	cp a, 1
+	jp z, .infoItem
+	; use item
 	ld a, [wcf91]
 	cp BICYCLE
-	jr nz, .notBicycle2
+	jr nz, .notBicycle
 	ld a, [wd732]
 	bit 5, a
 	jr z, .useItem_closeMenu
 	ld hl, CannotGetOffHereText
 	call PrintText
 	jp ItemMenuLoop
-.notBicycle2
-	ld a, [wCurrentMenuItem]
-	cp a, 2
-	jr z, .tossItem
-	cp a, 1
-	jr z, .infoItem
-; use item
+.notBicycle
 	ld [wPseudoItemID], a ; a must be 0 due to above conditional jump
 	ld a, [wcf91]
 	cp HM_01
