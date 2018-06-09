@@ -1943,7 +1943,7 @@ DrawPlayerHUDAndHPBar:
 	coord hl, 18, 8
 	ld de, wBattleMonDVs
 	call PrintMonShiny
-	coord hl, 17, 11
+	coord de, 17, 11 ; right end
 	call PrintEXPBar
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
@@ -8787,14 +8787,14 @@ PlayBattleAnimationGotID:
 	ret
 
 PrintEXPBar:
-	push hl
+	push de
 	call CalcEXPBarPixelLength
 	ld a, [H_QUOTIENT + 3]
 	ld [wEXPBarPixelLength], a
 	ld b, a
+	pop hl
 	ld c, 8
 	ld d, 8
-	pop hl
 .loop
 	ld a, b
 	sub c
@@ -8803,7 +8803,7 @@ PrintEXPBar:
 	jr .loop
 .skip
 	ld b, a
-	ld a, $c0
+	ld a, $C0 ; first (empty) exp bar tile
 	add c
 .loop2
 	ld [hld], a
@@ -8812,7 +8812,7 @@ PrintEXPBar:
 	ld a, b
 	and a
 	jr nz, .loop
-	ld a, $c0
+	ld a, $C0 ; empty exp bar tile
 	jr .loop2
 
 CalcEXPBarPixelLength:
@@ -8820,21 +8820,26 @@ CalcEXPBarPixelLength:
 	bit 0, [hl]
 	jr z, .start
 	res 0, [hl]
-	ld a, $40
+	ld a, 8 * 8
 	ld [H_QUOTIENT + 3], a
 	ret
 
 .start
 	; get the base exp needed for the current level
+	ld hl, wd72c
+	bit 1, [hl] ; bit 1 = fading out audio; is set for the status screen
+	ld hl, wLoadedMonSpecies
+	jr nz, .got_species
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
 	bit 3, a ; transformed?
-	jr z, .skip
+	jr z, .got_species
 	ld hl, wPartyMon1
 	ld a, [wPlayerMonNumber]
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
-.skip
+.got_species
+
 	ld a, [hl]
 	ld [wd0b5], a
 	call GetMonHeader
@@ -8859,10 +8864,15 @@ CalcEXPBarPixelLength:
 	callab CalcExperience
 
 	; get the address of the active Pokemon's current experience
+	ld hl, wd72c
+	bit 1, [hl]
+	ld hl, wLoadedMonExp
+	jr nz, .got_cur_exp
 	ld hl, wPartyMon1Exp
 	ld a, [wPlayerMonNumber]
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
+.got_cur_exp
 
 	; current exp - base exp
 	ld b, h
