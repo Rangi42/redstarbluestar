@@ -258,12 +258,12 @@ Char58:: ; prompt
 	cp LINK_STATE_BATTLING
 	jp z, .ok
 	ld a, "▼"
-	Coorda 18, 16
+	Coorda 18, 17
 .ok
 	call ProtectedDelay3
 	call ManualTextScroll
 	ld a, " "
-	Coorda 18, 16
+	Coorda 18, 17
 Char57:: ; done
 	pop hl
 	ld de, Char58Text
@@ -276,7 +276,7 @@ Char58Text::
 Char51:: ; para
 	push de
 	ld a, "▼"
-	Coorda 18, 16
+	Coorda 18, 17
 	call ProtectedDelay3
 	call ManualTextScroll
 	coord hl, 1, 13
@@ -291,7 +291,7 @@ Char51:: ; para
 Char49::
 	push de
 	ld a, "▼"
-	Coorda 18, 16
+	Coorda 18, 17
 	call ProtectedDelay3
 	call ManualTextScroll
 	coord hl, 1, 10
@@ -307,13 +307,13 @@ Char49::
 
 Char4B::
 	ld a, "▼"
-	Coorda 18, 16
+	Coorda 18, 17
 	call ProtectedDelay3
 	push de
 	call ManualTextScroll
 	pop de
 	ld a, " "
-	Coorda 18, 16
+	Coorda 18, 17
 	;fall through
 Char4C::
 	push de
@@ -503,12 +503,12 @@ TextCommand06::
 	cp LINK_STATE_BATTLING
 	jp z, TextCommand0D
 	ld a, "▼"
-	Coorda 18, 16 ; place down arrow in lower right corner of dialogue text box
+	Coorda 18, 17 ; place down arrow in lower right corner of dialogue text box
 	push bc
 	call ManualTextScroll ; blink arrow and wait for A or B to be pressed
 	pop bc
 	ld a, " "
-	Coorda 18, 16 ; overwrite down arrow with blank space
+	Coorda 18, 17 ; overwrite down arrow with blank space
 	pop hl
 	jp NextTextCommand
 
@@ -517,7 +517,7 @@ TextCommand06::
 ; (no arguments)
 TextCommand07::
 	ld a, " "
-	Coorda 18, 16 ; place blank space in lower right corner of dialogue text box
+	Coorda 18, 17 ; place blank space in lower right corner of dialogue text box
 	call ScrollTextUpOneLine
 	call ScrollTextUpOneLine
 	pop hl

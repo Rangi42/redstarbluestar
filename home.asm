@@ -3430,7 +3430,7 @@ WaitForTextScrollButtonPress::
 	jr z, .skipAnimation
 	call TownMapSpriteBlinkingAnimation
 .skipAnimation
-	coord hl, 18, 16
+	coord hl, 18, 17
 	call HandleDownArrowBlinkTiming
 	pop hl
 	call JoypadLowSensitivity
