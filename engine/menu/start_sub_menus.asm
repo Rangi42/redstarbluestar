@@ -348,9 +348,8 @@ StartMenu_Item:
 	xor a
 	ld [hli], a ; current menu item ID
 	inc hl
-	inc a
-	inc a ; a = 2
-	ld [hli], a ; max menu item ID
+	ld a, 2
+	ld [hli], a ; max menu item ID (USE/INFO/TOSS)
 	ld a, A_BUTTON | B_BUTTON
 	ld [hli], a ; menu watched keys
 	xor a
@@ -381,7 +380,8 @@ StartMenu_Item:
 	call PrintText
 	jp ItemMenuLoop
 .notBicycle
-	ld [wPseudoItemID], a ; a must be 0 due to above conditional jump
+	xor a
+	ld [wPseudoItemID], a
 	ld a, [wcf91]
 	cp HM_01
 	jr nc, .useItem_partyMenu
