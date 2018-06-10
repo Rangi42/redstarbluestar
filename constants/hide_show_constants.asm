@@ -192,7 +192,7 @@ const_value = 0
 	const HS_SILPH_CO_11F_1               ; B7
 	const HS_SILPH_CO_11F_2               ; B8
 	const HS_SILPH_CO_11F_3               ; B9
-	const HS_MAP_F4_1                     ; BA XXX sprite doesn't exist
+	const HS_CERULEAN_BULBASAUR           ; BA
 	const HS_MANSION_2_ITEM               ; BB X
 	const HS_MANSION_3_ITEM_1             ; BC X
 	const HS_MANSION_3_ITEM_2             ; BD X

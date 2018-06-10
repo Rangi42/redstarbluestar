@@ -253,6 +253,13 @@ BillSprite:            INCBIN "gfx/sprites/bill.2bpp"
 BurglarSprite:         INCBIN "gfx/sprites/burglar.2bpp"
 SwimmerFSprite:        INCBIN "gfx/sprites/swimmer_f.2bpp"
 PoliwrathSprite:       INCBIN "gfx/sprites/poliwrath.2bpp"
+BulbasaurSprite:       INCBIN "gfx/sprites/bulbasaur.2bpp"
+OddishSprite:          INCBIN "gfx/sprites/oddish.2bpp"
+SandshrewSprite:       INCBIN "gfx/sprites/sandshrew.2bpp"
+JigglypuffSprite:      INCBIN "gfx/sprites/jigglypuff.2bpp"
+ChanseySprite:         INCBIN "gfx/sprites/chansey.2bpp"
+PikachuSprite:         INCBIN "gfx/sprites/pikachu.2bpp"
+OfficerJennySprite:    INCBIN "gfx/sprites/officer_jenny.2bpp"
 
 
 SECTION "Battle (bank 5)", ROMX, BANK[$5]

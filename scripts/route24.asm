@@ -84,6 +84,7 @@ Route24TextPointers:
 	dw Route24Text6
 	dw Route24Text7
 	dw PickUpItemText
+	dw Route24Text8
 
 Route24TrainerHeader0:
 	dbEventFlagBit EVENT_BEAT_ROUTE_24_TRAINER_0
@@ -316,4 +317,60 @@ Route24EndBattleText6:
 
 Route24AfterBattleText6:
 	TX_FAR _Route24AfterBattleText6
+	db "@"
+
+Route24Text8:
+	TX_ASM
+	CheckEvent EVENT_GOT_CHARMANDER_FROM_DAMIAN
+	jr nz, .asm_515d5
+	ld hl, Route24Text_515de
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .asm_515d0
+	ld a, CHARMANDER
+	ld [wd11e], a
+	ld [wcf91], a
+	call GetMonName
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	lb bc, CHARMANDER, 10
+	call GivePokemon
+	jp nc, TextScriptEnd
+	ld a, [wAddedToParty]
+	and a
+	call z, WaitForTextScrollButtonPress
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, Route24Text_515e3
+	call PrintText
+	SetEvent EVENT_GOT_CHARMANDER_FROM_DAMIAN
+	jp TextScriptEnd
+
+.asm_515d0
+	ld hl, Route24Text_515e9
+	jr .asm_515d8
+
+.asm_515d5
+	ld hl, Route24Text_515ee
+.asm_515d8
+	call PrintText
+	jp TextScriptEnd
+
+Route24Text_515de:
+	TX_FAR _Route24DamianText1
+	db "@"
+
+Route24Text_515e3:
+	TX_FAR _Route24DamianText2
+	db $d
+	db "@"
+
+Route24Text_515e9:
+	TX_FAR _Route24DamianText3
+	db "@"
+
+Route24Text_515ee:
+	TX_FAR _Route24DamianText4
 	db "@"

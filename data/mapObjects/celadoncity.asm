@@ -34,7 +34,7 @@ CeladonCityObject:
 	object SPRITE_OLD_PERSON, 25, 22, STAY, DOWN, 4 ; person
 	object SPRITE_OLD_PERSON, 22, 16, STAY, DOWN, 5 ; person
 	object SPRITE_FISHER2, 32, 12, STAY, LEFT, 6 ; person
-	object SPRITE_POLIWRATH, 31, 12, WALK, 2, 7 ; person
+	object SPRITE_POLIWRATH, 30, 12, STAY, RIGHT, 7 ; person
 	object SPRITE_ROCKET, 32, 29, WALK, 2, 8 ; person
 	object SPRITE_ROCKET, 42, 14, WALK, 2, 9 ; person
 

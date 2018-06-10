@@ -99,7 +99,7 @@ SpriteSets:
 	db SPRITE_LYING_OLD_MAN
 
 ; sprite set $04
-	db SPRITE_FOULARD_WOMAN
+	db SPRITE_OFFICER_JENNY
 	db SPRITE_BLACK_HAIR_BOY_2
 	db SPRITE_BUG_CATCHER
 	db SPRITE_GAMBLER
@@ -522,6 +522,41 @@ SpriteSheetPointerTable:
 	dw PoliwrathSprite
 	db $c0 ; byte count
 	db BANK(PoliwrathSprite)
+
+	; SPRITE_BULBASAUR
+	dw BulbasaurSprite
+	db $c0 ; byte count
+	db BANK(BulbasaurSprite)
+
+	; SPRITE_ODDISH
+	dw OddishSprite
+	db $c0 ; byte count
+	db BANK(OddishSprite)
+
+	; SPRITE_SANDSHREW
+	dw SandshrewSprite
+	db $c0 ; byte count
+	db BANK(SandshrewSprite)
+
+	; SPRITE_JIGGLYPUFF
+	dw JigglypuffSprite
+	db $c0 ; byte count
+	db BANK(JigglypuffSprite)
+
+	; SPRITE_CHANSEY
+	dw ChanseySprite
+	db $c0 ; byte count
+	db BANK(ChanseySprite)
+
+	; SPRITE_PIKACHU
+	dw PikachuSprite
+	db $c0 ; byte count
+	db BANK(PikachuSprite)
+
+	; SPRITE_OFFICER_JENNY
+	dw OfficerJennySprite
+	db $c0 ; byte count
+	db BANK(OfficerJennySprite)
 
 	; SPRITE_BALL
 	dw BallSprite
