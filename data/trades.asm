@@ -13,7 +13,7 @@ IF DEF(_RED)
 ENDC
 IF DEF(_BLUE)
 	db MAROWAK,   KANGASKHAN,0,"TERRY@@@@@@"
-	db CLEFAIRY,  JYNX,      1,"LOLA@@@@@@@"
+	db CLEFAIRY,  MR_MIME,   0,"MARCEL@@@@@"
 	db BEEDRILL,  BUTTERFREE,2,"FLAPPER@@@@"
 	db VULPIX,    KRABBY,    0,"SAILOR@@@@@"
 	db PIDGEY,    FARFETCHD, 2,"DUX@@@@@@@@"
