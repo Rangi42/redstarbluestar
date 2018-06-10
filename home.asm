@@ -4099,7 +4099,7 @@ PlaceUnfilledArrowMenuCursor::
 	ld l, a
 	ld a, [wMenuCursorLocation + 1]
 	ld h, a
-	ld [hl], $ec ; outline of right arrow
+	ld [hl], "▷"
 	ld a, b
 	ret
 
@@ -4135,7 +4135,7 @@ HandleDownArrowBlinkTiming::
 	dec a
 	ld [H_DOWNARROWBLINKCNT2], a
 	ret nz
-	ld a, " "
+	ld a, "─"
 	ld [hl], a
 	ld a, $ff
 	ld [H_DOWNARROWBLINKCNT1], a
