@@ -58,9 +58,13 @@ BookshelfTileIDs:
 	db_tx_pre BookOrSculptureText
 	db GATE,         $22
 	db_tx_pre BookOrSculptureText
+	db MART,         $48
+	db_tx_pre PokemonStuffText
 	db MART,         $54
 	db_tx_pre PokemonStuffText
 	db MART,         $55
+	db_tx_pre PokemonStuffText
+	db POKECENTER,   $48
 	db_tx_pre PokemonStuffText
 	db POKECENTER,   $54
 	db_tx_pre PokemonStuffText

@@ -15,6 +15,7 @@ AnimateHealingMachine:
 	ld hl, wOAMBuffer + $84
 	ld de, PokeCenterOAMData
 	call CopyHealingMachineOAM
+	call CopyHealingMachineOAM
 	ld a, 4
 	ld [wAudioFadeOutControl], a
 	ld a, $ff
@@ -66,13 +67,14 @@ PokeCenterFlashingMonitorAndHealBall:
 	INCBIN "gfx/pokecenter_ball.2bpp"
 
 PokeCenterOAMData:
-	db $24,$34,$7C,$10 ; heal machine monitor
-	db $2B,$30,$7D,$10 ; pokeballs 1-6
-	db $2B,$38,$7D,$30
-	db $30,$30,$7D,$10
-	db $30,$38,$7D,$30
-	db $35,$30,$7D,$10
-	db $35,$38,$7D,$30
+	db $20,$20,$7C,$10 ; heal machine monitor
+	db $20,$28,$7C,$30
+	db $27,$20,$7D,$10 ; pokeballs 1-6
+	db $27,$28,$7D,$30
+	db $2C,$20,$7D,$10
+	db $2C,$28,$7D,$30
+	db $31,$20,$7D,$10
+	db $31,$28,$7D,$30
 
 ; d = value to xor with palette
 FlashSprite8Times:

@@ -896,7 +896,12 @@ LoadTilesetTilePatternData::
 	ld a, [wTilesetGfxPtr + 1]
 	ld h, a
 	ld de, vTileset
+	ld a, [wCurMapTileset]
+	cp POKECENTER
+	ld bc, $700
+	jr z, .ok
 	ld bc, $600
+.ok
 	ld a, [wTilesetBank]
 	jp FarCopyData2
 
