@@ -52,3 +52,4 @@ TrainerClassDVs:
 	dvs  7,  8,  8,  8 ; CHANNELER
 	dvs  7, 15, 13, 15 ; AGATHA
 	dvs 13, 12, 13, 13 ; LANCE
+	dvs  9,  8,  8,  8 ; SOLDIER

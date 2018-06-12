@@ -46,6 +46,7 @@ TrainerDataPointers:
 	dw ChannelerData
 	dw AgathaData
 	dw LanceData
+	dw SoldierData
 
 ; if first byte != FF, then
 	; first byte is level (of all pokemon on this team)
@@ -611,6 +612,7 @@ BlaineData:
 	db "BLAINE@",$FF,42,GROWLITHE,40,PONYTA,42,RAPIDASH,47,ARCANINE,0
 SabrinaData:
 	db "SABRINA@",$FF,38,KADABRA,37,MR_MIME,38,VENOMOTH,43,ALAKAZAM,0
+SoldierData:
 GentlemanData:
 ; SS Anne 1F Rooms
 	db "THOMAS@",18,GROWLITHE,GROWLITHE,0

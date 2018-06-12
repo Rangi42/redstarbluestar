@@ -967,6 +967,7 @@ LoreleiPic::       INCBIN "pic/trainer/lorelei.pic"
 ChannelerPic::     INCBIN "pic/swtrainer/channeler.pic"
 AgathaPic::        INCBIN "pic/trainer/agatha.pic"
 LancePic::         INCBIN "pic/trainer/lance.pic"
+SoldierPic::       INCBIN "pic/swtrainer/soldier.pic"
 
 
 SECTION "Battle (bank D)", ROMX, BANK[$D]

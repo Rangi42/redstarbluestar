@@ -46,3 +46,4 @@ TrainerNames:
 	db "CHANNELER@"
 	db "ELITE FOUR@"
 	db "ELITE FOUR@"
+	db "SOLDIER@"
