@@ -1958,9 +1958,7 @@ IF DEF(_BLUE)
 ENDC
 Version_GFXEnd:
 
-Dojo_GFX:
 Gym_GFX:           INCBIN "gfx/tilesets/gym.2bpp"
-Dojo_Block:
 Gym_Block:         INCBIN "gfx/blocksets/gym.bst"
 
 Mart_GFX:
@@ -2301,3 +2299,6 @@ Gate_GFX:          INCBIN "gfx/tilesets/gate.2bpp"
 ForestGate_Block:
 Museum_Block:
 Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
+
+Dojo_GFX:          INCBIN "gfx/tilesets/dojo.2bpp"
+Dojo_Block:        INCBIN "gfx/blocksets/dojo.bst"

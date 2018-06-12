@@ -54,7 +54,7 @@ BookshelfTileIDs:
 	db_tx_pre ElevatorText
 	db GYM,          $1D
 	db_tx_pre BookOrSculptureText
-	db DOJO,         $1D
+	db DOJO,         $1E
 	db_tx_pre BookOrSculptureText
 	db GATE,         $22
 	db_tx_pre BookOrSculptureText

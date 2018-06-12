@@ -29,8 +29,9 @@ OverworldWarpTileIDs:
 
 ForestGateWarpTileIDs:
 MuseumWarpTileIDs:
+	db $37,$3B,$14,$1A,$1C
 GateWarpTileIDs:
-	db $37,$3B,$14,$1A,$1C,$FF
+	db $FF
 
 RedsHouse1WarpTileIDs:
 RedsHouse2WarpTileIDs:
@@ -43,9 +44,10 @@ PokecenterWarpTileIDs:
 ForestWarpTileIDs:
 	db $3A,$FF
 
-DojoWarpTileIDs:
 GymWarpTileIDs:
-	db $4A,$FF
+	db $4A
+DojoWarpTileIDs:
+	db $FF
 
 HouseWarpTileIDs:
 	db $54,$5C,$32,$FF
