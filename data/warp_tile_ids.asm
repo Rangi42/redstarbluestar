@@ -29,8 +29,8 @@ OverworldWarpTileIDs:
 
 ForestGateWarpTileIDs:
 MuseumWarpTileIDs:
-	db $37,$3B,$14,$1A,$1C
 GateWarpTileIDs:
+	db $3B,$1A,$1C
 	db $FF
 
 RedsHouse1WarpTileIDs:
