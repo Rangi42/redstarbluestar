@@ -194,6 +194,9 @@ ROMX $38
   "Tileset Spillover 1"
 
 ROMX $39
+  "Tileset Spillover 2"
+
+ROMX $3A
   "Engine Spillover 1"
 
 WRAM0

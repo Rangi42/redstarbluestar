@@ -327,6 +327,8 @@ LoadSpinnerArrowTiles:
 	cp FACILITY
 	ld hl, FacilitySpinnerArrows
 	jr z, .asm_44ff6
+	cp BASEMENT
+	jr z, .asm_44ff6
 	ld hl, GymSpinnerArrows
 .asm_44ff6
 	ld a, [wSimulatedJoypadStatesIndex]

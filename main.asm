@@ -2303,3 +2303,9 @@ Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
 
 Dojo_GFX:          INCBIN "gfx/tilesets/dojo.2bpp"
 Dojo_Block:        INCBIN "gfx/blocksets/dojo.bst"
+
+
+SECTION "Tileset Spillover 2", ROMX
+
+Basement_GFX:      INCBIN "gfx/tilesets/basement.2bpp"
+Basement_Block:    INCBIN "gfx/blocksets/basement.bst"

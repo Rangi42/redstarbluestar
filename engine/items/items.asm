@@ -1526,7 +1526,7 @@ ItemUseEscapeRope:
 	jp ItemUseNotTime
 
 EscapeRopeTilesets:
-	db FOREST, CEMETERY, CAVERN, FACILITY, INTERIOR
+	db FOREST, CEMETERY, CAVERN, FACILITY, INTERIOR, BASEMENT
 	db $ff ; terminator
 
 ItemUseRepel:

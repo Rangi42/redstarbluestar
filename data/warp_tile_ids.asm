@@ -23,6 +23,7 @@ WarpTileIDPointers:
 	dw ClubWarpTileIDs
 	dw FacilityWarpTileIDs
 	dw PlateauWarpTileIDs
+	dw BasementWarpTileIDs
 
 OverworldWarpTileIDs:
 	db $1B,$58,$FF
@@ -85,3 +86,6 @@ PlateauWarpTileIDs:
 ShipPortWarpTileIDs:
 ClubWarpTileIDs:
 	db $FF
+
+BasementWarpTileIDs:
+	db $13,$1B,$FF
