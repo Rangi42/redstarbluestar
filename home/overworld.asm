@@ -900,6 +900,8 @@ LoadTilesetTilePatternData::
 	ld bc, $700
 	cp POKECENTER
 	jr z, .ok
+	cp MART
+	jr z, .ok
 	cp BASEMENT
 	jr z, .ok
 	ld bc, $600

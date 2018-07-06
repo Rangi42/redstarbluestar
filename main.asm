@@ -1962,9 +1962,7 @@ Version_GFXEnd:
 Gym_GFX:           INCBIN "gfx/tilesets/gym.2bpp"
 Gym_Block:         INCBIN "gfx/blocksets/gym.bst"
 
-Mart_GFX:
 Pokecenter_GFX:    INCBIN "gfx/tilesets/pokecenter.2bpp"
-Mart_Block:
 Pokecenter_Block:  INCBIN "gfx/blocksets/pokecenter.bst"
 
 Forest_GFX:        INCBIN "gfx/tilesets/forest.2bpp"
@@ -2309,3 +2307,5 @@ SECTION "Tileset Spillover 2", ROMX
 
 Basement_GFX:      INCBIN "gfx/tilesets/basement.2bpp"
 Basement_Block:    INCBIN "gfx/blocksets/basement.bst"
+Mart_GFX:          INCBIN "gfx/tilesets/mart.2bpp"
+Mart_Block:        INCBIN "gfx/blocksets/mart.bst"
