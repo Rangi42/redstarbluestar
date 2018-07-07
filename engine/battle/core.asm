@@ -459,9 +459,11 @@ MainInBattleLoop:
 	ld b, 0
 	add hl, bc
 	ld a, [hl]
-	cp METRONOME ; a MIRROR MOVE check is missing, might lead to a desync in link battles
-	             ; when combined with multi-turn moves
+	cp MIRROR_MOVE
+	jr z, .specialMoveUsed
+	cp METRONOME
 	jr nz, .specialMoveNotUsed
+.specialMoveUsed
 	ld [wPlayerSelectedMove], a
 .specialMoveNotUsed
 	callab SwitchEnemyMon
