@@ -479,6 +479,9 @@ KogaAI:
 BlaineAI:
 	cp $40
 	ret nc
+	ld a, $A
+	call AICheckIfHPBelowFraction
+	ret nc
 	jp AIUseSuperPotion
 
 SabrinaAI:
