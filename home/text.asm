@@ -291,9 +291,9 @@ Char51:: ; para
 Char49::
 	push de
 	ld a, "▼"
-	Coorda 18, 17
+	Coorda 18, 16
 	call ProtectedDelay3
-	call ManualTextScroll
+	call PokedexTextScroll
 	coord hl, 1, 10
 	lb bc, 7, 18
 	call ClearScreenArea

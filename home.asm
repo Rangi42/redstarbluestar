@@ -3457,6 +3457,32 @@ ManualTextScroll::
 	ld c, 65
 	jp DelayFrames
 
+PokedexTextScroll::
+	ld a, [H_DOWNARROWBLINKCNT1]
+	push af
+	ld a, [H_DOWNARROWBLINKCNT2]
+	push af
+	xor a
+	ld [H_DOWNARROWBLINKCNT1], a
+	ld a, $6
+	ld [H_DOWNARROWBLINKCNT2], a
+.loop
+	push hl
+	coord hl, 18, 16
+	ld a, " "
+	call HandleDownArrowBlinkTiming
+	pop hl
+	call JoypadLowSensitivity
+	ld a, [hJoy5]
+	and A_BUTTON | B_BUTTON
+	jr z, .loop
+	pop af
+	ld [H_DOWNARROWBLINKCNT2], a
+	pop af
+	ld [H_DOWNARROWBLINKCNT1], a
+	ld a, SFX_PRESS_AB
+	jp PlaySound
+
 ; function to do multiplication
 ; all values are big endian
 ; INPUT
