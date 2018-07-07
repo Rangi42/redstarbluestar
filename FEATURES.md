@@ -1,0 +1,55 @@
+# Features
+
+- Graphics from the Space World 1997 Pokémon G/S prototypes, including:
+   - Pokémon front and back sprites
+   - Map tiles
+   - Overworld sprites
+   - SGB borders
+   - Various UIs (battle HUD, Pokédex, trainer card, Pokémon stats, Town Map, etc)
+- Features from the Space World prototypes:
+   - Shiny Pokémon exist, using their Space World palettes, with the same DVs and encounter chances as G/S (1 in 8,192)
+   - Pokémon have genders
+   - Battle HUD shows experience bar and gender icons
+   - Swimmer♀ and Soldier trainer classes
+   - Trainers have individual names (copied from FR/LG)
+   - Trainer classes each have their own DVs, instead of all 9/8/8/8
+   - Face enemy trainers that see you
+   - Running Shoes (2x speed) or Mach Bike (4x bicycle speed) by holding B
+   - Talk to Surf water, Cut trees, and Strength boulders to use HMs
+   - Items in the Pack have descriptions
+   - Blinking arrow prompts show on the textbox border
+- Features from Yellow:
+   - NPCs in Cerulean City, Route 24, and Vermilion City give you Bulbasaur, Charmander, and Squirtle
+   - Various level-up moveset changes, like Kadabra learning Kinesis
+   - The Safari Zone lets you in if you don't have enough money
+   - Route 23, Victory Road, and Indigo Plateau disable the Bicycle music
+   - Blaine uses a different sprite
+- All 151 Pokémon are available:
+   - Ekans and Sandshrew: Routes 4, 8, 9, 10, 11, and 23
+   - Oddish and Bellsprout: Routes 5, 6, 7, 12, 13, 14, 15, 24, and 25
+   - Mankey and Meowth: Routes 5, 6, 7, and 8
+   - Growlithe and Vulpix: Routes 7 and 8, and Pokémon Mansion
+   - Scyther and Pinsir: Safari Zone
+   - Electabuzz: Power Plant
+   - Magmar: Pokémon Mansion
+   - Machamp, Golem, Alakazam, and Gengar: Cerulean Cave, and evolvable with Heart Stone (sold in Celadon Dept. Store) (trade evolution also still works)
+   - Mr. Mime: Game Corner prize (like G/S)
+   - Farfetch'd: Route 12 and 13 (like Yellow)
+   - Lickitung: Safari Zone (like Yellow)
+   - Jynx: Seafoam Islands (like Japanese Blue)
+   - Hitmonlee and Hitmonchan: Victory Road
+   - Eevee: Celadon Mansion, and a Game Corner prize
+   - Kabuto and Omanyte: the fossil not taken in Mt. Moon will be in Cerulean Cave
+   - Bulbasaur, Charmander, and Squirtle: NPC gifts (like Yellow)
+   - Mew: Use the [Mew glitch](https://bulbapedia.bulbagarden.net/wiki/Mew_glitch) ;)
+- Fixed some [bugs in Red and Blue](https://forums.glitchcity.info/index.php?topic=7682.0):
+   - Focus Energy and Dire Hit halve the critical hit rate instead of doubling it
+   - Mirror Move versus partial-trapping moves can desync link battles
+   - Bide can accumulate damage from a previous turn, a non-active Pokémon, and a previous battle
+   - Stat scaling with defending stat lower than 4 freezes the game via division by 0
+   - Dual-type effectiveness can show wrong text and sound
+   - Level-up moves not learned when a Pokémon grows by two or more levels at once
+   - Item evolutions can be triggered by Pokémon with matching IDs battling last
+   - Blaine may use a Super Potion with his Pokémon at full health
+- Default text speed is fast
+- Shiny icons in battle, so you won't miss them

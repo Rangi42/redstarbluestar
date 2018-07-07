@@ -12,10 +12,10 @@ Then download [**rgbds**](https://github.com/rednex/rgbds/releases/): the latest
 
 In the **Cygwin terminal**, enter these commands:
 
-	git clone -b spaceworld https://github.com/Rangi42/pokered
-	cd pokered
+	git clone https://github.com/Rangi42/redstarbluestar
+	cd redstarbluestar
 
-To build **pokered.gbc** and **pokeblue.gbc**:
+To build **redstar.gbc** and **bluestar.gbc**:
 
 	make
 
@@ -29,10 +29,10 @@ Then in **Terminal**, run:
 	xcode-select --install
 	brew install rgbds
 
-	git clone -b spaceworld https://github.com/Rangi42/pokered
-	cd pokered
+	git clone https://github.com/Rangi42/redstarbluestar
+	cd redstarbluestar
 
-To build **pokered.gbc** and **pokeblue.gbc**:
+To build **redstar.gbc** and **bluestar.gbc**:
 
 	make
 
@@ -47,10 +47,10 @@ To build **pokered.gbc** and **pokeblue.gbc**:
 	sudo make install
 	cd ..
 
-	git clone -b spaceworld https://github.com/Rangi42/pokered
-	cd pokered
+	git clone https://github.com/Rangi42/redstarbluestar
+	cd redstarbluestar
 
-To build **pokered.gbc** and **pokeblue.gbc**:
+To build **redstar.gbc** and **bluestar.gbc**:
 
 	make
 

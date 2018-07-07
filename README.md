@@ -1,24 +1,30 @@
-# Pokémon Red and Blue: Space World Edition
+# Pokémon Red★ and Blue★
 
-This is a disassembly of Pokémon Red and Blue. It has been modified by Rangi to use the Pokémon sprites from the Gold and Silver beta versions demoed at Nintendo Space World 1997, which were leaked in May 2018.
+This is a custom Pokémon game based on [the Pokémon Red and Blue disassembly](https://github.com/pret/pokered).
 
-![Screenshot](screenshot.png)
+It started out as a graphics upgrade, replacing the Pokémon sprites with the ones from [the Space World 1997 G/S prototypes](https://github.com/pret/pokegold-spaceworld). Then I ported more content, including overworld tile and sprite graphics, Pokémon genders, shiny Pokémon, and more. I also ended up making all 151 Pokémon available in one game.
 
-Credit goes to Pia Carrot and Copetin for the improved trainer back sprites of Red and the old man.
+For a full list of features, see [**FEATURES.md**](FEATURES.md).
 
-Furthermore, the default text speed is fast, and you can double your movement speed by holding B (like Running Shoes)—even when you're on the Bicycle.
+
+## Download and Play
+
+To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 It builds the following ROMs:
 
-* pokered.gbc  `md5: 42a6921eec607d379070d6a41f385971`
-* pokeblue.gbc `md5: db3addef215851a094ebd9cbf62c8edc`
-
-To set up the repository, see [**INSTALL.md**](INSTALL.md).
+* redstar.gbc  `md5: c16c643fae4e6d38d2fb019400c65435`
+* bluestar.gbc `md5: d2a806d815c55e6a5e160995a5880ab4`
 
 If you can't build the repository yourself, you can download these IPS patches and apply them to a clean ROM with a tool like [Lunar IPS](https://fusoya.eludevisibility.org/lips/).
 
 * [pokered.ips](patches/pokered.ips):  apply to Pokemon Red (UE) [S][!].gb  `md5: 3d45c1ee9abd5738df46d2bdda8b57dc`
 * [pokeblue.ips](patches/pokeblue.ips): apply to Pokemon Blue (UE) [S][!].gb `md5: 50927e843568814f7ed45ec4f944bd8b`
+
+
+## Screenshots
+
+![Screenshot](screenshot.png)
 
 
 ## See also
