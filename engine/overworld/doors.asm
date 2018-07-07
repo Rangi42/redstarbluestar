@@ -48,7 +48,8 @@ ForestDoorTileIDs:
 	db $3a,$00
 
 MartDoorTileIDs:
-	db $32,$52
+	db $5e,$00
+
 HouseDoorTileIDs:
 	db $54,$00
 

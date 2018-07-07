@@ -39,8 +39,6 @@ RedsHouse2WarpTileIDs:
 	db $1A,$1C,$FF
 
 MartWarpTileIDs:
-	db $32,$52,$54,$FF
-
 PokecenterWarpTileIDs:
 	db $5E,$FF
 

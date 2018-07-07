@@ -897,15 +897,7 @@ LoadTilesetTilePatternData::
 	ld h, a
 	ld de, vTileset
 	ld a, [wCurMapTileset]
-	ld bc, $700
-	cp POKECENTER
-	jr z, .ok
-	cp MART
-	jr z, .ok
-	cp BASEMENT
-	jr z, .ok
-	ld bc, $600
-.ok
+	ld bc, $790
 	ld a, [wTilesetBank]
 	jp FarCopyData2
 
