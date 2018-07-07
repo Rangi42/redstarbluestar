@@ -1,10 +1,13 @@
 DisplayEffectiveness:
 	ld a, [wDamageMultipliers]
 	and $7F
-	cp $0A
-	ret z
+	and a
+	ret z ; neutral
+	cp %00000011
+	ret z ; SE to one type and NVE to the other type
+	and %00000001
 	ld hl, SuperEffectiveText
-	jr nc, .done
+	jr z, .done
 	ld hl, NotVeryEffectiveText
 .done
 	jp PrintText
