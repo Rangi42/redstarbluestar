@@ -53,5 +53,6 @@
    - Level-up moves not learned when a Pokémon grows by two or more levels at once
    - Item evolutions can be triggered by Pokémon with matching IDs battling last
    - Blaine may use a Super Potion with his Pokémon at full health
+- Gym Leaders, the Elite 4, and the Champion have better movesets
 - Default text speed is fast
 - Shiny icons in battle, so you won't miss them

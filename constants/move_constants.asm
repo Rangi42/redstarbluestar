@@ -1,5 +1,6 @@
-const_value = 1
+const_value = 0
 
+	const NO_MOVE      ; 00
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03

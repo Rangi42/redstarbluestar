@@ -1665,10 +1665,8 @@ wDamageMultipliers:: ; d05b
 ; bit 7: STAB
 	ds 1
 
-wLoneAttackNo:: ; d05c
-; which entry in LoneAttacks to use
 wGymLeaderNo:: ; d05c
-; it's actually the same thing as ^
+; which gym leader is being battled (brock = 1, misty = 2, etc)
 	ds 1
 wTrainerNo:: ; d05d
 ; which instance of [youngster, lass, etc] is this?

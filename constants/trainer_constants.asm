@@ -54,3 +54,7 @@ const_value = 1
 	trainer_const AGATHA        ; $2E
 	trainer_const LANCE         ; $2F
 	trainer_const SOLDIER       ; $30
+
+; trainer types
+LEVELS EQU 0
+MOVES  EQU 1
