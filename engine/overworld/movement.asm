@@ -1,3 +1,5 @@
+MAX_TILE_ID EQU $78
+
 UpdatePlayerSprite:
 	ld a, [wSpriteStateData2]
 	and a
@@ -8,12 +10,11 @@ UpdatePlayerSprite:
 	ld [wSpriteStateData2], a
 	jr .disableSprite
 ; check if a text box is in front of the sprite by checking if the lower left
-; background tile the sprite is standing on is greater than $79, which is
-; the maximum number for map tiles
+; background tile the sprite is standing on is greater than MAX_TILE_ID
 .checkIfTextBoxInFrontOfSprite
 	aCoord 8, 9
 	ld [hTilePlayerStandingOn], a
-	cp $7a
+	cp MAX_TILE_ID + 1
 	jr c, .lowerLeftTileIsMapTile
 .disableSprite
 	ld a, $ff
@@ -127,7 +128,7 @@ UpdateNPCSprite:
 	and a
 	jp z, InitializeSpriteStatus
 	call CheckSpriteAvailability
-	ret c             ; if sprite is invisible, on tile >=$7a, in grass or player is currently walking
+	ret c             ; if sprite is invisible, on tile >=MAX_TILE_ID, in grass or player is currently walking
 	ld h, $c1
 	ld a, [H_CURRENTSPRITEOFFSET]
 	ld l, a
@@ -506,23 +507,22 @@ CheckSpriteAvailability:
 	jr c, .spriteInvisible  ; right of screen region
 .skipXVisibilityTest
 ; make the sprite invisible if a text box is in front of it
-; $79 is the maximum number for map tiles
 	call GetTileSpriteStandsOn
-	ld d, $7a
+	ld d, MAX_TILE_ID + 1
 	ld a, [hli]
 	cp d
-	jr nc, .spriteInvisible ; standing on tile with ID >=$7a (bottom left tile)
+	jr nc, .spriteInvisible ; standing on tile with ID >=MAX_TILE_ID (bottom left tile)
 	ld a, [hld]
 	cp d
-	jr nc, .spriteInvisible ; standing on tile with ID >=$7a (bottom right tile)
+	jr nc, .spriteInvisible ; standing on tile with ID >=MAX_TILE_ID (bottom right tile)
 	ld bc, -20
 	add hl, bc              ; go back one row of tiles
 	ld a, [hli]
 	cp d
-	jr nc, .spriteInvisible ; standing on tile with ID >=$7a (top left tile)
+	jr nc, .spriteInvisible ; standing on tile with ID >=MAX_TILE_ID (top left tile)
 	ld a, [hl]
 	cp d
-	jr c, .spriteVisible    ; standing on tile with ID >=$7a (top right tile)
+	jr c, .spriteVisible    ; standing on tile with ID >=MAX_TILE_ID (top right tile)
 .spriteInvisible
 	ld h, wSpriteStateData1 / $100
 	ld a, [H_CURRENTSPRITEOFFSET]
