@@ -260,6 +260,7 @@ JigglypuffSprite:      INCBIN "gfx/sprites/jigglypuff.2bpp"
 ChanseySprite:         INCBIN "gfx/sprites/chansey.2bpp"
 PikachuSprite:         INCBIN "gfx/sprites/pikachu.2bpp"
 OfficerJennySprite:    INCBIN "gfx/sprites/officer_jenny.2bpp"
+ReceptionistSprite:    INCBIN "gfx/sprites/receptionist.2bpp"
 
 
 SECTION "Battle (bank 5)", ROMX, BANK[$5]
