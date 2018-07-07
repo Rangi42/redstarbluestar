@@ -69,7 +69,7 @@ LabDoorTileIDs:
 	db $34,$00
 
 FacilityDoorTileIDs:
-	db $43,$58,$1b,$00
+	db $1b,$43,$58,$64,$00
 
 PlateauDoorTileIDs:
 	db $3b,$1b,$00
