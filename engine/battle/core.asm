@@ -4387,7 +4387,11 @@ GetDamageVarsForPlayerAttack:
 	rr c
 	srl b
 	rr c
-; defensive stat can actually end up as 0, leading to a division by 0 freeze during damage calculation
+	ld a, c
+	or b ; is the enemy's defensive stat 0?
+	jr nz, .player
+	inc c ; if the enemy's defensive stat is 0, bump it up to 1
+.player
 ; hl /= 4 (scale player's offensive stat)
 	srl h
 	rr l
