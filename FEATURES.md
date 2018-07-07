@@ -1,29 +1,30 @@
 # Features
 
 - Graphics from the Space World 1997 Pokémon G/S prototypes, including:
-   - Pokémon front and back sprites
-   - Map tiles
-   - Overworld sprites
-   - SGB borders
-   - Various UIs (battle HUD, Pokédex, trainer card, Pokémon stats, Town Map, etc)
+   - Pokémon [front](pic/swmon/) and [back](pic/swmonback/) sprites
+   - [Trainers](pic/swtrainer/)
+   - [Map tiles](gfx/tilesets/)
+   - [Overworld sprites](gfx/sprites/)
+   - SGB borders (Red uses [Gold](gfx/red/sgbborder.png), Blue uses [Silver](gfx/blue/sgbborder.png))
+   - Various UIs (battle HUD, Pokémon stats, Pokédex, trainer card, Town Map, etc)
 - Features from the Space World prototypes:
    - Shiny Pokémon exist, using their Space World palettes, with the same DVs and encounter chances as G/S (1 in 8,192)
    - Pokémon have genders
    - Battle HUD shows experience bar and gender icons
-   - Swimmer♀ and Soldier trainer classes
-   - Trainers have individual names (copied from FR/LG)
-   - Trainer classes each have their own DVs, instead of all 9/8/8/8
+   - [Swimmer♀](pic/swtrainer/swimmerf.png) and [Soldier](pic/swtrainer/soldier.png) trainer classes
+   - Trainers have [individual names](data/trainer_parties.asm) (copied from FR/LG)
+   - Trainer classes each have [their own DVs](data/trainer_dvs.asm), instead of all 9/8/8/8
    - Face enemy trainers that see you
    - Running Shoes (2x speed) or Mach Bike (4x bicycle speed) by holding B
    - Talk to Surf water, Cut trees, and Strength boulders to use HMs
-   - Items in the Pack have descriptions
+   - Items in the Pack have [descriptions](text/item_descriptions.asm)
    - Blinking arrow prompts show on the textbox border
 - Features from Yellow:
    - NPCs in Cerulean City, Route 24, and Vermilion City give you Bulbasaur, Charmander, and Squirtle
-   - Various level-up moveset changes, like Kadabra learning Kinesis
+   - Various [moveset changes](https://github.com/Rangi42/redstarbluestar/commit/3574b8c57826055ec4d6de533a57c1e657ad554f), like Kadabra learning Kinesis
    - The Safari Zone lets you in if you don't have enough money
    - Route 23, Victory Road, and Indigo Plateau disable the Bicycle music
-   - Blaine uses a different sprite
+   - Blaine uses a different overworld sprite
 - All 151 Pokémon are available:
    - Ekans and Sandshrew: Routes 4, 8, 9, 10, 11, and 23
    - Oddish and Bellsprout: Routes 5, 6, 7, 12, 13, 14, 15, 24, and 25
@@ -43,6 +44,7 @@
    - Bulbasaur, Charmander, and Squirtle: NPC gifts (like Yellow)
    - Mew: Use the [Mew glitch](https://bulbapedia.bulbagarden.net/wiki/Mew_glitch) ;)
 - Fixed some [bugs in Red and Blue](https://forums.glitchcity.info/index.php?topic=7682.0):
+   - [Some DV combinations are unavailable in the wild](https://www.youtube.com/watch?v=BcIxMyf8yHY), including all shiny ones
    - Focus Energy and Dire Hit halve the critical hit rate instead of doubling it
    - Mirror Move versus partial-trapping moves can desync link battles
    - Bide can accumulate damage from a previous turn, a non-active Pokémon, and a previous battle
