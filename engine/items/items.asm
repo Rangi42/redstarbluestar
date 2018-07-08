@@ -2881,7 +2881,7 @@ IsNextTileShoreOrWater:
 
 ; tilesets with water
 WaterTilesets:
-	db OVERWORLD, FOREST, GYM, SHIP, SHIP_PORT, CAVERN, FACILITY, PLATEAU
+	db OVERWORLD, FOREST, GYM, SHIP, SHIP_PORT, CAVERN, PLATEAU
 	db $ff ; terminator
 
 ReadSuperRodData:
