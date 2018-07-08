@@ -2,7 +2,7 @@
 
 This is a custom Pokémon game based on [the Pokémon Red and Blue disassembly](https://github.com/pret/pokered).
 
-![Title screens](titles.png)
+![titles](screenshots/titles.png)
 
 It started out as a graphics upgrade, replacing the Pokémon sprites with the ones from [the Space World 1997 G/S prototypes](https://github.com/pret/pokegold-spaceworld). Then I ported more content, including overworld tile and sprite graphics, Pokémon genders, shiny Pokémon, and more. I also ended up making all 151 Pokémon available in one game.
 
@@ -26,7 +26,40 @@ If you can't build the repository yourself, you can download these IPS patches a
 
 ## Screenshots
 
-![Screenshot](screenshot.png)
+![n64](screenshots/n64.png)
+![pallet-town](screenshots/pallet-town.png)
+![battle](screenshots/battle.png)
+![item-description](screenshots/item-description.png)
+  
+![pokedex](screenshots/pokedex.png)
+![pokedex-entry](screenshots/pokedex-entry.png)
+![town-map](screenshots/town-map.png)
+![trainer-card](screenshots/trainer-card.png)
+  
+![bug-catcher-rick](screenshots/bug-catcher-rick.png)
+![cut](screenshots/cut.png)
+![surf](screenshots/surf.png)
+![other-fossil](screenshots/other-fossil.png)
+
+![pewter-gym](screenshots/pewter-gym.png)
+![blaine](screenshots/blaine.png)
+![old-man](screenshots/old-man.png)
+![trade](screenshots/trade.png)
+  
+![wild-shiny](screenshots/wild-shiny.png)
+![stats-1](screenshots/stats-1.png)
+![stats-2](screenshots/stats-2.png)
+![safari-zone](screenshots/safari-zone.png)
+  
+![pokemon-center](screenshots/pokemon-center.png)
+![gift-bulbasaur](screenshots/gift-bulbasaur.png)
+![wild-farfetchd](screenshots/wild-farfetchd.png)
+![pokemon-league](screenshots/pokemon-league.png)
+  
+![swimmerf-nora](screenshots/swimmerf-nora.png)
+![gatehouse](screenshots/gatehouse.png)
+![game-corner](screenshots/game-corner.png)
+![rocket-hideout](screenshots/rocket-hideout.png)
 
 
 ## See also
