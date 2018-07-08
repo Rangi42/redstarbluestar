@@ -1,6 +1,6 @@
 # Features
 
-- Graphics from the Space World 1997 Pokémon G/S prototypes, including:
+- Graphics from the Space World 1997 Pokémon G/S prototypes:
    - Pokémon [front](pic/swmon/) and [back](pic/swmonback/) sprites
    - [Trainers](pic/swtrainer/)
    - [Map tiles](gfx/tilesets/)
@@ -10,7 +10,7 @@
 - Features from the Space World prototypes:
    - Shiny Pokémon exist, using their Space World palettes, with the same DVs and encounter chances as G/S (1 in 8,192)
    - Pokémon have genders
-   - Battle HUD shows experience bar and gender icons
+   - Battle HUD shows experience bar, gender icons, and caught icon
    - [Swimmer♀](pic/swtrainer/swimmerf.png) and [Soldier](pic/swtrainer/soldier.png) trainer classes
    - Trainers have [individual names](data/trainer_parties.asm) (copied from FR/LG)
    - Trainer classes each have [their own DVs](data/trainer_dvs.asm), instead of all 9/8/8/8
@@ -53,6 +53,7 @@
    - Level-up moves not learned when a Pokémon grows by two or more levels at once
    - Item evolutions can be triggered by Pokémon with matching IDs battling last
    - Blaine may use a Super Potion with his Pokémon at full health
-- Gym Leaders, the Elite 4, and the Champion have better movesets
+- Gym Leaders, the Elite 4, and the Champion have [better movesets](data/trainer_parties.asm)
 - Default text speed is fast
-- Shiny icons in battle, so you won't miss them
+- Shiny icons in battle, so you won't miss one
+- Missingno's Pokédex entry is the Space World placeholder one
