@@ -691,7 +691,7 @@ GentlemanData:
 ; SS Anne 2F Rooms
 	db "BROOKS@",23,PIKACHU,-1
 ; Vermilion Gym
-	db "TUCKER@",23,PIKACHU,-1
+	db "TUCKER@",22,VOLTORB,MAGNEMITE,-1
 ; SS Anne 2F Rooms
 	db "LAMAR@",17,GROWLITHE,PONYTA,-1
 
