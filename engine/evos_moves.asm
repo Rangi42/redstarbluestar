@@ -324,10 +324,10 @@ LearnMoveFromLevelUp:
 	ld a, [wd11e] ; species
 	ld [wcf91], a
 	dec a
-	add a
 	ld b, 0
 	ld c, a
 	ld hl, EvosMovesPointerTable
+	add hl, bc
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
