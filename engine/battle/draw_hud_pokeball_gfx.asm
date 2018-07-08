@@ -16,6 +16,14 @@ LoadPartyPokeballGfx:
 	lb bc, BANK(PokeballTileGraphics), (PokeballTileGraphicsEnd - PokeballTileGraphics) / $10
 	jp CopyVideoData
 
+	ds 9
+
+MissingNoBaseStats::
+; The PokedexOrder list assigns dex ID #000 to all MissingNo.
+; BaseStats + (MonBaseStatsEnd - MonBaseStats) * (000 - 1) = 0E:5FC2,
+; which is right here.
+INCLUDE "data/baseStats/missingno.asm"
+
 SetupOwnPartyPokeballs:
 	call PlacePlayerHUDTiles
 	ld hl, wPartyMon1
