@@ -2,6 +2,8 @@
 
 This is a custom Pokémon game based on [the Pokémon Red and Blue disassembly](https://github.com/pret/pokered).
 
+![Title screens](titles.png)
+
 It started out as a graphics upgrade, replacing the Pokémon sprites with the ones from [the Space World 1997 G/S prototypes](https://github.com/pret/pokegold-spaceworld). Then I ported more content, including overworld tile and sprite graphics, Pokémon genders, shiny Pokémon, and more. I also ended up making all 151 Pokémon available in one game.
 
 For a full list of features, see [**FEATURES.md**](FEATURES.md).
