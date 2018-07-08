@@ -56,4 +56,4 @@
 - Gym Leaders, the Elite 4, and the Champion have [better movesets](data/trainer_parties.asm)
 - Default text speed is fast
 - Shiny icons in battle, so you won't miss one
-- Missingno's Pokédex entry is the Space World placeholder one
+- MissingNo has *not* been "fixed"; its Pokédex entry is the Space World placeholder one
