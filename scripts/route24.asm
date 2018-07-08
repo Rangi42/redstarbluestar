@@ -321,6 +321,9 @@ Route24AfterBattleText6:
 
 Route24Text8:
 	TX_ASM
+	ld a, [wPlayerStarter]
+	cp CHARMANDER
+	jr z, .starter_charmander
 	CheckEvent EVENT_GOT_CHARMANDER_FROM_DAMIAN
 	jr nz, .asm_515d5
 	ld hl, Route24Text_515de
@@ -358,6 +361,26 @@ Route24Text8:
 	call PrintText
 	jp TextScriptEnd
 
+.starter_charmander
+	CheckEvent EVENT_GOT_CHARMANDER_FROM_DAMIAN
+	jr nz, .got_rare_candy
+	ld hl, Route24DamianText5
+	call PrintText
+	lb bc, RARE_CANDY, 1
+	call GiveItem
+	jr nc, .bag_full
+	SetEvent EVENT_GOT_CHARMANDER_FROM_DAMIAN
+	ld hl, Route24DamianText6
+	jr .done
+.bag_full
+	ld hl, Route24DamianText7
+	jr .done
+.got_rare_candy
+	ld hl, Route24DamianText8
+.done
+	call PrintText
+	jp TextScriptEnd
+
 Route24Text_515de:
 	TX_FAR _Route24DamianText1
 	db "@"
@@ -373,4 +396,21 @@ Route24Text_515e9:
 
 Route24Text_515ee:
 	TX_FAR _Route24DamianText4
+	db "@"
+
+Route24DamianText5:
+	TX_FAR _Route24DamianText5
+	db "@"
+
+Route24DamianText6:
+	TX_FAR _Route24DamianText6
+	TX_SFX_ITEM_1
+	db "@"
+
+Route24DamianText7:
+	TX_FAR _Route24DamianText7
+	db "@"
+
+Route24DamianText8:
+	TX_FAR _Route24DamianText8
 	db "@"

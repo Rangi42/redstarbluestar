@@ -116,3 +116,39 @@ _Route24DamianText4::
 	text "How's CHARMANDER"
 	line "doing?"
 	done
+
+_Route24DamianText5::
+	text "I'm not good at"
+	line "raising #MON."
+
+	para "I can't use this"
+	line "item on my"
+	cont "CHARMANDER..."
+
+	para "It would just"
+	line "be a waste."
+
+	para "You have a"
+	line "CHARMANDER too?"
+
+	para "If you promise me"
+	line "you'll care for"
+	cont "it, this item is"
+	cont "yours."
+	prompt
+
+_Route24DamianText6::
+	text "<PLAYER> got"
+	line "@"
+	TX_RAM wcf4b
+	text "!@@"
+
+_Route24DamianText7::
+	text "Oh... You can't"
+	line "carry this."
+	done
+
+_Route24DamianText8::
+	text "How's your CHAR-"
+	line "MANDER doing?"
+	done

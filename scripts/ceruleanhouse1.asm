@@ -9,6 +9,9 @@ CeruleanHouse1TextPointers:
 
 CeruleanHouse1Text1:
 	TX_ASM
+	ld a, [wPlayerStarter]
+	cp BULBASAUR
+	jr z, .starter_bulbasaur
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	CheckEvent EVENT_GOT_BULBASAUR_IN_CERULEAN
@@ -59,6 +62,26 @@ CeruleanHouse1Text1:
 	call PrintText
 	jp TextScriptEnd
 
+.starter_bulbasaur
+	CheckEvent EVENT_GOT_BULBASAUR_IN_CERULEAN
+	jr nz, .got_rare_candy
+	ld hl, CeruleanHouse1MelanieText6
+	call PrintText
+	lb bc, RARE_CANDY, 1
+	call GiveItem
+	jr nc, .bag_full
+	SetEvent EVENT_GOT_BULBASAUR_IN_CERULEAN
+	ld hl, CeruleanHouse1MelanieText7
+	jr .done
+.bag_full
+	ld hl, CeruleanHouse1MelanieText8
+	jr .done
+.got_rare_candy
+	ld hl, CeruleanHouse1MelanieText9
+.done
+	call PrintText
+	jp TextScriptEnd
+
 CeruleanHouse1Text_1cfc8:
 	TX_FAR MelanieText1
 	TX_WAIT
@@ -103,3 +126,20 @@ CeruleanHouse1Text4:
 	ld a, SANDSHREW
 	call PlayCry
 	jp TextScriptEnd
+
+CeruleanHouse1MelanieText6:
+	TX_FAR _CeruleanHouse1MelanieText6
+	db "@"
+
+CeruleanHouse1MelanieText7:
+	TX_FAR _CeruleanHouse1MelanieText7
+	TX_SFX_ITEM_1
+	db "@"
+
+CeruleanHouse1MelanieText8:
+	TX_FAR _CeruleanHouse1MelanieText8
+	db "@"
+
+CeruleanHouse1MelanieText9:
+	TX_FAR _CeruleanHouse1MelanieText9
+	db "@"

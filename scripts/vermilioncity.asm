@@ -263,6 +263,9 @@ VermilionCityText15:
 	jp TextScriptEnd
 
 .func_f1a0f:
+	ld a, [wPlayerStarter]
+	cp SQUIRTLE
+	jr z, .starter_squirtle
 	CheckEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
 	jr nz, .asm_f1a69
 	ld a, [wObtainedBadges]
@@ -308,6 +311,26 @@ VermilionCityText15:
 	call PrintText
 	ret
 
+.starter_squirtle
+	CheckEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
+	jr nz, .got_rare_candy
+	ld hl, OfficerJennyText6
+	call PrintText
+	lb bc, RARE_CANDY, 1
+	call GiveItem
+	jr nc, .bag_full
+	SetEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
+	ld hl, OfficerJennyText7
+	jr .done
+.bag_full
+	ld hl, OfficerJennyText8
+	jr .done
+.got_rare_candy
+	ld hl, OfficerJennyText9
+.done
+	call PrintText
+	ret
+
 OfficerJennyText1:
 	TX_FAR _OfficerJennyText1
 	db "@"
@@ -327,4 +350,21 @@ OfficerJennyText4:
 
 OfficerJennyText5:
 	TX_FAR _OfficerJennyText5
+	db "@"
+
+OfficerJennyText6:
+	TX_FAR _OfficerJennyText6
+	db "@"
+
+OfficerJennyText7:
+	TX_FAR _OfficerJennyText7
+	TX_SFX_ITEM_1
+	db "@"
+
+OfficerJennyText8:
+	TX_FAR _OfficerJennyText8
+	db "@"
+
+OfficerJennyText9:
+	TX_FAR _OfficerJennyText9
 	db "@"

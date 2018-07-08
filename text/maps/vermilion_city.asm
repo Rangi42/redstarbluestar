@@ -165,3 +165,37 @@ _OfficerJennyText5::
 	text "How is SQUIRTLE"
 	line "doing?"
 	done
+
+_OfficerJennyText6::
+	text "Some SQUIRTLE"
+	line "around here is"
+	cont "always getting"
+	cont "into mischief."
+
+	para "PROF.OAK gave you"
+	line "a SQUIRTLE?"
+	cont "And it behaves?"
+
+	para "You must be a"
+	line "good trainer!"
+
+	para "Take this and"
+	line "raise your"
+	cont "SQUIRTLE right!"
+	prompt
+
+_OfficerJennyText7::
+	text "<PLAYER> got"
+	line "@"
+	TX_RAM wcf4b
+	text "!@@"
+
+_OfficerJennyText8::
+	text "Oh... You can't"
+	line "carry this."
+	done
+
+_OfficerJennyText9::
+	text "How is your"
+	line "SQUIRTLE doing?"
+	done

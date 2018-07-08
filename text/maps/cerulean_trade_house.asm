@@ -37,3 +37,35 @@ MelanieOddishText::
 
 MelanieSandshrewText::
 	text "SANDSHREW: Pikii!@@"
+
+_CeruleanHouse1MelanieText6::
+	text "I take care of"
+	line "injured #MON."
+
+	para "I nursed this"
+	line "BULBASAUR back to"
+	cont "health."
+
+	para "You have a BULBA-"
+	line "SAUR too?"
+
+	para "I know! Take this"
+	line "item for your"
+	cont "BULBASAUR!"
+	prompt
+
+_CeruleanHouse1MelanieText7::
+	text "<PLAYER> got"
+	line "@"
+	TX_RAM wcf4b
+	text "!@@"
+
+_CeruleanHouse1MelanieText8::
+	text "Oh... You can't"
+	line "carry this."
+	done
+
+_CeruleanHouse1MelanieText9::
+	text "Is your BULBA-"
+	line "SAUR doing well?"
+	done
