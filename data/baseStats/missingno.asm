@@ -9,7 +9,7 @@ db NORMAL ; species type 2
 db 255 ; catch rate
 db 143 ; base exp yield
 db $88 ; sprite dimensions
-dw $1900
+dw MissingNoPicFront
 dw $8F37
 ; attacks known at lvl 0
 db WATER_GUN
@@ -19,4 +19,4 @@ db 0
 db $1A ; growth rate
 ; learnset
 db $37,$37,$0D,$37,$00,$1C,$0D
-db $0D
+db BANK(MissingNoPicFront)

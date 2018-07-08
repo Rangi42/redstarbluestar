@@ -915,6 +915,8 @@ GhostPic::             INCBIN "pic/other/ghost.pic"
 RedPicBack::           INCBIN "pic/other/redb.pic"
 OldManPic::            INCBIN "pic/other/oldman.pic"
 
+MissingNoPicFront::    INCBIN "pic/other/missingno.bin"
+
 
 SECTION "Trainer Pics 1", ROMX
 
