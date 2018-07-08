@@ -275,6 +275,7 @@ StartMenu_Pokemon:
 	db "@"
 .goBackToMap
 	call RestoreScreenTilesAndReloadTilePatterns
+	call ReloadMapData
 	jp CloseTextDisplay
 .newBadgeRequired
 	ld hl, .newBadgeRequiredText

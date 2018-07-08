@@ -24,7 +24,7 @@ RocketHideout4Script_45473:
 	call PlaySound
 	SetEvent EVENT_ROCKET_HIDEOUT_4_DOOR_UNLOCKED
 .asm_45496
-	ld a, $e
+	ld a, $1
 .asm_45498
 	ld [wNewTileBlockID], a
 	lb bc, 5, 12
