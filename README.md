@@ -15,13 +15,22 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 It builds the following ROMs:
 
-* redstar.gbc  `md5: c16c643fae4e6d38d2fb019400c65435`
-* bluestar.gbc `md5: d2a806d815c55e6a5e160995a5880ab4`
+* redstar.gbc  `md5: c5c0ed7c3de32a798dc5eabf07b9fafa`
+* bluestar.gbc `md5: 3aad552f36abb72891088da6ae43cfe7`
 
 If you can't build the repository yourself, you can download these IPS patches and apply them to a clean ROM with a tool like [Lunar IPS](https://fusoya.eludevisibility.org/lips/).
 
-* [pokered.ips](patches/pokered.ips):  apply to Pokemon Red (UE) [S][!].gb  `md5: 3d45c1ee9abd5738df46d2bdda8b57dc`
-* [pokeblue.ips](patches/pokeblue.ips): apply to Pokemon Blue (UE) [S][!].gb `md5: 50927e843568814f7ed45ec4f944bd8b`
+* [redstar.ips](patches/redstar.ips):  apply to Pokemon Red (UE) [S][!].gb  `md5: 3d45c1ee9abd5738df46d2bdda8b57dc`
+* [bluestar.ips](patches/bluestar.ips): apply to Pokemon Blue (UE) [S][!].gb `md5: 50927e843568814f7ed45ec4f944bd8b`
+
+
+## Discussion
+
+You can post questions or comments on any of these sites.
+
+* [Discord](https://discord.gg/UfXWKfN)
+* [Skeetendo](https://hax.iimarck.us/topic/47166/)
+* [PokéCommunity](https://www.pokecommunity.com/showthread.php?t=409459)
 
 
 ## Screenshots
