@@ -57,3 +57,68 @@
 - Default text speed is fast
 - Shiny icons in battle, so you won't miss one
 - MissingNo has *not* been "fixed"; its Pokédex entry is the Space World placeholder one
+
+There are *no* new Pokémon, maps, moves, or items (except the Heart Stone). This may look like Space World, but its content is purely R/B/Y.
+
+
+### Higher shiny odds
+
+If you want nearly 2% of wild Pokémon to be shiny like in the Space World demo, then follow the instructions in [INSTALL.md](INSTALL.md) to build your own ROM—but before running `make`, edit [main.asm](main.asm), replacing this:
+
+```
+IsMonShiny:
+	ld h, d
+	ld l, e
+	ld a, [hli]
+	bit 5, a
+	jr z, .notShiny
+	and a, $f
+	cp 10
+	jr nz, .notShiny
+	ld a, [hl]
+	cp (10 << 4) | 10
+	jr nz, .notShiny
+	and a
+	ret
+
+.notShiny
+	xor a
+	ret
+```
+
+with this:
+
+
+```
+IsMonShiny:
+	ld h, d
+	ld l, e
+	; attack DV >= 10?
+	ld a, [hl]
+	and $f0
+	cp 10 << 4
+	jr c, .notShiny
+	; defense DV >= 10?
+	ld a, [hli]
+	and $f
+	cp 10
+	jr c, .notShiny
+	; speed DV >= 10?
+	ld a, [hl]
+	and $f0
+	cp 10 << 4
+	jr c, .notShiny
+	; special DV >= 10?
+	ld a, [hl]
+	and $f
+	cp 10
+	jr c, .notShiny
+	and a
+	ret
+
+.notShiny
+	xor a
+	ret
+```
+
+Now any Pokémon with all four DVs at 10 or above (out of 15) will be shiny.
