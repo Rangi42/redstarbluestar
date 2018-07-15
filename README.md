@@ -38,37 +38,37 @@ You can post questions or comments on any of these sites.
 ![n64](screenshots/n64.png)
 ![pallet-town](screenshots/pallet-town.png)
 ![battle](screenshots/battle.png)
-![item-description](screenshots/item-description.png)
+![trainer-card](screenshots/trainer-card.png)
   
 ![pokedex](screenshots/pokedex.png)
 ![pokedex-entry](screenshots/pokedex-entry.png)
 ![town-map](screenshots/town-map.png)
-![trainer-card](screenshots/trainer-card.png)
+![wild-shiny](screenshots/wild-shiny.png)
+  
+![stats-1](screenshots/stats-1.png)
+![stats-2](screenshots/stats-2.png)
+![old-man](screenshots/old-man.png)
+![item-description](screenshots/item-description.png)
   
 ![bug-catcher-rick](screenshots/bug-catcher-rick.png)
 ![cut](screenshots/cut.png)
 ![surf](screenshots/surf.png)
-![other-fossil](screenshots/other-fossil.png)
-
-![pewter-gym](screenshots/pewter-gym.png)
-![blaine](screenshots/blaine.png)
-![old-man](screenshots/old-man.png)
-![trade](screenshots/trade.png)
-  
-![wild-shiny](screenshots/wild-shiny.png)
-![stats-1](screenshots/stats-1.png)
-![stats-2](screenshots/stats-2.png)
-![safari-zone](screenshots/safari-zone.png)
+![swimmerf-nora](screenshots/swimmerf-nora.png)
   
 ![pokemon-center](screenshots/pokemon-center.png)
 ![gift-bulbasaur](screenshots/gift-bulbasaur.png)
-![wild-farfetchd](screenshots/wild-farfetchd.png)
-![pokemon-league](screenshots/pokemon-league.png)
+![pewter-gym](screenshots/vermilion-gym.png)
+![blaine](screenshots/blaine.png)
   
-![swimmerf-nora](screenshots/swimmerf-nora.png)
-![gatehouse](screenshots/gatehouse.png)
+![wild-farfetchd](screenshots/wild-farfetchd.png)
+![other-fossil](screenshots/other-fossil.png)
+![trade](screenshots/trade.png)
+![safari-zone](screenshots/safari-zone.png)
+  
+![rocket-hideout](screenshots/power-plant.png)
+![pokemon-league](screenshots/pokemon-league.png)
 ![game-corner](screenshots/game-corner.png)
-![rocket-hideout](screenshots/rocket-hideout.png)
+![gatehouse](screenshots/slot-machine.png)
 
 
 ## See also
