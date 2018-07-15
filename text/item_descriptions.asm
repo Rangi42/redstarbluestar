@@ -514,8 +514,8 @@ _TM33Description::
 	prompt
 
 _TM34Description::
-	text "Waits 2-3 turns &"
-	next "hits back double."
+	text "Waits 2-3 turns to"
+	next "hit back double."
 	prompt
 
 _TM35Description::
