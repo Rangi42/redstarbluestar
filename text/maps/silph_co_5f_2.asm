@@ -50,6 +50,8 @@ _SilphCo5Text11::
 	line "REPORT!"
 
 	para "4 #MON evolve"
-	line "only when traded"
-	cont "by link-cable."
+	line "when traded by"
+	cont "link-cable, or"
+	cont "exposed to a"
+	cont "HEART STONE."
 	done
