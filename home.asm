@@ -3077,7 +3077,7 @@ LoadTextBoxTilePatterns::
 
 LoadHpBarAndStatusTilePatterns::
 	ld de, HpBarAndStatusGraphics
-	ld hl, vChars2 + $620
+	ld hl, vChars2 + $640
 	lb bc, BANK(HpBarAndStatusGraphics), (HpBarAndStatusGraphicsEnd - HpBarAndStatusGraphics) / $10
 	call GoodCopyVideoData
 	ld de, EXPBarGraphics

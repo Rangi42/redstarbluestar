@@ -155,8 +155,6 @@ charmap "#", $54 ; POKé
 charmap "<TARGET>", $59
 charmap "<USER>", $5A
 
-charmap "<:L>", $62
-charmap "<SHINY>", $63
 charmap "<P>", $72
 charmap "<ID>", $73
 charmap "№", $74
@@ -233,6 +231,9 @@ charmap "'l", $BC
 charmap "'s", $BD
 charmap "'t", $BE
 charmap "'v", $BF
+
+charmap "<:L>", $DE
+charmap "<SHINY>", $DF
 
 charmap "'", $E0
 charmap "<PK>", $E1

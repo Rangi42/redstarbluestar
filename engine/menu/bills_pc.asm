@@ -114,7 +114,7 @@ BillsPC_::
 BillsPCMenu:
 	ld a, [wParentMenuItem]
 	ld [wCurrentMenuItem], a
-	ld hl, vChars2 + $780
+	ld hl, vChars1 + $5d0
 	ld de, PokeballTileGraphics
 	lb bc, BANK(PokeballTileGraphics), $01
 	call CopyVideoData
