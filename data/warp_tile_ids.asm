@@ -72,7 +72,7 @@ LabWarpTileIDs:
 	db $34,$FF
 
 FacilityWarpTileIDs:
-	db $43,$58,$5F,$64,$20
+	db $43,$58,$64,$20
 
 CemeteryWarpTileIDs:
 	db $1B
