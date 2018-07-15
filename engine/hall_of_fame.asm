@@ -198,6 +198,9 @@ HoFLoadPlayerPics:
 	ld de, vBackPic
 	push de
 	jp LoadUncompressedBackSprite
+	; XXX works for pokered-gen-II...
+	nop
+	ld c, $1
 
 HoFLoadMonPlayerPicTileIDs:
 ; c = base tile ID
