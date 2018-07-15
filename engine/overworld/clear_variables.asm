@@ -14,6 +14,9 @@ ClearVariablesOnEnterMap:
 	ld hl, wCardKeyDoorY
 	ld [hli], a
 	ld [hl], a
+	ld hl, wNextEncounterLevel
+	ld [hli], a
+	ld [hl], a
 	ld hl, wWhichTrade
 	ld bc, wStandingOnWarpPadOrHole - wWhichTrade
 	call FillMemory
