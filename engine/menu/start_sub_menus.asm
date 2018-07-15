@@ -415,6 +415,7 @@ StartMenu_Item:
 	jp z, .partyMenuNotDisplayed
 	call GBPalWhiteOutWithDelay3
 	call RestoreScreenTilesAndReloadTilePatterns
+	call ReloadMapData
 	pop af
 	ld [wUpdateSpritesEnabled], a
 	jp StartMenu_Item
