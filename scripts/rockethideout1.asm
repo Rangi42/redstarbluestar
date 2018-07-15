@@ -24,7 +24,7 @@ RocketHideout1Script_44be0:
 	call PlaySound
 	CheckEventHL EVENT_677
 .asm_44c01
-	ld a, $e
+	ld a, $1
 .asm_44c03
 	ld [wNewTileBlockID], a
 	lb bc, 8, 12
