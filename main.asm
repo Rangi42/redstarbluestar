@@ -2310,3 +2310,6 @@ SECTION "Tileset Spillover 2", ROMX
 
 Basement_GFX:      INCBIN "gfx/tilesets/basement.2bpp"
 Basement_Block:    INCBIN "gfx/blocksets/basement.bst"
+
+Roof_GFX:          INCBIN "gfx/tilesets/roof.2bpp"
+Roof_Block:        INCBIN "gfx/blocksets/roof.bst"
