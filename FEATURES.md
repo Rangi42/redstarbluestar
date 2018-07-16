@@ -7,6 +7,7 @@
    - [Overworld sprites](gfx/sprites/)
    - SGB borders (Red uses [Gold](gfx/red/sgbborder.png), Blue uses [Silver](gfx/blue/sgbborder.png))
    - Various UIs (battle HUD, Pokémon stats, Pokédex, trainer card, Town Map, etc)
+   - Color palettes (new as of July 16, 2018)
 - Features from the Space World prototypes:
    - Shiny Pokémon exist, using their Space World palettes, with the same DVs and encounter chances as G/S (1 in 8,192)
    - Pokémon have genders
@@ -55,7 +56,7 @@
    - Blaine may use a Super Potion with his Pokémon at full health
 - Gym Leaders, the Elite 4, and the Champion have [better movesets](data/trainer_parties.asm)
 - Default text speed is fast
-- Shiny icons in battle, so you won't miss one
+- Shiny icons in battle, in case you don't notice the sparkle animation
 - MissingNo has *not* been "fixed"; its Pokédex entry is the Space World placeholder one
 
 There are *no* new Pokémon, maps, moves, or items (except the Heart Stone). This may look like Space World, but its content is purely R/B/Y.
