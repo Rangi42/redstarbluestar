@@ -282,6 +282,8 @@ Char51:: ; para
 	coord hl, 1, 13
 	lb bc, 4, 18
 	call ClearScreenArea
+	ld a, "─"
+	Coorda 18, 17
 	ld c, 20
 	call DelayFrames
 	pop de
