@@ -45,6 +45,7 @@ EmotionBubble:
 	ld b, 0
 	add hl, bc
 	ld a, [hli]
+	add $4 ; 4px offset
 	ld b, a
 	inc hl
 	ld a, [hl]

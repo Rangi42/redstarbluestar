@@ -83,7 +83,7 @@ PrepareOAMData:
 
 .tileLoop
 	ld a, [hSpriteScreenY]   ; temp for sprite Y position
-	add $10                  ; Y=16 is top of screen (Y=0 is invisible)
+	add $14                  ; Y=16 is top of screen (Y=0 is invisible), plus 4px offset
 	add [hl]                 ; add Y offset from table
 	ld [de], a               ; write new sprite OAM Y position
 	inc hl

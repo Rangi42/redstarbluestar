@@ -20,6 +20,7 @@
    - Talk to Surf water, Cut trees, and Strength boulders to use HMs
    - Items in the Pack have [descriptions](text/item_descriptions.asm)
    - Blinking arrow prompts show on the textbox border
+   - Overworld sprites are aligned with tiles (new as of August 19, 2018)
 - Features from Yellow:
    - NPCs in Cerulean City, Route 24, and Vermilion City give you Bulbasaur, Charmander, and Squirtle
    - Various [moveset changes](https://github.com/Rangi42/redstarbluestar/commit/3574b8c57826055ec4d6de533a57c1e657ad554f), like Kadabra learning Kinesis
