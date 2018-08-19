@@ -3,17 +3,9 @@ LoadShootingStarGraphics:
 	ld [rOBP0], a
 	ld a, $a4
 	ld [rOBP1], a
-	ld de, AnimationTileset2 + $30 ; star tile (top left quadrant)
+	ld de, ShootingStar
 	ld hl, vChars1 + $200
-	lb bc, BANK(AnimationTileset2), $01
-	call CopyVideoData
-	ld de, AnimationTileset2 + $130 ; star tile (bottom left quadrant)
-	ld hl, vChars1 + $210
-	lb bc, BANK(AnimationTileset2), $01
-	call CopyVideoData
-	ld de, FallingStar
-	ld hl, vChars1 + $220
-	lb bc, BANK(FallingStar), (FallingStarEnd - FallingStar) / $10
+	lb bc, BANK(ShootingStar), (FallingStarEnd - ShootingStar) / $10
 	call CopyVideoData
 	ld hl, GameFreakLogoOAMData
 	ld de, wOAMBuffer + $60
@@ -175,8 +167,8 @@ SmallStarsWave2Coords:
 SmallStarsWave3Coords:
 	db $68,$34
 	db $68,$4C
-	db $68,$54
-	db $68,$64
+	db $68,$58
+	db $68,$68
 
 SmallStarsWave4Coords:
 	db $68,$3C
@@ -238,6 +230,9 @@ GameFreakShootingStarOAMData:
 	db $08,$A8,$A1,$30
 GameFreakShootingStarOAMDataEnd:
 
+ShootingStar:
+	INCBIN "gfx/shooting_star.2bpp"
+ShootingStarEnd:
 FallingStar:
 	INCBIN "gfx/falling_star.2bpp"
 FallingStarEnd:
