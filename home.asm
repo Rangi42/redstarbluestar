@@ -2530,7 +2530,7 @@ EngageMapTrainer::
 	ld [wIsTrainerBattle], a
 	jp PlayTrainerMusic
 .pokemon
-	and $7F
+	and $ff ^ OW_POKEMON
 	ld [wEngagedTrainerSet], a
 	xor a
 	ld [wIsTrainerBattle], a

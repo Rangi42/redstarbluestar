@@ -1040,7 +1040,7 @@ TrainerBattleVictory:
 
 	xor a
 	ld [wIsTrainerBattle], a
-	ld a, 1
+	inc a
 	ld [wWasTrainerBattle], a
 
 	ld de, wPlayerMoney + 2
