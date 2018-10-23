@@ -7,7 +7,7 @@ bluestar_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
-.PHONY: all clean mostlyclean red blue compare tools
+.PHONY: all clean tidy red blue compare tools
 
 roms := redstar.gbc bluestar.gbc
 
@@ -24,7 +24,7 @@ clean:
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -exec rm {} +
 	$(MAKE) clean -C tools/
 
-mostlyclean:
+tidy:
 	rm -f $(roms) $(redstar_obj) $(bluestar_obj) $(roms:.gbc=.sym)
 	$(MAKE) clean -C tools/
 
