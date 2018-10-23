@@ -2284,7 +2284,11 @@ wPseudoItemID:: ; d152
 wUnusedD153:: ; d153
 	ds 1
 
-	ds 2
+wIsTrainerBattle::
+	ds 1
+
+wWasTrainerBattle::
+	ds 1
 
 wEvoStoneItemID:: ; d156
 	ds 1

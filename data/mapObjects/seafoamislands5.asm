@@ -14,7 +14,7 @@ SeafoamIslands5Object:
 	db 3 ; objects
 	object SPRITE_BOULDER, 4, 15, STAY, NONE, 1 ; person
 	object SPRITE_BOULDER, 5, 15, STAY, NONE, 2 ; person
-	object SPRITE_BIRD, 6, 1, STAY, DOWN, 3, ARTICUNO, 50
+	object SPRITE_BIRD, 6, 1, STAY, DOWN, 3, ARTICUNO, 50 | OW_POKEMON
 
 	; warp-to
 	warp_to 20, 17, SEAFOAM_ISLANDS_5_WIDTH ; SEAFOAM_ISLANDS_4

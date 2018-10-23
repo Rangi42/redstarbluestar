@@ -1,18 +1,3 @@
-FarCopyData2::
-; Identical to FarCopyData, but uses hROMBankTemp
-; as temp space instead of wBuffer.
-	ld [hROMBankTemp], a
-	ld a, [H_LOADEDROMBANK]
-	push af
-	ld a, [hROMBankTemp]
-	ld [H_LOADEDROMBANK], a
-	ld [MBC1RomBank], a
-	call CopyData
-	pop af
-	ld [H_LOADEDROMBANK], a
-	ld [MBC1RomBank], a
-	ret
-
 FarCopyData3::
 ; Copy bc bytes from a:de to hl.
 	ld [hROMBankTemp], a
