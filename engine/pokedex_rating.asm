@@ -86,7 +86,7 @@ DexRatingsTable:
 	dw PokedexRatingText_44242
 	db 150
 	dw PokedexRatingText_44247
-	db 152
+	db NUM_POKEMON + 1 ; 152 originally, prevent reading past the end of the list looking for an entry
 	dw PokedexRatingText_4424c
 
 PokedexRatingText_44201:

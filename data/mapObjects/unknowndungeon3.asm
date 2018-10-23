@@ -7,7 +7,7 @@ UnknownDungeon3Object:
 	db 0 ; signs
 
 	db 3 ; objects
-	object SPRITE_SLOWBRO, 27, 13, STAY, DOWN, 1, MEWTWO, 70
+	object SPRITE_SLOWBRO, 27, 13, STAY, DOWN, 1, MEWTWO, 70 | OW_POKEMON
 	object SPRITE_BALL, 16, 9, STAY, NONE, 2, ULTRA_BALL
 	object SPRITE_BALL, 18, 1, STAY, NONE, 3, MAX_REVIVE
 

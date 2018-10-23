@@ -377,9 +377,10 @@ PlayBattleMusic::
 	ld a, MUSIC_GYM_LEADER_BATTLE
 	jr .playSong
 .notGymLeaderBattle
+	ld a, [wIsTrainerBattle]
+	and a
+	jr z, .wildBattle
 	ld a, [wCurOpponent]
-	cp 200
-	jr c, .wildBattle
 	cp OPP_SONY3
 	jr z, .finalBattle
 	cp OPP_LANCE
