@@ -8970,3 +8970,9 @@ CalcEXPBarPixelLength:
 	ld [H_DIVISOR], a
 	ld b, 4
 	jp Divide
+
+LoadBackSpriteUnzoomed:
+	ld a, $66
+	ld de, vBackPic
+	push de
+	jp LoadUncompressedBackSprite
