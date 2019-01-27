@@ -31,7 +31,7 @@ If you can't build the repository yourself, you can download these IPS patches a
 You can post questions or comments on any of these sites.
 
 * [Discord](https://discord.gg/UfXWKfN)
-* [Skeetendo](https://hax.iimarck.us/topic/47166/)
+* [Skeetendo](https://hax.iimarckus.org/topic/7470/)
 * [PokéCommunity](https://www.pokecommunity.com/showthread.php?t=409459)
 * [/r/PokemonROMhacks](https://www.reddit.com/r/PokemonROMhacks/comments/8z8a3q/pok%C3%A9mon_red_and_blue_july_16_update/)
 
