@@ -377,7 +377,6 @@ Trade_ShowEnemyMon:
 
 Trade_AnimLeftToRight:
 ; Animates the mon moving from the left GB to the right one.
-	call Trade_InitGameboyTransferGfx
 	ld a, $1
 	ld [wTradedMonMovingRight], a
 	ld a, %11100100
@@ -387,7 +386,8 @@ Trade_AnimLeftToRight:
 	ld a, $1c
 	ld [wBaseCoordY], a
 	ld a, [wLeftGBMonSpecies]
-	ld [wMonPartySpriteSpecies], a
+	ld [wcf91], a
+	call Trade_InitGameboyTransferGfx
 	call Trade_WriteCircledMonOAM
 	call Trade_DrawLeftGameboy
 	call Trade_CopyTileMapToVRAM
@@ -411,7 +411,6 @@ Trade_AnimLeftToRight:
 
 Trade_AnimRightToLeft:
 ; Animates the mon moving from the right GB to the left one.
-	call Trade_InitGameboyTransferGfx
 	xor a
 	ld [wTradedMonMovingRight], a
 	ld a, $64
@@ -419,7 +418,8 @@ Trade_AnimRightToLeft:
 	ld a, $44
 	ld [wBaseCoordY], a
 	ld a, [wRightGBMonSpecies]
-	ld [wMonPartySpriteSpecies], a
+	ld [wcf91], a
+	call Trade_InitGameboyTransferGfx
 	call Trade_WriteCircledMonOAM
 	call Trade_DrawRightGameboy
 	call Trade_CopyTileMapToVRAM
@@ -600,8 +600,22 @@ Trade_AnimCircledMon:
 	xor $3c ; make link cable flash
 	ld [rBGP], a
 	ld hl, wOAMBuffer + $02
+	ld a, [hl]
+	bit 2, a
+	jr z, .firstFrame
+	sub 8
+.firstFrame
+	add 4
+	ld bc, 4
+rept 3
+	ld [hl], a
+	add hl, bc
+	inc a
+endr
+	ld [hl], a
+	add hl, bc
 	ld de, $4
-	ld c, $14
+	ld c, $10
 .loop
 	ld a, [hl]
 	xor $40

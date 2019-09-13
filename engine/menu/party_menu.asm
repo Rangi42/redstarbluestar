@@ -22,6 +22,8 @@ DrawPartyMenu_:
 	ld [H_AUTOBGTRANSFERENABLED], a
 	call ClearScreen
 	call UpdateSprites
+
+RedrawPartyMenu__:
 	callba LoadMonPartySpriteGfxWithLCDDisabled ; load pokemon icon graphics
 
 RedrawPartyMenu_:
