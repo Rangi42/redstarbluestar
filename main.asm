@@ -995,6 +995,9 @@ INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 
 TradingAnimationGraphics:
 INCBIN "gfx/game_boy.2bpp"
+rept 32
+	db $00
+endr
 INCBIN "gfx/link_cable.2bpp"
 TradingAnimationGraphicsEnd:
 

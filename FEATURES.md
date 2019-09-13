@@ -6,7 +6,7 @@
    - [Map tiles](gfx/tilesets/)
    - [Overworld sprites](gfx/sprites/)
    - SGB borders (Red uses [Gold](gfx/red/sgbborder.png), Blue uses [Silver](gfx/blue/sgbborder.png))
-   - Various UIs (battle HUD, Pokémon stats, Pokédex, trainer card, Town Map, etc)
+   - Various UIs (battle HUD, Pokémon stats, Pokédex, trainer card, Town Map, trading, etc)
    - Color palettes (new as of July 16, 2018)
 - Features from the Space World prototypes:
    - Shiny Pokémon exist, using their Space World palettes, with the same DVs and encounter chances as G/S (1 in 8,192)
