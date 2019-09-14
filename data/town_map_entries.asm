@@ -16,10 +16,10 @@ ExternalMapEntries:
 	EMAP $4,$3,Route3Name
 	EMAP $8,$2,Route4Name
 	EMAP $A,$3,Route5Name
-	EMAP $A,$8,Route6Name
+	EMAP $A,$7,Route6Name
 	EMAP $8,$5,Route7Name
-	EMAP $D,$5,Route8Name
-	EMAP $D,$2,Route9Name
+	EMAP $C,$5,Route8Name
+	EMAP $C,$2,Route9Name
 	EMAP $E,$4,Route10Name
 	EMAP $C,$9,Route11Name
 	EMAP $E,$9,Route12Name
@@ -29,7 +29,7 @@ ExternalMapEntries:
 	EMAP $5,$5,Route16Name
 	EMAP $4,$8,Route17Name
 	EMAP $6,$D,Route18Name
-	EMAP $6,$F,Route19Name
+	EMAP $7,$F,Route19Name
 	EMAP $4,$F,Route20Name
 	EMAP $2,$D,Route21Name
 	EMAP $0,$8,Route22Name

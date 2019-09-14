@@ -411,11 +411,11 @@ AreaUnknownText:
 
 TownMapCoordsToOAMCoords:
 ; in: lower nybble of a = x, upper nybble of a = y
-; out: b and [hl] = (y * 8) + 24, c and [hl+1] = (x * 8) + 24
+; out: b and [hl] = (y * 8) + 23, c and [hl+1] = (x * 8) + 24
 	push af
 	and $f0
 	srl a
-	add 24
+	add 23
 	ld b, a
 	ld [hli], a
 	pop af
