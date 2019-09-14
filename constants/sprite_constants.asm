@@ -96,27 +96,28 @@ const_value = 1
 	const SPRITE_BRUNO                     ; $3a
 	const SPRITE_LORELEI                   ; $3b
 	const SPRITE_SEEL                      ; $3c
-	const SPRITE_BILL                      ; $3d
-	const SPRITE_BURGLAR                   ; $3e
-	const SPRITE_SWIMMER_F                 ; $3f
-	const SPRITE_POLIWRATH                 ; $40
-	const SPRITE_BULBASAUR                 ; $41
-	const SPRITE_ODDISH                    ; $42
-	const SPRITE_SANDSHREW                 ; $43
-	const SPRITE_JIGGLYPUFF                ; $44
-	const SPRITE_CHANSEY                   ; $45
-	const SPRITE_PIKACHU                   ; $46
-	const SPRITE_OFFICER_JENNY             ; $47
-	const SPRITE_RECEPTIONIST              ; $48
-	const SPRITE_BALL                      ; $49
-	const SPRITE_OMANYTE                   ; $4a
-	const SPRITE_BOULDER                   ; $4b
-	const SPRITE_PAPER_SHEET               ; $4c
-	const SPRITE_BOOK_MAP_DEX              ; $4d
-	const SPRITE_CLIPBOARD                 ; $4e
-	const SPRITE_SNORLAX                   ; $4f
-	const SPRITE_OLD_AMBER                 ; $50
-	const SPRITE_LYING_OLD_MAN             ; $51
+	const SPRITE_LAPRAS                    ; $3d
+	const SPRITE_BILL                      ; $3e
+	const SPRITE_BURGLAR                   ; $3f
+	const SPRITE_SWIMMER_F                 ; $40
+	const SPRITE_POLIWRATH                 ; $41
+	const SPRITE_BULBASAUR                 ; $42
+	const SPRITE_ODDISH                    ; $43
+	const SPRITE_SANDSHREW                 ; $44
+	const SPRITE_JIGGLYPUFF                ; $45
+	const SPRITE_CHANSEY                   ; $46
+	const SPRITE_PIKACHU                   ; $47
+	const SPRITE_OFFICER_JENNY             ; $48
+	const SPRITE_RECEPTIONIST              ; $49
+	const SPRITE_BALL                      ; $4a
+	const SPRITE_OMANYTE                   ; $4b
+	const SPRITE_BOULDER                   ; $4c
+	const SPRITE_PAPER_SHEET               ; $4d
+	const SPRITE_BOOK_MAP_DEX              ; $4e
+	const SPRITE_CLIPBOARD                 ; $4f
+	const SPRITE_SNORLAX                   ; $50
+	const SPRITE_OLD_AMBER                 ; $51
+	const SPRITE_LYING_OLD_MAN             ; $52
 
 ; different kinds of people events
 ITEM    EQU $80

@@ -37,7 +37,7 @@ FuchsiaCityObject:
 	object SPRITE_BALL, 25, 6, STAY, NONE, 6 ; person
 	object SPRITE_SLOWBRO, 12, 6, WALK, 2, 7 ; person
 	object SPRITE_SLOWBRO, 30, 12, WALK, 2, 8 ; person
-	object SPRITE_SEEL, 8, 17, WALK, 0, 9 ; person
+	object SPRITE_LAPRAS, 8, 17, WALK, 0, 9 ; person
 	object SPRITE_OMANYTE, 6, 5, STAY, NONE, 10 ; person
 
 	; warp-to

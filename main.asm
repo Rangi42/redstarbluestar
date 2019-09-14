@@ -244,11 +244,12 @@ ClefairySprite:       INCBIN "gfx/sprites/clefairy.2bpp"
 AgathaSprite:         INCBIN "gfx/sprites/agatha.2bpp"
 BrunoSprite:          INCBIN "gfx/sprites/bruno.2bpp"
 LoreleiSprite:        INCBIN "gfx/sprites/lorelei.2bpp"
-SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
+LaprasSprite:         INCBIN "gfx/sprites/lapras.2bpp"
 
 
 SECTION "NPC Sprites 3", ROMX
 
+SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
 BillSprite:            INCBIN "gfx/sprites/bill.2bpp"
 BurglarSprite:         INCBIN "gfx/sprites/burglar.2bpp"
 SwimmerFSprite:        INCBIN "gfx/sprites/swimmer_f.2bpp"

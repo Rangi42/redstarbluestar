@@ -66,7 +66,7 @@ SpriteSets:
 	db SPRITE_FISHER2
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_GAMBLER
-	db SPRITE_SEEL
+	db SPRITE_LAPRAS
 	db SPRITE_SWIMMER_F
 	db SPRITE_SWIMMER
 	db SPRITE_BALL
@@ -183,7 +183,7 @@ SpriteSets:
 	db SPRITE_SWIMMER_F
 	db SPRITE_GAMBLER
 	db SPRITE_SLOWBRO
-	db SPRITE_SEEL
+	db SPRITE_LAPRAS
 	db SPRITE_SWIMMER
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL
@@ -196,7 +196,7 @@ SpriteSets:
 	db SPRITE_FISHER2
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_GAMBLER
-	db SPRITE_SEEL
+	db SPRITE_LAPRAS
 	db SPRITE_SWIMMER_F
 	db SPRITE_SWIMMER
 	db SPRITE_BALL
@@ -502,6 +502,11 @@ SpriteSheetPointerTable:
 	dw SeelSprite
 	db $c0 ; byte count
 	db BANK(SeelSprite)
+
+	; SPRITE_LAPRAS
+	dw LaprasSprite
+	db $c0 ; byte count
+	db BANK(LaprasSprite)
 
 	; SPRITE_BILL
 	dw BillSprite
