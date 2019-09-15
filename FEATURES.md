@@ -65,7 +65,7 @@ There are *no* new Pokémon, maps, moves, or items (except the Heart Stone). Thi
 
 ### Higher shiny odds
 
-If you want nearly 2% of wild Pokémon to be shiny like in the Space World demo, then follow the instructions in [INSTALL.md](INSTALL.md) to build your own ROM—but before running `make`, edit [main.asm](main.asm), replacing this:
+If you want nearly 2% of wild Pokémon to be shiny like in the Space World demo, then follow the instructions in [INSTALL.md](INSTALL.md) to build your own ROM—but before running `make`, edit [engine/shiny.asm](engine/shiny.asm), replacing this:
 
 ```
 IsMonShiny:
