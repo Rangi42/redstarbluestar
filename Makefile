@@ -1,5 +1,11 @@
 MD5 := md5sum -c
 
+ifneq ($(wildcard rgbds/.*),)
+RGBDS = rgbds/
+else
+RGBDS =
+endif
+
 redstar_obj := audio_red.o main_red.o text_red.o wram_red.o
 bluestar_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
 
@@ -43,18 +49,18 @@ endif
 
 %_red.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(redstar_obj): %_red.o: %.asm $$(dep)
-	rgbasm -D _RED -h -o $@ $*.asm
+	$(RGBDS)rgbasm -D _RED -h -o $@ $*.asm
 
 %_blue.o: dep = $(shell tools/scan_includes $(@D)/$*.asm)
 $(bluestar_obj): %_blue.o: %.asm $$(dep)
-	rgbasm -D _BLUE -h -o $@ $*.asm
+	$(RGBDS)rgbasm -D _BLUE -h -o $@ $*.asm
 
 redstar_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "PKMN RED STAR"
 bluestar_opt = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "PKMN BLUE STAR"
 
 %.gbc: $$(%_obj)
-	rgblink -d -n $*.sym -l redstarbluestar.link -o $@ $^
-	rgbfix $($*_opt) $@
+	$(RGBDS)rgblink -d -n $*.sym -l redstarbluestar.link -o $@ $^
+	$(RGBDS)rgbfix $($*_opt) $@
 	sort $*.sym -o $*.sym
 
 gfx/blue/intro_purin_1.2bpp: rgbgfx += -h
@@ -71,11 +77,11 @@ gfx/tilesets/%.2bpp: tools/gfx += --trim-whitespace
 %.png: ;
 
 %.2bpp: %.png
-	rgbgfx $(rgbgfx) -o $@ $<
+	$(RGBDS)rgbgfx $(rgbgfx) -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -o $@ $@)
 %.1bpp: %.png
-	rgbgfx -d1 $(rgbgfx) -o $@ $<
+	$(RGBDS)rgbgfx -d1 $(rgbgfx) -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -d1 -o $@ $@)
 %.pic:  %.2bpp

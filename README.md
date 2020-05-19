@@ -1,12 +1,12 @@
 # Pokémon Red★ and Blue★
 
-***Latest release: September 15, 2019***
+***Latest release: May 19, 2020***
 
 This is a custom Pokémon game based on [the Pokémon Red and Blue disassembly](https://github.com/pret/pokered).
 
 ![titles](screenshots/titles.png)
 
-It started out as a graphics upgrade, replacing the Pokémon sprites with the ones from [the Space World 1997 G/S prototypes](https://github.com/pret/pokegold-spaceworld). Then I ported more content, including overworld tile and sprite graphics, Pokémon genders, shiny Pokémon, and more. I also ended up making all 151 Pokémon available in one game.
+It started out as a graphics upgrade, replacing the Pokémon sprites with the ones from [the Space World 1997 G/S prototypes](https://github.com/pret/pokegold-spaceworld). Then I ported more content, including overworld tile and sprite graphics, Pokémon genders, shiny Pokémon, and more. I also ended up making all 151 Pokémon available in one game. When the Space World 1999 demo ROMs also leaked, I ported a few graphics from them too.
 
 For a full list of features, see [**FEATURES.md**](FEATURES.md).
 
@@ -17,8 +17,8 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 It builds the following ROMs:
 
-* redstar.gbc  `md5: b44a8a2f276a1d7265b0e18636485286`
-* bluestar.gbc `md5: 6ee0e3488f466bcd337cbeb1756f306f`
+* redstar.gbc  `md5: 180ad463ffdd88bbf23512c032502ef4`
+* bluestar.gbc `md5: fb8ef2d19ecfa0f2fad6ea6904ed8bcf`
 
 If you can't build the repository yourself, you can download these IPS patches and apply them to a clean ROM with a tool like [Lunar IPS](https://fusoya.eludevisibility.org/lips/).
 

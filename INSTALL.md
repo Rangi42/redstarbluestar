@@ -8,7 +8,7 @@ Run setup and leave the default settings. At "Select Packages", choose to instal
 - `git`
 - `gcc-core`
 
-Then download [**rgbds**](https://github.com/rednex/rgbds/releases/): the latest **win64.tar.gz** or **win32.tar.gz** release. Extract it and put all the `exe` and `dll` files individually in **C:\cygwin64\usr\local\bin**.
+Then download [**rgbds 0.3.8**](https://github.com/rednex/rgbds/releases/tag/v0.3.8). Extract it and put all the `exe` and `dll` files individually in **C:\cygwin64\usr\local\bin**.
 
 In the **Cygwin terminal**, enter these commands:
 

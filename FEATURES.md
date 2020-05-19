@@ -1,6 +1,6 @@
 # Features
 
-- Graphics from the Space World 1997 Pokémon G/S prototypes:
+- Graphics from the Space World 1997 and 1999 Pokémon G/S prototypes:
    - Pokémon [front sprites](pic/swmon/), [back sprites](pic/swmonback/), and [icons](gfx/icons/)
    - [Trainers](pic/swtrainer/)
    - [Map tiles](gfx/tilesets/)
