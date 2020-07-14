@@ -120,6 +120,7 @@ VermilionCityTextPointers:
 	dw VermilionCityText4
 	dw VermilionCityText5
 	dw VermilionCityText6
+	dw VermilionCityText15
 	dw VermilionCityText7
 	dw VermilionCityText8
 	dw MartSignText
@@ -127,7 +128,6 @@ VermilionCityTextPointers:
 	dw VermilionCityText11
 	dw VermilionCityText12
 	dw VermilionCityText13
-	dw VermilionCityText15
 
 VermilionCityText1:
 	TX_FAR _VermilionCityText1

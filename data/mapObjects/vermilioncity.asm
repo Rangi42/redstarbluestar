@@ -13,13 +13,13 @@ VermilionCityObject:
 	warp 7, 3, 0, VERMILION_HOUSE_2
 
 	db 7 ; signs
-	sign 27, 3, 7 ; VermilionCityText7
-	sign 37, 13, 8 ; VermilionCityText8
-	sign 24, 13, 9 ; MartSignText
-	sign 12, 3, 10 ; PokeCenterSignText
-	sign 7, 13, 11 ; VermilionCityText11
-	sign 7, 19, 12 ; VermilionCityText12
-	sign 29, 15, 13 ; VermilionCityText13
+	sign 27, 3, 8 ; VermilionCityText7
+	sign 37, 13, 9 ; VermilionCityText8
+	sign 24, 13, 10 ; MartSignText
+	sign 12, 3, 11 ; PokeCenterSignText
+	sign 7, 13, 12 ; VermilionCityText11
+	sign 7, 19, 13 ; VermilionCityText12
+	sign 29, 15, 14 ; VermilionCityText13
 
 	db 7 ; objects
 	object SPRITE_LASS, 19, 7, WALK, 2, 1 ; person
@@ -28,7 +28,7 @@ VermilionCityObject:
 	object SPRITE_GAMBLER, 30, 7, STAY, NONE, 4 ; person
 	object SPRITE_SLOWBRO, 29, 9, WALK, 1, 5 ; person
 	object SPRITE_SAILOR, 25, 27, WALK, 2, 6 ; person
-	object SPRITE_OFFICER_JENNY, 19, 15, STAY, NONE, 14 ; person
+	object SPRITE_OFFICER_JENNY, 19, 15, STAY, NONE, 7 ; person
 
 	; warp-to
 	warp_to 11, 3, VERMILION_CITY_WIDTH ; VERMILION_POKECENTER
