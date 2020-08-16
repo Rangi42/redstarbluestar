@@ -11,9 +11,8 @@ DisplayTownMap:
 	push af
 	ld b, $0
 	call DrawPlayerOrBirdSprite ; player sprite
-	coord hl, 1, 0
 	ld de, wcd6d
-	call PlaceString
+	call PlaceMapName
 	ld hl, wOAMBuffer
 	ld de, wTileMapBackup
 	ld bc, $10
@@ -29,7 +28,7 @@ DisplayTownMap:
 
 .townMapLoop
 	coord hl, 0, 0
-	lb bc, 1, 20
+	lb bc, 2, 10
 	call ClearScreenArea
 	ld hl, TownMapOrder
 	ld a, [wWhichTownMapLocation]
@@ -55,9 +54,8 @@ DisplayTownMap:
 	inc de
 	cp $50
 	jr nz, .copyMapName
-	coord hl, 1, 0
 	ld de, wcd6d
-	call PlaceString
+	call PlaceMapName
 	ld hl, wOAMBuffer + $10
 	ld de, wTileMapBackup + 16
 	ld bc, $10
@@ -118,8 +116,7 @@ LoadTownMap_Nest:
 	push hl
 	call DisplayWildLocations
 	call GetMonName
-	coord hl, 1, 0
-	call PlaceString
+	call PlaceMapName
 	ld h, b
 	ld l, c
 	ld de, MonsNestText
@@ -149,35 +146,24 @@ LoadTownMap_Fly:
 	push af
 	ld [hl], $ff
 	push hl
-	coord hl, 0, 0
-	ld de, ToText
-	call PlaceString
 	ld a, [wCurMap]
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
-	coord de, 18, 0
 .townMapFlyLoop
-	ld a, " "
-	ld [de], a
 	push hl
 	push hl
-	coord hl, 3, 0
-	lb bc, 1, 15
+	coord hl, 0, 0
+	lb bc, 2, 10
 	call ClearScreenArea
 	pop hl
 	ld a, [hl]
 	ld b, $4
 	call DrawPlayerOrBirdSprite ; draw bird sprite
-	coord hl, 3, 0
 	ld de, wcd6d
-	call PlaceString
+	call PlaceMapName
 	ld c, 15
 	call DelayFrames
-	coord hl, 18, 0
-	ld [hl], "▲"
-	coord hl, 19, 0
-	ld [hl], "▼"
 	pop hl
 .inputLoop
 	push hl
@@ -238,9 +224,6 @@ LoadTownMap_Fly:
 .wrapToEndOfList
 	ld hl, wFlyLocationsList + 11
 	jr .pressedDown
-
-ToText:
-	db "To@"
 
 BuildFlyLocationsList:
 	ld hl, wFlyLocationsList - 1
@@ -609,3 +592,9 @@ TownMapSpriteBlinkingAnimation:
 .done
 	ld [wAnimCounter], a
 	jp DelayFrame
+
+PlaceMapName:
+	coord hl, 0, 0
+	ld [hl], "<UPDN>"
+	inc hl
+	jp PlaceString

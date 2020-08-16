@@ -1,26 +1,26 @@
 MapNames:
 PalletTownName:
-	db "PALLET TOWN@"
+	db "PALLET<LF>TOWN@"
 ViridianCityName:
-	db "VIRIDIAN CITY@"
+	db "VIRIDIAN<LF>CITY@"
 PewterCityName:
-	db "PEWTER CITY@"
+	db "PEWTER<LF>CITY@"
 CeruleanCityName:
-	db "CERULEAN CITY@"
+	db "CERULEAN<LF>CITY@"
 LavenderTownName:
-	db "LAVENDER TOWN@"
+	db "LAVENDER<LF>TOWN@"
 VermilionCityName:
-	db "VERMILION CITY@"
+	db "VERMILION<LF>CITY@"
 CeladonCityName:
-	db "CELADON CITY@"
+	db "CELADON<LF>CITY@"
 FuchsiaCityName:
-	db "FUCHSIA CITY@"
+	db "FUCHSIA<LF>CITY@"
 CinnabarIslandName:
-	db "CINNABAR ISLAND@"
+	db "CINNABAR<LF>ISLAND@"
 IndigoPlateauName:
-	db "INDIGO PLATEAU@"
+	db "INDIGO<LF>PLATEAU@"
 SaffronCityName:
-	db "SAFFRON CITY@"
+	db "SAFFRON<LF>CITY@"
 Route1Name:
 	db "ROUTE 1@"
 Route2Name:
@@ -58,11 +58,11 @@ Route17Name:
 Route18Name:
 	db "ROUTE 18@"
 Route19Name:
-	db "SEA ROUTE 19@"
+	db "ROUTE 19@"
 Route20Name:
-	db "SEA ROUTE 20@"
+	db "ROUTE 20@"
 Route21Name:
-	db "SEA ROUTE 21@"
+	db "ROUTE 21@"
 Route22Name:
 	db "ROUTE 22@"
 Route23Name:
@@ -72,36 +72,36 @@ Route24Name:
 Route25Name:
 	db "ROUTE 25@"
 ViridianForestName:
-	db "VIRIDIAN FOREST@"
+	db "VIRIDIAN<LF>FOREST@"
 MountMoonName:
 	db "MT.MOON@"
 RockTunnelName:
-	db "ROCK TUNNEL@"
+	db "ROCK<LF>TUNNEL@"
 SeaCottageName:
-	db "SEA COTTAGE@"
+	db "SEA<LF>COTTAGE@"
 SSAnneName:
 	db "S.S.ANNE@"
 PokemonLeagueName:
-	db "#MON LEAGUE@"
+	db "#MON<LF>LEAGUE@"
 UndergroundPathName:
-	db "UNDERGROUND PATH@"
+	db "UNDERGROUND<LF>PATH@"
 PokemonTowerName:
-	db "#MON TOWER@"
+	db "#MON<LF>TOWER@"
 SeafoamIslandsName:
-	db "SEAFOAM ISLANDS@"
+	db "SEAFOAM<LF>ISLANDS@"
 VictoryRoadName:
-	db "VICTORY ROAD@"
+	db "VICTORY<LF>ROAD@"
 DiglettsCaveName:
-	db "DIGLETT's CAVE@"
+	db "DIGLETT's<LF>CAVE@"
 RocketHQName:
 	db "ROCKET HQ@"
 SilphCoName:
 	db "SILPH CO.@"
 PokemonMansionName:
-	db "<PKMN> MANSION@"
+	db "#MON<LF>MANSION@"
 SafariZoneName:
-	db "SAFARI ZONE@"
+	db "SAFARI<LF>ZONE@"
 CeruleanCaveName:
-	db "CERULEAN CAVE@"
+	db "CERULEAN<LF>CAVE@"
 PowerPlantName:
-	db "POWER PLANT@"
+	db "POWER<LF>PLANT@"

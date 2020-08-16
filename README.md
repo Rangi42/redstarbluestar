@@ -1,6 +1,6 @@
 # Pokémon Red★ and Blue★
 
-***Latest release: May 19, 2020***
+***Latest release: August 16, 2020***
 
 This is a custom Pokémon game based on [the Pokémon Red and Blue disassembly](https://github.com/pret/pokered).
 
@@ -17,8 +17,8 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 It builds the following ROMs:
 
-* redstar.gbc  `md5: 180ad463ffdd88bbf23512c032502ef4`
-* bluestar.gbc `md5: fb8ef2d19ecfa0f2fad6ea6904ed8bcf`
+* redstar.gbc  `md5: 04bc4348b8cfc75a026261b89f78e58f`
+* bluestar.gbc `md5: e13a187ffdc5a2d05efdf2285d86845f`
 
 If you can't build the repository yourself, you can download these IPS patches and apply them to a clean ROM with a tool like [Lunar IPS](https://fusoya.eludevisibility.org/lips/).
 

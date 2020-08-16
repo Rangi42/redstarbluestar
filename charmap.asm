@@ -147,6 +147,8 @@ charmap "ゅ", $E1
 charmap "ょ", $E2
 charmap "ー", $E3
 
+charmap "<LF>", $1F
+
 charmap "<PKMN>", $4A
 charmap "@", $50
 charmap "<PLAYER>", $52
@@ -232,6 +234,7 @@ charmap "'s", $BD
 charmap "'t", $BE
 charmap "'v", $BF
 
+charmap "<UPDN>", $DD
 charmap "<:L>", $DE
 charmap "<SHINY>", $DF
 
