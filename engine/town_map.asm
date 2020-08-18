@@ -116,9 +116,9 @@ LoadTownMap_Nest:
 	push hl
 	call DisplayWildLocations
 	call GetMonName
-	call PlaceMapName
-	ld h, b
-	ld l, c
+	coord hl, 0, 0
+	call PlaceString
+	coord hl, 0, 1
 	ld de, MonsNestText
 	call PlaceString
 	call WaitForTextScrollButtonPress
@@ -129,7 +129,7 @@ LoadTownMap_Nest:
 	ret
 
 MonsNestText:
-	db "'s NEST@"
+	db "NESTS@"
 
 LoadTownMap_Fly:
 	call ClearSprites
@@ -359,6 +359,10 @@ DisplayWildLocations:
 	cp $19 ; Cerulean Cave's coordinates
 	jr z, .nextEntry ; skip Cerulean Cave
 	call TownMapCoordsToOAMCoords
+	dec hl
+	inc [hl] ; shift nest icons down 1 pixel
+	inc hl
+	inc hl
 	ld a, $4 ; nest icon tile no.
 	ld [hli], a
 	xor a
@@ -407,7 +411,7 @@ TownMapCoordsToOAMCoords:
 	srl a
 	add 24
 	ld c, a
-	ld [hli], a
+	ld [hl], a
 	ret
 
 WritePlayerOrBirdSpriteOAM:
