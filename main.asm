@@ -950,7 +950,7 @@ BlackbeltPic::     INCBIN "pic/swtrainer/blackbelt.pic"
 SECTION "Trainer Pics 2", ROMX
 
 Rival1Pic::        INCBIN "pic/ytrainer/rival1.pic"
-ProfOakPic::       INCBIN "pic/trainer/prof.oak.pic"
+ProfOakPic::       INCBIN "pic/swtrainer/prof.oak.pic"
 ScientistPic::     INCBIN "pic/trainer/scientist.pic"
 GiovanniPic::      INCBIN "pic/swtrainer/giovanni.pic"
 RocketPic::        INCBIN "pic/swtrainer/rocket.pic"
