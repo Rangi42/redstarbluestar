@@ -38,8 +38,6 @@ INCLUDE "engine/print_waiting_text.asm"
 
 INCLUDE "engine/overworld/map_sprite_functions1.asm"
 
-INCLUDE "engine/test_battle.asm"
-
 INCLUDE "engine/overworld/item.asm"
 INCLUDE "engine/overworld/movement.asm"
 

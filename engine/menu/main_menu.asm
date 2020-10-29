@@ -306,7 +306,18 @@ LinkCanceledText:
 
 StartNewGame:
 	ld hl, wd732
-	res 1, [hl]
+	res 1, [hl] ; clear debug mode bit
+	res 7, [hl] ; clear cheat mode bit
+	jr _StartNewGame
+StartCheatGame:
+	ld hl, wd732
+	set 7, [hl] ; set cheat mode bit
+StartNewGameDebug:
+	ld a, 1 ; fast speed
+	ld [wOptions], a
+	ld hl, wd732
+	set 1, [hl] ; set debug mode bit
+_StartNewGame:
 	call OakSpeech
 	ld c, 20
 	call DelayFrames

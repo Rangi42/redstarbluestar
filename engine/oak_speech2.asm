@@ -9,6 +9,9 @@ ChoosePlayerName:
 	call GetDefaultName
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
+	ld hl, wd732
+	bit 1, [hl] ; debug mode bit
+	ret nz
 	jr .done
 .customName
 	ld hl, wPlayerName
@@ -18,6 +21,9 @@ ChoosePlayerName:
 	ld a, [wcf4b]
 	cp "@"
 	jr z, .customName
+	ld hl, wd732
+	bit 1, [hl] ; debug mode bit
+	ret nz
 	call ClearScreen
 	call Delay3
 	ld de, RedPicFront
@@ -42,6 +48,9 @@ ChooseRivalName:
 	call GetDefaultName
 	ld de, wRivalName
 	call OakSpeechSlidePicLeft
+	ld hl, wd732
+	bit 1, [hl] ; debug mode bit
+	ret nz
 	jr .done
 .customName
 	ld hl, wRivalName
@@ -51,6 +60,9 @@ ChooseRivalName:
 	ld a, [wcf4b]
 	cp "@"
 	jr z, .customName
+	ld hl, wd732
+	bit 1, [hl] ; debug mode bit
+	ret nz
 	call ClearScreen
 	call Delay3
 	ld de, Rival1Pic

@@ -41,6 +41,16 @@ _IntroduceRivalText::
 	line "his name again?"
 	prompt
 
+_IntroducePlayerTextDebug::
+	text "What is your"
+	line "name?"
+	prompt
+
+_IntroduceRivalTextDebug::
+	text "And your rival's"
+	line "name?"
+	prompt
+
 _OakSpeechText3::
 	text "<PLAYER>!"
 

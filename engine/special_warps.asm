@@ -9,9 +9,9 @@ SpecialWarpIn:
 	ld a, [wDestinationMap]
 	jr .next2
 .next
-	bit 1, [hl]
+	bit 7, [hl] ; cheat mode bit
 	jr z, .next3
-	call EmptyFunc
+	call SetupCheatMode
 .next3
 	ld a, 0
 .next2
@@ -50,7 +50,7 @@ LoadSpecialWarpData:
 	jr .copyWarpData
 .notColosseum
 	ld a, [wd732]
-	bit 1, a
+	bit 7, a
 	jr nz, .notFirstMap
 	bit 2, a
 	jr nz, .notFirstMap

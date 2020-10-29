@@ -614,7 +614,7 @@ SendSGBPackets:
 	push de
 	call InitGBCPalettes
 	pop hl
-	call EmptyFunc5
+	call EmptyFunc3
 	ret
 .notGBC
 	push de
@@ -644,7 +644,7 @@ InitGBCPalettes:
 	jr nz, .loop
 	ret
 
-EmptyFunc5:
+EmptyFunc3:
 	ret
 
 CopySGBBorderTiles:

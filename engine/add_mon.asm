@@ -40,13 +40,15 @@ _AddPartyMon:
 	ld hl, wPlayerName
 	ld bc, NAME_LENGTH
 	call CopyData
-	ld a, [wMonDataLocation]
-	and a
-	jr nz, .skipNaming
 	ld hl, wPartyMonNicks
 	ld a, [hNewPartyLength]
 	dec a
 	call SkipFixedLengthTextEntries
+	ld a, [wMonDataLocation]
+	cp $f0
+	jp z, .useRealName
+	and a
+	jr nz, .skipNaming
 	ld a, NAME_MON_SCREEN
 	ld [wNamingScreenType], a
 	predef AskName
@@ -254,6 +256,16 @@ _AddPartyMon:
 .done
 	scf
 	ret
+.useRealName
+	ld a, [wcf91]
+	ld [wd11e], a
+	call GetMonName
+	ld d, h
+	ld e, l
+	ld hl, wcd6d
+	ld bc, NAME_LENGTH
+	call CopyData
+	jp .skipNaming
 
 LoadMovePPs:
 	call GetPredefRegisters

@@ -252,6 +252,9 @@ ENDC
 	and D_UP | SELECT | B_BUTTON
 	cp D_UP | SELECT | B_BUTTON
 	jp z, .doClearSaveDialogue
+	ld a, b
+	bit BIT_SELECT, a
+	jp nz, DebugMenu
 	jp MainMenu
 
 .doClearSaveDialogue
@@ -394,5 +397,11 @@ PrintGameVersionOnTitleScreen:
 VersionOnTitleScreenText:
 	db $60,$61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Red#/Blue# Version"
 
-NintenText: db "NINTEN@"
-SonyText:   db "SONY@"
+IF DEF(_RED)
+NintenText: db "RED@"
+SonyText:   db "BLUE@"
+ENDC
+IF DEF(_BLUE)
+NintenText: db "BLUE@"
+SonyText:   db "RED@"
+ENDC

@@ -1237,6 +1237,17 @@ IsSpriteInFrontOfPlayer2::
 	ld [hSpriteIndexOrTextID], a
 	ret
 
+CollisionCheckDebug:
+	call DebugPressedOrHeldB
+	jr z, .no
+	; TODO: check direction for out of bounds
+	and a
+	ret
+
+.no
+	scf
+	ret
+
 ; function to check if the player will jump down a ledge and check if the tile ahead is passable (when not surfing)
 ; sets the carry flag if there is a collision, and unsets it if there isn't a collision
 CollisionCheckOnLand::
@@ -1247,6 +1258,8 @@ CollisionCheckOnLand::
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	jr nz, .noCollision ; no collisions when the player's movements are being controlled by the game
+	call CollisionCheckDebug
+	jr nc, .noCollision
 	ld a, [wPlayerDirection] ; the direction that the player is trying to go in
 	ld d, a
 	ld a, [wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)

@@ -3046,7 +3046,7 @@ wd730:: ; d730
 
 wd732:: ; d732
 ; bit 0: play time being counted
-; bit 1: remnant of debug mode? not set by the game code.
+; bit 1: debug mode bit
 ; if it is set
 ; 1. skips most of Prof. Oak's speech, and uses NINTEN as the player's name and SONY as the rival's name
 ; 2. does not have the player start in floor two of the player's house (instead sending them to [wLastMap])
@@ -3056,6 +3056,7 @@ wd732:: ; d732
 ; bit 4: jumped into hole (Pokemon Mansion, Seafoam Islands, Victory Road) or went down waterfall (Seafoam Islands), so the target warp is a "dungeon warp"
 ; bit 5: currently being forced to ride bike (cycling road)
 ; bit 6: map destination is [wLastBlackoutMap] (usually the last used pokemon center, but could be the player's house)
+; bit 7: cheat mode bit
 	ds 1
 
 wFlags_D733:: ; d733

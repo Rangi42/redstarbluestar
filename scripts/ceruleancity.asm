@@ -35,6 +35,8 @@ CeruleanCityScript4:
 	ret
 
 CeruleanCityScript0:
+	call DebugPressedOrHeldB
+	ret nz
 	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	jr nz, .asm_194f7
 	ld hl, CeruleanCityCoords1

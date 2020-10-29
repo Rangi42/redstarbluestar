@@ -131,7 +131,7 @@ CheckForUserInterruption::
 	jr z, .input
 
 	ld a, [hJoy5]
-	and START | A_BUTTON
+	and START | SELECT | A_BUTTON
 	jr nz, .input
 
 	dec c
@@ -2175,7 +2175,15 @@ RunNPCMovementScript::
 EndNPCMovementScript::
 	jpba _EndNPCMovementScript
 
-EmptyFunc2::
+DebugPressedOrHeldB::
+	ld a, [wd732]
+	bit 1, a
+	ret z
+	ldh a, [hJoyHeld]
+	bit BIT_B_BUTTON, a
+	ret nz
+	ldh a, [hJoyPressed]
+	bit BIT_B_BUTTON, a
 	ret
 
 ; stores hl in [wTrainerHeaderPtr]
@@ -2306,10 +2314,13 @@ TalkToTrainer::
 
 ; checks if any trainers are seeing the player and wanting to fight
 CheckFightingMapTrainers::
+	call DebugPressedOrHeldB
+	jr nz, .trainerNotEngaging
 	call CheckForEngagingTrainers
 	ld a, [wSpriteIndex]
 	cp $ff
 	jr nz, .trainerEngaging
+.trainerNotEngaging
 	xor a
 	ld [wSpriteIndex], a
 	ld [wTrainerHeaderFlagBit], a
@@ -2994,7 +3005,6 @@ YesNoChoicePokeCenter::
 	ld [wTwoOptionMenuID], a
 	coord hl, 11, 6
 	lb bc, 8, 12
-	jr DisplayYesNoChoice
 
 DisplayYesNoChoice::
 	ld a, TWO_OPTION_MENU
@@ -3155,8 +3165,7 @@ SaveScreenTilesToBuffer2::
 	coord hl, 0, 0
 	ld de, wTileMapBackup2
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyData
-	ret
+	jp CopyData
 
 LoadScreenTilesFromBuffer2::
 	call LoadScreenTilesFromBuffer2DisableBGTransfer
@@ -3171,8 +3180,7 @@ LoadScreenTilesFromBuffer2DisableBGTransfer::
 	ld hl, wTileMapBackup2
 	coord de, 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyData
-	ret
+	jp CopyData
 
 SaveScreenTilesToBuffer1::
 	coord hl, 0, 0

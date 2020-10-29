@@ -54,8 +54,10 @@ OakSpeech:
 	xor a
 	ld [hTilesetType], a
 	ld a, [wd732]
-	bit 1, a ; possibly a debug mode bit
-	jp nz, .skipChoosingNames
+	bit 7, a ; cheat mode bit
+	jp nz, .skipOakSpeech
+	bit 1, a ; debug mode bit
+	jr nz, .skipIntro
 	ld de, ProfOakPic
 	lb bc, Bank(ProfOakPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -79,12 +81,18 @@ ENDC
 	ld hl, OakSpeechText2
 	call PrintText
 	call GBFadeOutToWhite
+.skipIntro
 	call ClearScreen
 	ld de, RedPicFront
 	lb bc, Bank(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
+	ld a, [wd732]
+	bit 1, a ; debug mode bit
 	ld hl, IntroducePlayerText
+	jr z, .gotPlayerText
+	ld hl, IntroducePlayerTextDebug
+.gotPlayerText
 	call PrintText
 	call ChoosePlayerName
 	call GBFadeOutToWhite
@@ -93,16 +101,24 @@ ENDC
 	lb bc, Bank(Rival1Pic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call FadeInIntroPic
+	ld a, [wd732]
+	bit 1, a ; debug mode bit
 	ld hl, IntroduceRivalText
+	jr z, .gotRivalText
+	ld hl, IntroduceRivalTextDebug
+.gotRivalText
 	call PrintText
 	call ChooseRivalName
-.skipChoosingNames
 	call GBFadeOutToWhite
+.skipOakSpeech
 	call ClearScreen
 	ld de, RedPicFront
 	lb bc, Bank(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
+	ld a, [wd732]
+	bit 1, a ; debug mode bit
+	jr nz, .next
 	ld a, [wd72d]
 	and a
 	jr nz, .next
@@ -170,6 +186,12 @@ IntroducePlayerText:
 	db "@"
 IntroduceRivalText:
 	TX_FAR _IntroduceRivalText
+	db "@"
+IntroducePlayerTextDebug:
+	TX_FAR _IntroducePlayerTextDebug
+	db "@"
+IntroduceRivalTextDebug:
+	TX_FAR _IntroduceRivalTextDebug
 	db "@"
 OakSpeechText3:
 	TX_FAR _OakSpeechText3

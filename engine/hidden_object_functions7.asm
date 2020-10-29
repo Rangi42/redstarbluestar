@@ -45,6 +45,8 @@ SafariZoneCheck:
 	jr SafariZoneGameStillGoing
 
 SafariZoneCheckSteps:
+	call DebugPressedOrHeldB
+	ret nz
 	ld a, [wSafariSteps]
 	ld b, a
 	ld a, [wSafariSteps + 1]
