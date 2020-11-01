@@ -571,6 +571,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkEastMap
 	ld a, [wMapConn3Ptr]
+	cp $ff
+	jr z, .checkEastMap
 	ld [wCurMap], a
 	ld a, [wWestConnectedMapXAlignment] ; new X coordinate upon entering west map
 	ld [wXCoord], a
@@ -608,6 +610,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .checkNorthMap
 	ld a, [wMapConn4Ptr]
+	cp $ff
+	jr z, .checkNorthMap
 	ld [wCurMap], a
 	ld a, [wEastConnectedMapXAlignment] ; new X coordinate upon entering east map
 	ld [wXCoord], a
@@ -644,6 +648,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkSouthMap
 	ld a, [wMapConn1Ptr]
+	cp $ff
+	jr z, .checkSouthMap
 	ld [wCurMap], a
 	ld a, [wNorthConnectedMapYAlignment] ; new Y coordinate upon entering north map
 	ld [wYCoord], a
@@ -672,6 +678,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .didNotEnterConnectedMap
 	ld a, [wMapConn2Ptr]
+	cp $ff
+	jr z, .didNotEnterConnectedMap
 	ld [wCurMap], a
 	ld a, [wSouthConnectedMapYAlignment] ; new Y coordinate upon entering south map
 	ld [wYCoord], a
@@ -1237,17 +1245,6 @@ IsSpriteInFrontOfPlayer2::
 	ld [hSpriteIndexOrTextID], a
 	ret
 
-CollisionCheckDebug:
-	call DebugPressedOrHeldB
-	jr z, .no
-	; TODO: check direction for out of bounds
-	and a
-	ret
-
-.no
-	scf
-	ret
-
 ; function to check if the player will jump down a ledge and check if the tile ahead is passable (when not surfing)
 ; sets the carry flag if there is a collision, and unsets it if there isn't a collision
 CollisionCheckOnLand::
@@ -1258,8 +1255,8 @@ CollisionCheckOnLand::
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	jr nz, .noCollision ; no collisions when the player's movements are being controlled by the game
-	call CollisionCheckDebug
-	jr nc, .noCollision
+	call DebugPressedOrHeldB
+	jr nz, .noCollision
 	ld a, [wPlayerDirection] ; the direction that the player is trying to go in
 	ld d, a
 	ld a, [wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)
