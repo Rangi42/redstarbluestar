@@ -45,6 +45,10 @@
    - Kabuto and Omanyte: the fossil not taken in Mt. Moon will be in Cerulean Cave
    - Bulbasaur, Charmander, and Squirtle: NPC gifts (like Yellow)
    - Mew: Use the [Mew glitch](https://bulbapedia.bulbagarden.net/wiki/Mew_glitch) ;)
+- Press Select at the title screen for Noclip or Debug modes:
+   - Holding B will disable wild encounters, trainer battles, Safari Zone steps, and rival battle triggers
+   - Holding B will let you walk through walls ("noclip") including out of bounds
+   - "Debug" will, in addition the the "Noclip" features, give you a strong party, seven badges, some good items, ¥999,999, and skip the introductory game events
 - Fixed some [bugs in Red and Blue](https://forums.glitchcity.info/index.php?topic=7682.0):
    - [Some DV combinations are unavailable in the wild](https://www.youtube.com/watch?v=BcIxMyf8yHY), including all shiny ones
    - Focus Energy and Dire Hit halve the critical hit rate instead of doubling it
