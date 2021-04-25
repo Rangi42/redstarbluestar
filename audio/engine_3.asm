@@ -646,7 +646,7 @@ Audio3_dnote:
 	push af
 	push bc
 	call Audio3_GetNextMusicByte ; get dnote instrument
-asm_7d571
+asm_7d571:
 	ld d, a
 	ld a, [wDisableChannelOutputWhenSfxEnds]
 	and a

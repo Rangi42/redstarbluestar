@@ -653,7 +653,7 @@ Audio2_dnote:
 	push af
 	push bc
 	call Audio2_GetNextMusicByte ; get dnote instrument
-asm_21c7e
+asm_21c7e:
 	ld d, a
 	ld a, [wDisableChannelOutputWhenSfxEnds]
 	and a

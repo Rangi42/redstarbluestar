@@ -666,7 +666,7 @@ Audio1_dnote:
 	push af
 	push bc
 	call Audio1_GetNextMusicByte ; get dnote instrument
-asm_94fd
+asm_94fd:
 	ld d, a
 	ld a, [wDisableChannelOutputWhenSfxEnds]
 	and a
