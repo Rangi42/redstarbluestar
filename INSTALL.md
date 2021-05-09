@@ -8,7 +8,7 @@ Run setup and leave the default settings. At "Select Packages", choose to instal
 - `git`
 - `gcc-core`
 
-Then download [**rgbds 0.3.8**](https://github.com/rednex/rgbds/releases/tag/v0.3.8). Extract it and put all the `exe` and `dll` files individually in **C:\cygwin64\usr\local\bin**.
+Then download [**rgbds 0.5.1**](https://github.com/gbdev/rgbds/releases/tag/v0.5.1). Extract it and put all the `exe` and `dll` files individually in **C:\cygwin64\usr\local\bin**.
 
 In the **Cygwin terminal**, enter these commands:
 
@@ -41,8 +41,8 @@ To build **redstar.gbc** and **bluestar.gbc**:
 
 	sudo apt-get install make git gcc
 
-	sudo apt-get install byacc flex pkg-config libpng-dev
-	git clone https://github.com/rednex/rgbds
+	sudo apt-get install bison pkg-config libpng-dev
+	git clone https://github.com/gbdev/rgbds
 	cd rgbds
 	sudo make install
 	cd ..
