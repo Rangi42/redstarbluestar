@@ -59,7 +59,7 @@ redstar_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "PKMN RED STAR"
 bluestar_opt = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "PKMN BLUE STAR"
 
 %.gbc: $$(%_obj)
-	$(RGBDS)rgblink -d -n $*.sym -l redstarbluestar.link -o $@ $^
+	$(RGBDS)rgblink -d -n $*.sym -l layout.link -o $@ $^
 	$(RGBDS)rgbfix $($*_opt) $@
 	sort $*.sym -o $*.sym
 
